@@ -1,13 +1,31 @@
+##### LOAD PACKAGES #####
+library(tidyverse)
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(ggpubr)
+library(DT)
+library(psych)
+library(stringr)
+library(scales)
+
+##### LOAD DATA #####
+SIAP <- read.csv("/Users/erikaluna/R\ Studio/msc_thesis/SIAP.csv") 
+
+##### Data Wrangling #####
+
+
 #### Graphing diversity ####
 
 one_crop <- SIAP %>% 
   #filter(type == "food", cycle == "perennial") %>% 
   #filter(type == "food", year > 1994) %>% 
   #filter(crop == "maiz", str_detect(crop_var,'grano')) %>% 
-  filter(crop == "frijol", water == "rainfed") %>% 
+  #filter(crop == "frijol", water == "rainfed") %>% 
   #filter(crop == "sorgo", str_detect(crop_var,'grano'), water == "irrigated") %>% 
-  #group_by(state, year, crop) %>% 
-  group_by(year) %>% 
+  group_by(state, year, crop) %>% 
+  #group_by(state, year) %>% 
+  #group_by(year) %>% 
   summarise(ag_yield = round(sum(production)/sum(harvested), digits = 2),
             ag_prod = sum(production),
             ag_planted = sum(planted),
@@ -31,8 +49,8 @@ ggplot(diversity, aes(year, n, group = state, colour = state)) +
   #scale_x_discrete(guide = guide_axis(angle = 45))
   theme(legend.position = "none")
 
-#ggplot(one_crop, aes(year, ag_planted, group = state, colour = state)) +
-ggplot(one_crop, aes(year, ag_planted)) +
+ggplot(one_crop, aes(year, ag_planted, group = state, colour = state)) +
+#ggplot(one_crop, aes(year, ag_planted)) +
   geom_line() 
 
 ggplot(one_crop, aes(x=year)) + 
@@ -75,10 +93,7 @@ diversity %>%
 #########slope extraction from a linear model in R##########
 #e.g. if you were trying to estimate a linear effect of temp on yields for each state,
 #holding year constant
-##########################################################
-##load some data
-library(ggplot2)
-data(diamonds)
+data(one_crop)
 diamonds$color <-factor(diamonds$color, order=F) #reset to factor var
 ##full mod
 #for your data replace price =yield, color=admin unit, and table= year and carat=temperature
@@ -129,3 +144,120 @@ glimpse(results3)
 
 tmp <- filter(tmp, str_detect(term, "year"))
 write.csv(tmp, "ag_harv_coeff.csv")
+
+
+one_crop <- SIAP %>% 
+  #filter(crop == "maiz", water == "irrigated",str_detect(crop_var,'grano'), state %in% maize_states) %>% 
+  #filter(crop == "trigo", water == "rainfed",str_detect(crop_var,'grano'), state %in% maize_states) %>% 
+  #filter(crop == "soya", water == "rainfed", state %in% maize_states) %>% 
+  #filter(crop == "sorgo", water == "irrigated",str_detect(crop_var,'grano'), state %in% maize_states) %>% 
+  group_by(year, state) %>% 
+  summarise(ag_yield = round(sum(production)/sum(harvested), digits = 2),
+            ag_prod = sum(production),
+            ag_planted = sum(planted),
+            ag_harv = sum(harvested), 
+            HAR = round(sum(harvested)/sum(planted), digits = 2) )
+
+
+#### One particular crop ####
+
+one_crop %>% 
+  DT::datatable()
+
+#### Panel data ####
+period <- tibble(rep(c(1980:2016), times = 32)) #32 states report maize production
+colnames(period) <- c("year") 
+states <- tibble(rep(c("aguascalientes","baja california","baja california sur",
+                       "campeche", "coahuila", "colima","chiapas","chihuahua",
+                       "distrito federal","durango",
+                       "guanajuato", "guerrero", "hidalgo", "jalisco", 
+                       "mexico", "michoacan", "morelos", "nayarit","nuevo leon", 
+                       "oaxaca", "puebla", "queretaro", "quintana roo",
+                       "san luis potosi", "sinaloa", "sonora", "tabasco", 
+                       "tamaulipas", "tlaxcala","veracruz", "yucatan", "zacatecas"), times = 37))
+cov_id <- tibble(rep(c(1, 2, 3,
+                       4, 5, 6, 7,8,
+                       9, 10, 
+                       11, 12, 13, 14, 
+                       15, 16, 17, 18, 19,
+                       20, 21, 22, 23,
+                       24, 25, 26, 27,
+                       28, 29, 30, 31, 32), times = 37))
+
+colnames(states) <- c("state") 
+states <- states %>% 
+  arrange(state) 
+
+colnames(cov_id) <- c("state_code")
+cov_id <- cov_id %>% 
+  arrange(state_code)
+
+states_period <- cbind(cov_id, states, period)
+
+##### Data frame for one particular crop ####
+maize <- left_join(states_period, one_crop, by=c("state", "year"))
+maize <- maize %>%  
+  transform(i=as.numeric(factor(state))) %>% 
+  transform(t=as.numeric(factor(year))) %>% 
+  group_by(year) %>% 
+  arrange(state) 
+
+maize %>% 
+  DT::datatable()
+
+#### REGIONS #####
+mex_south <- c("chiapas", "guanajuato", "jalisco", "mexico", "michoacan") 
+mex_north <- c("sinaloa", "tamaulipas") # maize states
+maize_states <- c(mex_south, mex_north)
+
+mex_south <- c("chiapas", "guanajuato", "jalisco", "mexico", "michoacan") # maize states
+
+yields_south <- maize %>%
+  #filter(state %in% mex_south) %>% # filter by state names 
+  #group_by(year) %>% 
+  group_by(state, year) %>% 
+  summarise(ag_yield = round(sum(ag_prod)/sum(ag_harv), digits = 2),
+            HAR = round(sum(ag_harv)/sum(ag_planted), digits = 2)) # just calculate yields
+
+yields_south %>% 
+  DT::datatable()
+
+str(yields_south)
+
+n <- diff(log(yields_south$ag_yield))
+fd_yield <- c(0, n)
+yields_south$fd_yield <- fd_yield
+
+e <- diff(log(yields_south$HAR))
+fd_HAR <- c(0, e)
+yields_south$fd_HAR <- fd_HAR
+
+
+
+yields_south %>% 
+  filter(state == "puebla") %>% 
+  ggplot(aes(x=year, y=HAR)) +
+  geom_line() #+
+#geom_smooth(method=lm , color="red", fill="#69b3a2", se=TRUE)
+
+ggplot(yields_south, aes(x=year, y=fd_HAR)) +
+  geom_line() +
+  geom_smooth(method=lm , color="red", fill="#69b3a2", se=TRUE)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
