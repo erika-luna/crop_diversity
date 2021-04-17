@@ -98,15 +98,13 @@ crop <- SIAP %>%
   filter(crop == "maiz") #%>% 
   #filter(str_detect(crop_var,'grano'))
 
-unique(crop$crop_var)
-
 crop_div <- SIAP %>% 
   group_by(state, year, crop) %>% 
-  summarise(ag_yield = round(sum(production)/sum(harvested), digits = 2),
-            ag_prod = sum(production),
-            ag_planted = sum(planted),
-            ag_harv = sum(harvested), 
-            HAR = round(sum(harvested)/sum(planted), digits = 2))
+  count()
+
+unique(crop$crop_var)
+
+
 
 crop_div <- crop_div %>% 
   group_by(state, year) %>% 
@@ -114,34 +112,127 @@ crop_div <- crop_div %>%
   ggplot(aes(year, n, group = state, colour = state)) +
   geom_line() +
   theme(legend.position = "none")
-
-
-  library(vegan)
-  
-  crop_div <- crop_div %>% 
-    group_by(year) %>% 
-    count()
   
   
-  H <- diversity(crop_div$n)
-  simp <- diversity(BCI, "simpson")
-  invsimp <- diversity(BCI, "inv")
-  ## Unbiased Simpson (Hurlbert 1971, eq. 5) with rarefy:
-  unbias.simp <- rarefy(BCI, 2) - 1
-  ## Fisher alpha
-  alpha <- fisher.alpha(BCI)
-  ## Plot all
-  pairs(cbind(H, simp, invsimp, unbias.simp, alpha), pch="+", col="blue")
-  ## Species richness (S) and Pielou's evenness (J):
-  S <- specnumber(BCI) ## rowSums(BCI > 0) does the same...
-  J <- H/log(S)
-  ## beta diversity defined as gamma/alpha - 1:
-  data(dune)
-  data(dune.env)
-  alpha <- with(dune.env, tapply(specnumber(dune), Management, mean))
-  gamma <- with(dune.env, specnumber(dune, Management))
-  gamma/alpha - 1
+aguas <- SIAP %>% 
+  filter(state == "aguascalientes") %>% 
+  group_by(year) %>% 
+  summarise(ag_harv = sum(harvested),
+            ag_plan = sum(planted))
 
+state <- SIAP %>% 
+  filter(state == "chiapas") %>% 
+  group_by(year) %>% 
+  summarise(ag_harv = sum(harvested),
+            ag_plan = sum(planted))
+
+
+aguas %>% 
+  ggplot(aes(year, ag_harv)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+
+
+library(ggpubr)
+theme_set(
+  theme_minimal() +
+    theme(legend.position = "top")
+)
+
+ggplot(state, aes(year, value)) +
+geom_point(aes(color = area)) +
+  #geom_rug(aes(color =area)) +
+  geom_smooth(aes(color = area), method = lm, 
+              se = FALSE, fullrange = TRUE)+
+  scale_color_manual(values = c("#00AFBB", "#E7B800"))#+
+  ggpubr::stat_cor(aes(color = area), label.x = 3)
+
+
+data <- SIAP %>% 
+    group_by(state, year) %>% 
+    summarise(ag_harv = sum(harvested),
+              ag_plan = sum(planted))
+  
+data <- gather(data, "area", "value", 3:4)  
+  
+  
+  cities = unique(data$state)
+  city_plots = list()
+  for(city_ in cities) {
+    city_plots[[city_]] = ggplot(data %>% filter(state == city_), aes(x=year, y=value)) +
+      geom_point(aes(color = area)) +
+      #geom_rug(aes(color =area)) +
+      geom_smooth(aes(color = area), method = lm, 
+                  se = FALSE, fullrange = TRUE)+
+      scale_color_manual(values = c("#00AFBB", "#E7B800"))#+
+    
+    print(city_plots[[city_]])
+    ggsave(city_plots[[city_]], file=paste0("plot_", city_,".png"), width = 44.45, height = 27.78, units = "cm", dpi=300)
+  }
+  
+  
+  
+  
+  
+#### Measuring taxonomic crop alpha diversity ####
+library(vegan)
+
+aguas <- SIAP %>% 
+  filter(state == "aguascalientes") %>% 
+  group_by(state, year, crop) %>% 
+  summarise(ag_harv = sum(harvested))
+
+# Matrix
+aguas <- aguas %>%  
+  spread(crop, ag_harv)
+
+aguas[is.na(aguas)] <- 0 # NA values to cero 
+
+aguas <- as.data.frame(aguas)
+
+tmp <- c("state", "year") # columns to remove
+ 
+aguas <- aguas %>%  # remove columns from the matrix
+  select(-one_of(tmp))
+  
+aguas <- mapply(aguas, FUN=as.integer)
+
+# Indices
+H <- diversity(aguas)
+simp <- diversity(aguas, "simpson")
+invsimp <- diversity(aguas, "inv")
+## Unbiased Simpson (Hurlbert 1971, eq. 5) with rarefy:
+unbias.simp <- rarefy(aguas, 2) - 1
+## Fisher alpha
+alpha <- fisher.alpha(aguas)
+## Plot all
+pairs(cbind(H, simp, invsimp, unbias.simp, alpha), pch="+", col="blue")
+## Species richness (S) and Pielou's evenness (J):
+S <- specnumber(aguas) ## rowSums(BCI > 0) does the same...
+J <- H/log(S)
+
+period <- c(1980:2016)
+
+SR_time <- as.data.frame(cbind(period, H)) 
+SD_time <- as.data.frame(cbind(period, simp))
+
+plot(SR_time)
+plot(SD_time)
+
+ggplot(SR_time, aes(period, H)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+
+
+## beta diversity defined as gamma/alpha - 1:
+data(dune)
+data(dune.env)
+alpha <- with(dune.env, tapply(specnumber(dune), Management, mean))
+gamma <- with(dune.env, specnumber(dune, Management))
+gamma/alpha - 1
+
+ 
+  
 
 
 #########slope extraction from a linear model in R##########
