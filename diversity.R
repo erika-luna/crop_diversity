@@ -23,7 +23,7 @@ one_crop <- SIAP %>%
   #filter(crop == "maiz", str_detect(crop_var,'grano')) %>% 
   #filter(crop == "frijol", water == "rainfed") %>% 
   #filter(crop == "sorgo", str_detect(crop_var,'grano'), water == "irrigated") %>% 
-  group_by(state, year, crop) %>% 
+  #group_by(state, year, crop) %>% 
   #group_by(state, year) %>% 
   #group_by(year) %>% 
   summarise(ag_yield = round(sum(production)/sum(harvested), digits = 2),
@@ -88,6 +88,60 @@ diversity %>%
   filter(state == "coahuila") %>% 
   ggplot(aes(year, simplemodel)) +
   geom_line()
+
+
+
+
+#### Diversity indices ####
+
+crop <- SIAP %>% 
+  filter(crop == "maiz") #%>% 
+  #filter(str_detect(crop_var,'grano'))
+
+unique(crop$crop_var)
+
+crop_div <- SIAP %>% 
+  group_by(state, year, crop) %>% 
+  summarise(ag_yield = round(sum(production)/sum(harvested), digits = 2),
+            ag_prod = sum(production),
+            ag_planted = sum(planted),
+            ag_harv = sum(harvested), 
+            HAR = round(sum(harvested)/sum(planted), digits = 2))
+
+crop_div <- crop_div %>% 
+  group_by(state, year) %>% 
+  count() #%>% 
+  ggplot(aes(year, n, group = state, colour = state)) +
+  geom_line() +
+  theme(legend.position = "none")
+
+
+  library(vegan)
+  
+  crop_div <- crop_div %>% 
+    group_by(year) %>% 
+    count()
+  
+  
+  H <- diversity(crop_div$n)
+  simp <- diversity(BCI, "simpson")
+  invsimp <- diversity(BCI, "inv")
+  ## Unbiased Simpson (Hurlbert 1971, eq. 5) with rarefy:
+  unbias.simp <- rarefy(BCI, 2) - 1
+  ## Fisher alpha
+  alpha <- fisher.alpha(BCI)
+  ## Plot all
+  pairs(cbind(H, simp, invsimp, unbias.simp, alpha), pch="+", col="blue")
+  ## Species richness (S) and Pielou's evenness (J):
+  S <- specnumber(BCI) ## rowSums(BCI > 0) does the same...
+  J <- H/log(S)
+  ## beta diversity defined as gamma/alpha - 1:
+  data(dune)
+  data(dune.env)
+  alpha <- with(dune.env, tapply(specnumber(dune), Management, mean))
+  gamma <- with(dune.env, specnumber(dune, Management))
+  gamma/alpha - 1
+
 
 
 #########slope extraction from a linear model in R##########
