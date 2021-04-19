@@ -12,9 +12,6 @@ library(scales)
 ##### LOAD DATA #####
 SIAP <- read.csv("/Users/erikaluna/R\ Studio/msc_thesis/SIAP.csv") 
 
-##### Data Wrangling #####
-
-
 #### Graphing diversity ####
 
 one_crop <- SIAP %>% 
@@ -172,56 +169,161 @@ data <- gather(data, "area", "value", 3:4)
   
   
   
+#### Regions ####
+
+  north_west <- c("baja california", "baja california sur", "nayarit","sinaloa", "sonora")
+  north_east <- c("chihuahua", "coahuila", "durango","nuevo leon","tamaulipas", "zacatecas")
+  central_west <- c("aguascalientes","colima","guanajuato","jalisco","michoacan", "san luis potosi" )
+  central <- c("distrito federal","hidalgo","guerrero","morelos","mexico","puebla","tlaxcala","queretaro")
+  south <- c("campeche","chiapas","oaxaca","tabasco","veracruz", "quintana roo","yucatan")
+  
+  data <- SIAP %>% 
+    group_by(state, water, year) %>% 
+    summarise(ag_harv = sum(harvested),
+              ag_plan = sum(planted))
+  
+  data <- data %>% 
+    mutate(region = case_when(
+      state %in% north_west  ~ "north_west",
+      state %in% north_east  ~ "north_east",
+      state %in% central_west  ~ "central_west",
+      state %in% central  ~ "central",
+      state %in% south  ~ "south"
+    ))
   
   
+  data <- data %>% 
+    group_by(region, water, year) %>% 
+    summarise(ag_harv = sum(ag_harv),
+              ag_plan = sum(ag_plan))
+  
+  data <- gather(data, "area", "value", 4:5) 
+  
+  cities = unique(data$region)
+  city_plots = list()
+  for(city_ in cities) {
+    city_plots[[city_]] = ggplot(data %>% filter(region == city_), aes(x=year, y=value)) +
+      geom_point(aes(color = area, linetype = water)) +
+      geom_smooth(aes(color = area, linetype = water), method = lm, 
+                  se = FALSE, fullrange = TRUE)+
+      scale_color_manual(values = c("#00AFBB", "#E7B800")) +
+      scale_y_continuous(labels = comma) +
+      ggtitle(city_)
+    
+    print(city_plots[[city_]])
+    #ggsave(city_plots[[city_]], file=paste0("plot_", city_,".png"), width = 44.45, height = 27.78, units = "cm", dpi=300)
+  }
+  
+  do.call(grid.arrange,city_plots)
+  
+  
+city_plots[1]
+  
+  
+    
+  
+
+
+##### Total area #####
+
+data <- SIAP %>% 
+  group_by(state, water, year) %>% 
+  summarise(ag_harv = sum(harvested))
+
+data <- data %>% 
+  mutate(region = case_when(
+    state %in% north_west  ~ "north_west",
+    state %in% north_east  ~ "north_east",
+    state %in% central_west  ~ "central_west",
+    state %in% central  ~ "central",
+    state %in% south  ~ "south"
+  ))
+
+data <- data %>% 
+  group_by(region, water, year) %>% 
+  summarise(ag_harv = sum(ag_harv))
+
+perc_area <- data %>% 
+group_by(year) %>% 
+  mutate(percent = ag_harv/sum(ag_harv)*100)
+
+perc_area %>% 
+  ggplot(aes(year, percent, fill = region)) +
+  geom_col()
+  
+
 #### Measuring taxonomic crop alpha diversity ####
 library(vegan)
 
-aguas <- SIAP %>% 
-  filter(state == "aguascalientes") %>% 
-  group_by(state, year, crop) %>% 
+data <- SIAP %>% 
+  group_by(state, crop, year) %>% 
   summarise(ag_harv = sum(harvested))
 
+data <- data %>% 
+  mutate(region = case_when(
+    state %in% north_west  ~ "north_west",
+    state %in% north_east  ~ "north_east",
+    state %in% central_west  ~ "central_west",
+    state %in% central  ~ "central",
+    state %in% south  ~ "south"
+  ))
+
+one_region <- data %>% 
+ filter(region == "south") %>% 
+  group_by(year, crop) %>% 
+  summarise(ag_harv = sum(ag_harv))
+
 # Matrix
-aguas <- aguas %>%  
+one_region <- one_region %>%  
   spread(crop, ag_harv)
 
-aguas[is.na(aguas)] <- 0 # NA values to cero 
+one_region[is.na(one_region)] <- 0 # NA values to cero 
 
-aguas <- as.data.frame(aguas)
+one_region <- as.data.frame(one_region)
 
-tmp <- c("state", "year") # columns to remove
+#tmp <- c("state", "year") # columns to remove
  
-aguas <- aguas %>%  # remove columns from the matrix
-  select(-one_of(tmp))
+one_region <- one_region %>%  # remove columns from the matrix
+  #select(-one_of(tmp))
+  select(-year)
   
-aguas <- mapply(aguas, FUN=as.integer)
+one_region <- mapply(one_region, FUN=as.integer)
 
 # Indices
-H <- diversity(aguas)
-simp <- diversity(aguas, "simpson")
-invsimp <- diversity(aguas, "inv")
+H <- diversity(one_region)
+simp <- diversity(one_region, "simpson")
+invsimp <- diversity(one_region, "inv")
 ## Unbiased Simpson (Hurlbert 1971, eq. 5) with rarefy:
-unbias.simp <- rarefy(aguas, 2) - 1
+unbias.simp <- rarefy(one_region, 2) - 1
 ## Fisher alpha
-alpha <- fisher.alpha(aguas)
+alpha <- fisher.alpha(one_region)
 ## Plot all
 pairs(cbind(H, simp, invsimp, unbias.simp, alpha), pch="+", col="blue")
 ## Species richness (S) and Pielou's evenness (J):
-S <- specnumber(aguas) ## rowSums(BCI > 0) does the same...
+S <- specnumber(one_region) ## rowSums(BCI > 0) does the same...
 J <- H/log(S)
+
+ENCS <- exp(-H)
 
 period <- c(1980:2016)
 
-SR_time <- as.data.frame(cbind(period, H)) 
-SD_time <- as.data.frame(cbind(period, simp))
+H_time <- as.data.frame(cbind(period, J)) 
+D_time <- as.data.frame(cbind(period, simp))
+indices_time <- left_join(H_time, D_time)
 
-plot(SR_time)
-plot(SD_time)
-
-ggplot(SR_time, aes(period, H)) +
+H_plot <- ggplot(indices_time, aes(period, J)) +
   geom_point() +
-  geom_smooth(method = "lm")
+  geom_smooth(method = "lm") +
+  labs(title = "Shannon index (H): Abundance of species", x = "year", y = "H") +
+  scale_y_continuous(limits = c(0, 1))
+
+D_plot <- ggplot(indices_time, aes(period, simp)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "Simpson index (D)", x = "year", y = "D") +
+  scale_y_continuous(limits = c(0, 1))
+
+ggarrange(H_plot, D_plot,nrow = 2)
 
 
 ## beta diversity defined as gamma/alpha - 1:
