@@ -1,5 +1,39 @@
 SIAP <- read.csv("/Users/erikaluna/Sync/UBC/Research/thesis/Data/Agt_cierre_80_16_equivalenciesFAO-SIAP.csv")
-str(SIAP)
+
+vars_english <- c("crop_var", "crop", "year", "state_code", "state", "mun_code", "mun", "unit",
+                  "cycle", "water", "planted", "harvested", "losses", "production", "yield", "pmr", "value", "type")
+
+colnames(SIAP) <- vars_english
+
+levels(SIAP$cycle)[levels(SIAP$cycle)=="otono - invierno"] <- "fall-winter"
+levels(SIAP$cycle)[levels(SIAP$cycle)=="otono-invierno"] <- "fall-winter"
+levels(SIAP$cycle)[levels(SIAP$cycle)=="primavera - verano"] <- "spring-summer"
+levels(SIAP$cycle)[levels(SIAP$cycle)=="primavera-verano"] <- "spring-summer"
+levels(SIAP$cycle)[levels(SIAP$cycle)=="perennes"] <- "perennial"
+levels(SIAP$water)[levels(SIAP$water)=="riego"] <- "irrigated"
+levels(SIAP$water)[levels(SIAP$water)=="temporal"] <- "rainfed"
+
+SIAP$planted <- as.numeric(gsub(",", "", SIAP$planted))
+SIAP$harvested <- as.numeric(gsub(",", "", SIAP$harvested))
+SIAP$losses <- as.numeric(gsub(",", "", SIAP$losses))
+SIAP$production <- as.numeric(gsub(",", "", SIAP$production))
+SIAP$yield <- as.numeric(gsub(",", "", SIAP$yield))
+SIAP$pmr <- as.numeric(gsub(",", "", SIAP$pmr))
+SIAP$value <- as.numeric(gsub(",", "", SIAP$value))
+
+# exclude zero yield values and NA
+SIAP <- SIAP %>% 
+  drop_na(yield) %>% 
+  filter(yield > 0)
+
+
+write.csv(SIAP, file = "SIAP.csv")
+
+
+
+
+
+
 
 SIAP$Cosechada <- sapply(SIAP$Cosechada, as.character)
 SIAP[is.na(SIAP$Cosechada)] <- " "

@@ -9,21 +9,45 @@ library(psych)
 library(stringr)
 library(scales)
 library(gridExtra)
+library(broom)
 
 ##### LOAD DATA #####
-SIAP <- read.csv("/Users/erikaluna/R\ Studio/msc_thesis/SIAP.csv") 
+SIAP <- read.csv("/Users/erikaluna/R\ Studio/crop_diversity/SIAP.csv") 
+
+##### DATA WRANGLING #####
+SIAP <- SIAP %>% 
+  filter(type == "food") # Only interested in food crops
+
+# Add regions 
+north_west <- c("baja california", "baja california sur", "nayarit","sinaloa", "sonora")
+north_east <- c("chihuahua", "coahuila", "durango","nuevo leon","san luis potosi","tamaulipas", "zacatecas")
+central_west <- c("aguascalientes","colima","guanajuato","jalisco","michoacan","queretaro")
+central <- c("distrito federal","hidalgo","guerrero","morelos","mexico","puebla","tlaxcala","veracruz")
+south <- c("campeche","chiapas","oaxaca","tabasco", "quintana roo","yucatan")
+
+SIAP <- SIAP %>% 
+  mutate(region = case_when(
+    state %in% north_west  ~ "north_west",
+    state %in% north_east  ~ "north_east",
+    state %in% central_west  ~ "central_west",
+    state %in% central  ~ "central",
+    state %in% south  ~ "south"
+  ))
+
+SIAP$region <- as.factor(SIAP$region)
+
+# Add crop groups
+#Tud??
+
+# Municipal level
+SIAP_mun <- SIAP %>%
+  filter(year > 2002) # data is recorded at the mun level after 2003
 
 #### Graphing diversity ####
 
 one_crop <- SIAP %>% 
-  filter(type == "food") %>% 
-  #filter(type == "food", year > 1994) %>% 
   #filter(crop == "maiz", str_detect(crop_var,'grano')) %>% 
-  #filter(crop == "frijol", water == "rainfed") %>% 
-  #filter(crop == "sorgo", str_detect(crop_var,'grano'), water == "irrigated") %>% 
   group_by(state, year, crop) %>% 
-  #group_by(state, year) %>% 
-  #group_by(year) %>% 
   summarise(ag_yield = round(sum(production)/sum(harvested), digits = 2),
             ag_prod = sum(production),
             ag_planted = sum(planted),
@@ -55,15 +79,20 @@ ggplot(one_crop, aes(x=year)) +
   ggtitle("Beans rainfed")
 
 one_crop <- drop_na(one_crop)
-yields_south <- drop_na(one_crop)
 
 m0 <- lm(n~state*year-1, data = diversity)
-#m0 <- lm(HAR~state*year-1, data = one_crop)
-#m0 <- lm(HAR~state*year-1, data = yields_south)
 predict(m0)
 diversity$simplemodel <- predict(m0)
-#one_crop$simplemodel <- predict(m0)
-#yields_south$simplemodel <- predict(m0)
+
+tmp <- tidy(m0)
+augment(m0)
+glimpse(m0)
+
+print(m0$coefficients)
+
+results3 <- broom::tidy(m0)
+
+glimpse(results3)
 
 
 #model.all<-lm(n~state*year-1, data = diversity)
@@ -85,17 +114,13 @@ diversity %>%
 
 
 
-#### Regions ####
 
-north_west <- c("baja california", "baja california sur", "nayarit","sinaloa", "sonora")
-north_east <- c("chihuahua", "coahuila", "durango","nuevo leon","tamaulipas", "zacatecas")
-central_west <- c("aguascalientes","colima","guanajuato","jalisco","michoacan", "san luis potosi" )
-central <- c("distrito federal","hidalgo","guerrero","morelos","mexico","puebla","tlaxcala","queretaro")
-south <- c("campeche","chiapas","oaxaca","tabasco","veracruz", "quintana roo","yucatan")
+
+
 
 #### Diversity indices ####
 
-crop_div <- SIAP %>% 
+crop_div <- SIAP %>% # To group states by regions 
   mutate(region = case_when(
     state %in% north_west  ~ "north_west",
     state %in% north_east  ~ "north_east",
@@ -105,45 +130,35 @@ crop_div <- SIAP %>%
   ))
 
 crop_div <- crop_div %>% 
-  group_by(region, year, crop) %>% 
+  group_by(region, crop, year) %>% 
   count()
-
-crop_div <- crop_div %>% 
-  group_by(region, year) %>% 
-  count() #%>% 
-
 
 crop_div %>% 
   ggplot(aes(year, n, group = region, colour = region)) +
   geom_line() 
   
-  
-aguas <- SIAP %>% 
-  filter(state == "aguascalientes") %>% 
-  group_by(year) %>% 
+one_state <- SIAP %>% 
+  filter(state == "veracruz") %>% 
+  group_by(year, crop) %>% 
   summarise(ag_harv = sum(harvested),
             ag_plan = sum(planted))
 
-state <- SIAP %>% 
-  filter(state == "chiapas") %>% 
-  group_by(year) %>% 
-  summarise(ag_harv = sum(harvested),
-            ag_plan = sum(planted))
-
-
-aguas %>% 
+one_state %>% 
   ggplot(aes(year, ag_harv)) +
   geom_point() +
   geom_smooth(method = "lm")
 
+one_state <- one_state %>% 
+  gather(area, ha, 3:4) %>% 
+  filter(year == 1983)
 
-ggplot(state, aes(year, value)) +
-geom_point(aes(color = area)) +
+ggplot(one_state, aes(year, ha)) +
+geom_point(aes(color = crop)) #+
   #geom_rug(aes(color =area)) +
-  geom_smooth(aes(color = area), method = lm, 
-              se = FALSE, fullrange = TRUE)+
-  scale_color_manual(values = c("#00AFBB", "#E7B800"))#+
-  ggpubr::stat_cor(aes(color = area), label.x = 3)
+  #geom_smooth(aes(color = crop), method = lm, 
+            #  se = FALSE, fullrange = TRUE)+
+  #scale_color_manual(values = c("#00AFBB", "#E7B800"))#+
+  #ggpubr::stat_cor(aes(color = area), label.x = 3)
 
 
 data <- SIAP %>% 
@@ -165,7 +180,7 @@ data <- gather(data, "area", "value", 3:4)
       scale_color_manual(values = c("#00AFBB", "#E7B800"))#+
     
     print(city_plots[[city_]])
-    ggsave(city_plots[[city_]], file=paste0("plot_", city_,".png"), width = 44.45, height = 27.78, units = "cm", dpi=300)
+    #ggsave(city_plots[[city_]], file=paste0("plot_", city_,".png"), width = 44.45, height = 27.78, units = "cm", dpi=300)
   }
   
   
@@ -173,31 +188,15 @@ data <- gather(data, "area", "value", 3:4)
 
 #### Area #####
   
-  data <- SIAP %>% 
-    filter(type == "food") %>% 
-    group_by(state, water, year) %>% 
-    summarise(ag_harv = sum(harvested),
-              ag_plan = sum(planted))
+data <- SIAP %>% 
+  group_by(region, water, year) %>% 
+  summarise(ag_harv = sum(harvested),
+            ag_plan = sum(planted))
   
-  data <- data %>% 
-    mutate(region = case_when(
-      state %in% north_west  ~ "north_west",
-      state %in% north_east  ~ "north_east",
-      state %in% central_west  ~ "central_west",
-      state %in% central  ~ "central",
-      state %in% south  ~ "south"
-    ))
-  
-  
-  data <- data %>% 
-    group_by(region, water, year) %>% 
-    summarise(ag_harv = sum(ag_harv),
-              ag_plan = sum(ag_plan))
-  
-  data <- gather(data, "area", "value", 4:5) 
-  
-  cities = unique(data$region)
-  city_plots = list()
+data <- gather(data, "area", "value", 4:5) 
+
+cities = unique(data$region)
+city_plots = list()
   for(city_ in cities) {
     city_plots[[city_]] = ggplot(data %>% filter(region == city_), aes(x=year, y=value)) +
       #geom_point(aes(color = area, linetype = water)) +
@@ -213,35 +212,10 @@ data <- gather(data, "area", "value", 3:4)
   
   do.call(grid.arrange,city_plots)
   
-  
-city_plots[1]
-  
-  
-    
-  
-
-
 ##### Total area #####
-
 data <- SIAP %>% 
-  filter(type == "food") %>% 
-  group_by(state, water, year) %>% 
-  summarise(ag_harv = sum(planted))
-
-data <- data %>% 
-  mutate(region = case_when(
-    state %in% north_west  ~ "north_west",
-    state %in% north_east  ~ "north_east",
-    state %in% central_west  ~ "central_west",
-    state %in% central  ~ "central",
-    state %in% south  ~ "south"
-  ))
-
-data <- data %>% 
   group_by(region, year) %>% 
-  summarise(ag_harv = sum(ag_harv))
-
-data$region <- as.factor(data$region)
+  summarise(ag_harv = sum(harvested))
 
 perc_area <- data %>% 
 group_by(year) %>% 
@@ -251,26 +225,15 @@ perc_area %>%
   ggplot(aes(year, percent, fill = region)) +
   geom_area()
   
-
 #### Measuring taxonomic crop alpha diversity ####
 library(vegan)
 
 data <- SIAP %>% 
-  filter(type == "food") %>% 
-  group_by(state, crop, year) %>% 
+  group_by(region, crop, year) %>% 
   summarise(ag_harv = sum(harvested))
 
-data <- data %>% 
-  mutate(region = case_when(
-    state %in% north_west  ~ "north_west",
-    state %in% north_east  ~ "north_east",
-    state %in% central_west  ~ "central_west",
-    state %in% central  ~ "central",
-    state %in% south  ~ "south"
-  ))
-
 one_region <- data %>% 
- filter(region == "south") %>% 
+ filter(region == "south") %>% # Modify for each region
   group_by(year, crop) %>% 
   summarise(ag_harv = sum(ag_harv))
 
@@ -309,7 +272,7 @@ ENCS <- exp(-H)
 period <- c(1980:2016)
 
 
-indices_time_south <- as.data.frame(cbind(period, H, simp, S, J, ENCS))
+indices_time <- as.data.frame(cbind(period, H, simp, S, J, ENCS))
 
 
 J_plot <- ggplot(indices_time, aes(period, J)) +
@@ -324,7 +287,7 @@ D_plot <- ggplot(indices_time, aes(period, simp)) +
   labs(title = "Simpson index (D)", x = "year", y = "D") +
   scale_y_continuous(limits = c(0, 1))
 
-ggarrange(H_plot, D_plot,nrow = 2)
+ggarrange(J_plot, D_plot,nrow = 2)
 
 
 ## beta diversity defined as gamma/alpha - 1:
