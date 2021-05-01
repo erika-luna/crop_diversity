@@ -239,21 +239,38 @@ abundance <- data %>%
   group_modify(~ broom::tidy(diversity(.x))) # this is H index (Shannon - species abundance)
 colnames(abundance) <- c("region", "year", "abundance")
 
+simpson <- data %>% 
+  group_by(region, year) %>%
+  group_modify(~ broom::tidy(diversity(.x, "simpson"))) # this is D index (Simpson - species abundance)
+colnames(simpson) <- c("region", "year", "simpson")
+
 richness <- data %>% 
   group_by(region, year) %>% 
   group_modify(~ broom::tidy(specnumber(.x))) # this is S index (Species richness)
 colnames(richness) <- c("region", "year", "richness")
 
 # Indices data frame
-indices <- left_join(abundance, richness, by = c("region", "year"))
+indices <- left_join(abundance, simpson, by = c("region", "year")) %>% 
+              left_join(., richness, by=c("region", "year")) 
+
 indices <- indices %>% 
   mutate(evenness = abundance/log(richness)) # this is J index (Pielou's evenness)
 
+indices <- indices %>% 
+  mutate(encs = exp(-abundance)) # this is ENCS (Effective Number of Crop Species)
+  
+# Plots
 H_plot <- indices %>% 
   ggplot(aes(year, abundance, color = region)) +
   geom_point() +
   geom_smooth(method = "lm") +
   labs(title = "Shannon index (H) - crop abundance", x = "year", y = "H") 
+
+D_plot <- indices %>% 
+  ggplot(aes(year, simpson, color = region)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "Simpson index (D) - crop abundance", x = "year", y = "D") 
 
 S_plot <- indices %>% 
   ggplot(aes(year, richness, color = region)) +
@@ -267,8 +284,29 @@ J_plot <- indices %>%
   geom_smooth(method = "lm") +
   labs(title = "Pielou's index (J) - crop evenness", x = "year", y = "J")
 
+ENCS_plot <- indices %>% 
+  ggplot(aes(year, encs, color = region)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "ENCS", x = "year", y = "ENCS")
 
-# Indices
+ggarrange(H_plot, D_plot, S_plot, J_plot,nrow = 1, common.legend = TRUE, legend="bottom")
+
+# Slope extraction
+m0 <- lm(encs~region*year-1, data=indices)
+
+library(broom)
+tmp <- tidy(m0)
+augment(m0)
+glimpse(m0)
+summary(m0)
+
+j <- summ(m0, digits = 3)
+
+
+
+
+jt# Indices
 H <- diversity(one_region)
 simp <- diversity(one_region, "simpson")
 invsimp <- diversity(one_region, "inv")
