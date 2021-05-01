@@ -118,16 +118,7 @@ diversity %>%
 
 
 
-#### Diversity indices ####
-
-crop_div <- SIAP %>% # To group states by regions 
-  mutate(region = case_when(
-    state %in% north_west  ~ "north_west",
-    state %in% north_east  ~ "north_east",
-    state %in% central_west  ~ "central_west",
-    state %in% central  ~ "central",
-    state %in% south  ~ "south"
-  ))
+#### Species richness ####
 
 crop_div <- crop_div %>% 
   group_by(region, crop, year) %>% 
@@ -225,33 +216,57 @@ perc_area %>%
   ggplot(aes(year, percent, fill = region)) +
   geom_area()
   
-#### Measuring taxonomic crop alpha diversity ####
+
+##### Diversity Indices #####
+# Measuring taxonomic crop alpha diversity 
 library(vegan)
 
 data <- SIAP %>% 
   group_by(region, crop, year) %>% 
   summarise(ag_harv = sum(harvested))
 
-one_region <- data %>% 
- filter(region == "south") %>% # Modify for each region
-  group_by(year, crop) %>% 
-  summarise(ag_harv = sum(ag_harv))
-
 # Matrix
-one_region <- one_region %>%  
+data <- data %>%
   spread(crop, ag_harv)
 
-one_region[is.na(one_region)] <- 0 # NA values to cero 
+data[is.na(data)] <- 0
 
-one_region <- as.data.frame(one_region)
+data <- as.data.frame(data)
 
-#tmp <- c("state", "year") # columns to remove
- 
-one_region <- one_region %>%  # remove columns from the matrix
-  #select(-one_of(tmp))
-  select(-year)
-  
-one_region <- mapply(one_region, FUN=as.integer)
+# indices with vegan
+abundance <- data %>%
+  group_by(region, year) %>%
+  group_modify(~ broom::tidy(diversity(.x))) # this is H index (Shannon - species abundance)
+colnames(abundance) <- c("region", "year", "abundance")
+
+richness <- data %>% 
+  group_by(region, year) %>% 
+  group_modify(~ broom::tidy(specnumber(.x))) # this is S index (Species richness)
+colnames(richness) <- c("region", "year", "richness")
+
+# Indices data frame
+indices <- left_join(abundance, richness, by = c("region", "year"))
+indices <- indices %>% 
+  mutate(evenness = abundance/log(richness)) # this is J index (Pielou's evenness)
+
+H_plot <- indices %>% 
+  ggplot(aes(year, abundance, color = region)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "Shannon index (H) - crop abundance", x = "year", y = "H") 
+
+S_plot <- indices %>% 
+  ggplot(aes(year, richness, color = region)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "Richness index (S) - crop richness", x = "year", y = "n") 
+
+J_plot <- indices %>% 
+  ggplot(aes(year, evenness, color = region)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "Pielou's index (J) - crop evenness", x = "year", y = "J")
+
 
 # Indices
 H <- diversity(one_region)
@@ -458,10 +473,28 @@ ggplot(yields_south, aes(x=year, y=fd_HAR)) +
 
 
 
+##### Archive ######
 
+one_region <- data %>% 
+  filter(region == "central") %>% # Modify for each region, delete after writing for loop 
+  group_by(year, crop) %>% 
+  summarise(ag_harv = sum(ag_harv))
 
+# Matrix
+one_region <- one_region %>%  
+  spread(crop, ag_harv)
 
+one_region[is.na(one_region)] <- 0 # NA values to cero 
 
+one_region <- as.data.frame(one_region)
+
+#tmp <- c("state", "year") # columns to remove
+
+one_region <- one_region %>%  # remove columns from the matrix
+  #select(-one_of(tmp))
+  select(-year)
+
+one_region <- mapply(one_region, FUN=as.integer)
 
 
 
