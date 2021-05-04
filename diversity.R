@@ -222,7 +222,7 @@ perc_area %>%
 library(vegan)
 
 data <- SIAP %>% 
-  group_by(region, crop, year) %>% 
+  group_by(state, crop, year) %>% # modify for region, state or municipal level
   summarise(ag_harv = sum(harvested))
 
 # Matrix
@@ -235,29 +235,31 @@ data <- as.data.frame(data)
 
 # indices with vegan
 abundance <- data %>%
-  group_by(region, year) %>%
+  group_by(state, year) %>% # modify for region, state or municipal level
   group_modify(~ broom::tidy(diversity(.x))) # this is H index (Shannon - species abundance)
-colnames(abundance) <- c("region", "year", "abundance")
+colnames(abundance) <- c("state", "year", "abundance") # modify for region, state or municipal level
 
 simpson <- data %>% 
-  group_by(region, year) %>%
+  group_by(state, year) %>%
   group_modify(~ broom::tidy(diversity(.x, "simpson"))) # this is D index (Simpson - species abundance)
-colnames(simpson) <- c("region", "year", "simpson")
+colnames(simpson) <- c("state", "year", "simpson")
 
 richness <- data %>% 
-  group_by(region, year) %>% 
+  group_by(state, year) %>% 
   group_modify(~ broom::tidy(specnumber(.x))) # this is S index (Species richness)
-colnames(richness) <- c("region", "year", "richness")
+colnames(richness) <- c("state", "year", "richness")
 
 # Indices data frame
-indices <- left_join(abundance, simpson, by = c("region", "year")) %>% 
-              left_join(., richness, by=c("region", "year")) 
+indices <- left_join(abundance, simpson, by = c("state", "year")) %>% 
+              left_join(., richness, by=c("state", "year")) 
 
 indices <- indices %>% 
   mutate(evenness = abundance/log(richness)) # this is J index (Pielou's evenness)
 
 indices <- indices %>% 
   mutate(encs = exp(-abundance)) # this is ENCS (Effective Number of Crop Species)
+
+#write.csv(indices, file = "indices_state.csv")
   
 # Plots
 H_plot <- indices %>% 
@@ -293,6 +295,15 @@ ENCS_plot <- indices %>%
 ggarrange(H_plot, D_plot, S_plot, J_plot,nrow = 1, common.legend = TRUE, legend="bottom")
 
 # Slope extraction
+library(lme4)
+fits <- lmList(encs ~ year | state, data=indices)
+fits
+coefs <- coef(fits)
+
+write.csv(coefs, file = "coefs_state.csv")
+
+
+
 m0 <- lm(encs~region*year-1, data=indices)
 
 library(broom)
@@ -304,70 +315,36 @@ summary(m0)
 j <- summ(m0, digits = 3)
 
 
-
-
-jt# Indices
-H <- diversity(one_region)
-simp <- diversity(one_region, "simpson")
-invsimp <- diversity(one_region, "inv")
-## Unbiased Simpson (Hurlbert 1971, eq. 5) with rarefy:
-unbias.simp <- rarefy(one_region, 2) - 1
-## Fisher alpha
-alpha <- fisher.alpha(one_region)
-## Plot all
-pairs(cbind(H, simp, invsimp, unbias.simp, alpha), pch="+", col="blue")
-## Species richness (S) and Pielou's evenness (J):
-S <- specnumber(one_region) ## rowSums(BCI > 0) does the same...
-J <- H/log(S)
-
-ENCS <- exp(-H)
-
-period <- c(1980:2016)
-
-
-indices_time <- as.data.frame(cbind(period, H, simp, S, J, ENCS))
-
-
-J_plot <- ggplot(indices_time, aes(period, J)) +
-  geom_point() +
-  geom_smooth(method = "lm") +
-  labs(title = "Pielou's evenness (J)", x = "year", y = "H") +
-  scale_y_continuous(limits = c(0, 1))
-
-D_plot <- ggplot(indices_time, aes(period, simp)) +
-  geom_point() +
-  geom_smooth(method = "lm") +
-  labs(title = "Simpson index (D)", x = "year", y = "D") +
-  scale_y_continuous(limits = c(0, 1))
-
-ggarrange(J_plot, D_plot,nrow = 2)
-
-
-## beta diversity defined as gamma/alpha - 1:
+## beta diversity defined as gamma/alpha - 1: 
+# Tud??
 data(dune)
 data(dune.env)
 alpha <- with(dune.env, tapply(specnumber(dune), Management, mean))
 gamma <- with(dune.env, specnumber(dune, Management))
 gamma/alpha - 1
 
- 
-  
+
+fitted_models = indices %>% group_by(region) %>% do(model = lm(encs ~ year, data = .))
+summary(fitted_models)
 
 
-#########slope extraction from a linear model in R##########
+##########slope extraction from a linear model in R##########
 #e.g. if you were trying to estimate a linear effect of temp on yields for each state,
 #holding year constant
-data(one_crop)
+##########################################################
+##load some data
+library(ggplot2)
+data(diamonds)
 diamonds$color <-factor(diamonds$color, order=F) #reset to factor var
 ##full mod
 #for your data replace price =yield, color=admin unit, and table= year and carat=temperature
 #we set intercept to -1 for convenience
-#model.all<-lm(n~state*year-1, data=diversity)
-model.all<-lm(ag_harv~state*year-1, data=one_crop)
+#model.all<-lm(price~color*carat+color*table-1, data=diamonds)
+model.all<-lm(encs~year*region, data=indices)
 ##subset model
 #e.g.  the data for diamond colour E (e.g. or in your case a particular state).
-sub.e<-base::subset(diversity, state=="aguascalientes")
-model.E<-lm(n~ year, data=sub.e)
+sub.e<-base::subset(diamonds, color=="E")
+model.E<-lm(price~carat+ table, data=sub.e)
 ##you can use both approaches, eg. either running the model on each colour (state)
 #or running the complete model, 
 #note the coefficients from the two approaches
@@ -376,7 +353,7 @@ coef(model.all)
 ##to reconstruct the coefficents for effect of carat (temp) on price (yield), for colour D
 #do this...because D is the base value
 #note R uses Helmert contrasts by default and is alphabetically ordered
-coef(model.all)['year']
+coef(model.all)['carat']
 #so for color E you would do this
 coef(model.all)['carat']+coef(model.all)['colorE:carat']
 #And colour F this..
@@ -384,7 +361,7 @@ coef(model.all)['carat']+coef(model.all)['colorF:carat']
 #this is tedious... 
 #you can do this all in one go with the effects package.
 library(effects)
-ef.mod.all<-effect('state:year', model.all)
+ef.mod.all<-effect('color:carat', model.all)
 summary(ef.mod.all)
 #because the effect is linear it is simple
 #for your application just change the index for the columns (4,3)
@@ -393,7 +370,15 @@ summary(ef.mod.all)$effect[,4]-summary(ef.mod.all)$effect[,3]
 #which is the same as our manual estimate from the full
 coef(model.all)['carat']+coef(model.all)['colorE:carat']
 #and individual model for E
-coef(model.E)[2]
+coef(model.E)[2] 
+
+
+
+
+
+
+
+
 
 library(broom)
 tmp <- tidy(m0)
@@ -410,6 +395,11 @@ tmp <- filter(tmp, str_detect(term, "year"))
 write.csv(tmp, "ag_harv_coeff.csv")
 
 
+m0$coefficients
+
+
+
+#### Just one crop ####
 one_crop <- SIAP %>% 
   #filter(crop == "maiz", water == "irrigated",str_detect(crop_var,'grano'), state %in% maize_states) %>% 
   #filter(crop == "trigo", water == "rainfed",str_detect(crop_var,'grano'), state %in% maize_states) %>% 
@@ -535,11 +525,49 @@ one_region <- one_region %>%  # remove columns from the matrix
 one_region <- mapply(one_region, FUN=as.integer)
 
 
+# Indices
+H <- diversity(one_region)
+simp <- diversity(one_region, "simpson")
+invsimp <- diversity(one_region, "inv")
+## Unbiased Simpson (Hurlbert 1971, eq. 5) with rarefy:
+unbias.simp <- rarefy(one_region, 2) - 1
+## Fisher alpha
+alpha <- fisher.alpha(one_region)
+## Plot all
+pairs(cbind(H, simp, invsimp, unbias.simp, alpha), pch="+", col="blue")
+## Species richness (S) and Pielou's evenness (J):
+S <- specnumber(one_region) ## rowSums(BCI > 0) does the same...
+J <- H/log(S)
+
+ENCS <- exp(-H)
+
+period <- c(1980:2016)
 
 
+indices_time <- as.data.frame(cbind(period, H, simp, S, J, ENCS))
 
 
+J_plot <- ggplot(indices_time, aes(period, J)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "Pielou's evenness (J)", x = "year", y = "H") +
+  scale_y_continuous(limits = c(0, 1))
 
+D_plot <- ggplot(indices_time, aes(period, simp)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "Simpson index (D)", x = "year", y = "D") +
+  scale_y_continuous(limits = c(0, 1))
+
+ggarrange(J_plot, D_plot,nrow = 2)
+
+
+## beta diversity defined as gamma/alpha - 1:
+data(dune)
+data(dune.env)
+alpha <- with(dune.env, tapply(specnumber(dune), Management, mean))
+gamma <- with(dune.env, specnumber(dune, Management))
+gamma/alpha - 1
 
 
 
