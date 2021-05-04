@@ -221,8 +221,10 @@ perc_area %>%
 # Measuring taxonomic crop alpha diversity 
 library(vegan)
 
-data <- SIAP %>% 
-  group_by(state, crop, year) %>% # modify for region, state or municipal level
+#data <- SIAP %>% 
+data <- SIAP_mun %>% 
+  #group_by(state, crop, year) %>% # modify for region, state or municipal level
+  group_by(ID, crop, year) %>% # modify for region, state or municipal level
   summarise(ag_harv = sum(harvested))
 
 # Matrix
@@ -235,23 +237,23 @@ data <- as.data.frame(data)
 
 # indices with vegan
 abundance <- data %>%
-  group_by(state, year) %>% # modify for region, state or municipal level
+  group_by(ID, year) %>% # modify for region, state or municipal level
   group_modify(~ broom::tidy(diversity(.x))) # this is H index (Shannon - species abundance)
-colnames(abundance) <- c("state", "year", "abundance") # modify for region, state or municipal level
+colnames(abundance) <- c("ID", "year", "abundance") # modify for region, state or municipal level
 
 simpson <- data %>% 
-  group_by(state, year) %>%
+  group_by(ID, year) %>%
   group_modify(~ broom::tidy(diversity(.x, "simpson"))) # this is D index (Simpson - species abundance)
-colnames(simpson) <- c("state", "year", "simpson")
+colnames(simpson) <- c("ID", "year", "simpson")
 
 richness <- data %>% 
-  group_by(state, year) %>% 
+  group_by(ID, year) %>% 
   group_modify(~ broom::tidy(specnumber(.x))) # this is S index (Species richness)
-colnames(richness) <- c("state", "year", "richness")
+colnames(richness) <- c("ID", "year", "richness")
 
 # Indices data frame
-indices <- left_join(abundance, simpson, by = c("state", "year")) %>% 
-              left_join(., richness, by=c("state", "year")) 
+indices <- left_join(abundance, simpson, by = c("ID", "year")) %>% 
+              left_join(., richness, by=c("ID", "year")) 
 
 indices <- indices %>% 
   mutate(evenness = abundance/log(richness)) # this is J index (Pielou's evenness)
@@ -259,7 +261,7 @@ indices <- indices %>%
 indices <- indices %>% 
   mutate(encs = exp(-abundance)) # this is ENCS (Effective Number of Crop Species)
 
-#write.csv(indices, file = "indices_state.csv")
+write.csv(indices, file = "indices_ID.csv")
   
 # Plots
 H_plot <- indices %>% 
@@ -296,11 +298,16 @@ ggarrange(H_plot, D_plot, S_plot, J_plot,nrow = 1, common.legend = TRUE, legend=
 
 # Slope extraction
 library(lme4)
-fits <- lmList(encs ~ year | state, data=indices)
+
+indices$mun <- as.factor(indices$mun)
+str(indices)
+
+fits <- lmList(encs ~ year | ID, data=indices)
 fits
 coefs <- coef(fits)
-
-write.csv(coefs, file = "coefs_state.csv")
+#mun <- c(1:570)
+#coefs <- cbind(coefs, ID)
+write.csv(coefs, file = "coefs_ID.csv")
 
 
 
