@@ -193,9 +193,5 @@ coefs_mun <- read.csv("coefs_mun.csv")
 colnames(coefs_mun) <- c("mun", "intercept", "slope")
 SIAP_coef <- left_join(SIAP_mun, coefs, by = "mun")
 
-#### second try i think this one works
-SIAP_mun <- SIAP_mun %>% 
-  mutate(ID = group_indices(., state_code, mun_code))
-
 
 
