@@ -228,10 +228,11 @@ perc_area %>%
 # Measuring taxonomic crop alpha diversity 
 library(vegan)
 
-#data <- SIAP %>% 
-data <- SIAP_mun %>% 
-  #group_by(state, crop, year) %>% # modify for region, state or municipal level
-  group_by(COV_ID, crop, year) %>% # modify for region, state or municipal level
+data <- SIAP %>% 
+  filter(year > 1993) %>% 
+#data <- SIAP_mun %>% 
+  group_by(region, crop, year) %>% # modify for region, state or municipal level
+  #group_by(COV_ID, crop, year) %>% # modify for region, state or municipal level
   summarise(ag_harv = sum(harvested))
 
 # Matrix
@@ -244,31 +245,31 @@ data <- as.data.frame(data)
 
 # indices with vegan
 abundance <- data %>%
-  group_by(COV_ID, year) %>% # modify for region, state or municipal level
+  group_by(region, year) %>% # modify for region, state or municipal level
   group_modify(~ broom::tidy(diversity(.x))) # this is H index (Shannon - species abundance)
-colnames(abundance) <- c("COV_ID", "year", "abundance") # modify for region, state or municipal level
+colnames(abundance) <- c("region", "year", "abundance") # modify for region, state or municipal level
 
 simpson <- data %>% 
-  group_by(COV_ID, year) %>%
+  group_by(region, year) %>%
   group_modify(~ broom::tidy(diversity(.x, "simpson"))) # this is D index (Simpson - species abundance)
-colnames(simpson) <- c("COV_ID", "year", "simpson")
+colnames(simpson) <- c("region", "year", "simpson")
 
 richness <- data %>% 
-  group_by(COV_ID, year) %>% 
+  group_by(region, year) %>% 
   group_modify(~ broom::tidy(specnumber(.x))) # this is S index (Species richness)
-colnames(richness) <- c("COV_ID", "year", "richness")
+colnames(richness) <- c("region", "year", "richness")
 
 # Indices data frame
-indices <- left_join(abundance, simpson, by = c("COV_ID", "year")) %>% 
-              left_join(., richness, by=c("COV_ID", "year")) 
+indices <- left_join(abundance, simpson, by = c("region", "year")) %>% 
+              left_join(., richness, by=c("region", "year")) 
 
 indices <- indices %>% 
   mutate(evenness = abundance/log(richness)) # this is J index (Pielou's evenness)
 
 indices <- indices %>% 
-  mutate(encs = exp(-abundance)) # this is ENCS (Effective Number of Crop Species)
+  mutate(encs = exp(abundance)) # this is ENCS (Effective Number of Crop Species)
 
-write.csv(indices, file = "indices_COV_ID.csv")
+write.csv(indices, file = "indices_region.csv")
   
 # Plots
 H_plot <- indices %>% 
@@ -300,39 +301,41 @@ ENCS_plot <- indices %>%
   geom_point() +
   geom_smooth(method = "lm") +
   labs(title = "ENCS", x = "year", y = "ENCS")
-
+ENCS_plot
 ggarrange(H_plot, D_plot, S_plot, J_plot,nrow = 1, common.legend = TRUE, legend="bottom")
 
 # Slope extraction
 library(lme4)
 
-indices$mun <- as.factor(indices$mun)
-str(indices)
+#indices$mun <- as.factor(indices$mun)
+#str(indices)
 
-fits_encs <- lmList(encs ~ year | COV_ID, data=indices)
+fits_encs <- lmList(encs ~ year | region, data=indices)
 coefs_encs <- coef(fits_encs)
 colnames(coefs_encs) <- c("int_encs", "slope_encs")
 
-fits_abundance <- lmList(abundance ~ year | COV_ID, data=indices)
+fits_abundance <- lmList(abundance ~ year | region, data=indices)
 coefs_abundance <- coef(fits_abundance)
 colnames(coefs_abundance) <- c("int_abundance", "slope_abundance")
 
-fits_simpson <- lmList(simpson ~ year | COV_ID, data=indices)
+fits_simpson <- lmList(simpson ~ year | region, data=indices)
 coefs_simpson <- coef(fits_simpson)
 colnames(coefs_simpson) <- c("int_simpson", "slope_simpson")
 
-fits_richness <- lmList(richness ~ year | COV_ID, data=indices)
+fits_richness <- lmList(richness ~ year | region, data=indices)
 coefs_richness <- coef(fits_richness)
 colnames(coefs_richness) <- c("int_richness", "slope_richness")
 
-fits_evenness <- lmList(evenness ~ year | COV_ID, data=indices)
+fits_evenness <- lmList(evenness ~ year | region, data=indices)
 coefs_evenness <- coef(fits_evenness)
 colnames(coefs_evenness) <- c("int_evenness", "slope_evenness")
 
-COV_ID <- c(1:2433)
-coefs <- cbind(coefs_encs, coefs_abundance, coefs_simpson, coefs_richness, coefs_evenness, COV_ID)
-coefs <- left_join(coefs, SIAP_codes, by = "COV_ID")
-write.csv(coefs, file = "coefs_COV_ID.csv")
+COV_ID <- c(1:2436)
+state_code <- c(1:32)
+
+coefs <- cbind(coefs_encs, coefs_abundance, coefs_simpson, coefs_richness, coefs_evenness, state_code)
+#coefs <- left_join(coefs, SIAP_codes, by = "COV_ID")
+write.csv(coefs, file = "coefs_state_code.csv")
 
 coefs %>% 
   ggplot(aes(state, slope_evenness)) +
