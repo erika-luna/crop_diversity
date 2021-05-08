@@ -7,6 +7,12 @@ library(ggplot2)
 ##### LOAD DATA #####
 SIAP <- read.csv("/Users/erikaluna/R\ Studio/crop_diversity/SIAP.csv") 
 
+municipios <- read.csv("municipios.csv")
+municipios <- municipios %>% 
+  select(c("CVE_ENT", "CVE_MUN", "NOM_ENT", "NOM_MUN", "COV_ID"))
+colnames(municipios)[colnames(municipios) == 'CVE_ENT'] <- 'state_code'
+colnames(municipios)[colnames(municipios) == 'CVE_MUN'] <- 'mun_code'
+
 ##### DATA WRANGLING #####
 SIAP <- SIAP %>% 
   filter(type == "food") # Only interested in food crops
@@ -225,16 +231,22 @@ SIAP$mun[SIAP$mun == "general francisco r. murguia"] <- "francisco r. murguia"
 SIAP$mun[SIAP$mun == "general joaquin amaro"] <- "el plateado de joaquin amaro"
 SIAP$mun[SIAP$mun == "salvador el"] <- "el salvador"
 
-
-
 # Test each state
 state_count <- SIAP_codes %>% 
   filter(state=="nuevo leon") %>% 
   count(COV_ID)
 
-
-
-SIAP$mun[SIAP$mun == ""] <- ""
-
-
 write.csv(SIAP_codes, file = "SIAP_codes.csv")  
+
+SIAP_codes <- SIAP_codes %>% 
+  select(-COV_ID)
+
+# Merge
+SIAP_mun <- merge(SIAP, municipios, by=c("state_code","mun_code"))
+SIAP_mun <- SIAP_mun %>% 
+  select(-c("NOM_ENT", "NOM_MUN"))
+
+# Write new csv files
+write.csv(SIAP_mun, file = "SIAP_mun.csv")
+write.csv(SIAP, file = "SIAP.csv")
+write.csv(SIAP_codes, file = "SIAP_codes.csv")
