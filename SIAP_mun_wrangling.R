@@ -77,6 +77,7 @@ SIAP$mun[SIAP$mun == "coyame del sotol"] <- "coyame"
 # Coahuila
 SIAP$mun_code[SIAP$mun == "viesca"] <- 36
 SIAP$mun[SIAP$mun == "fco. i. madero"] <- "francisco i. madero"
+SIAP$mun[SIAP$mun == "parras de la fuente"] <- "parras"
 # Distrito federal
 SIAP$mun[SIAP$mun == "cuajimalpa de morelos/cuajimal"] <- "cuajimalpa de morelos"
 SIAP$mun[SIAP$mun == "magdalena contreras la"] <- "la magdalena contreras"
@@ -119,7 +120,7 @@ SIAP$mun[SIAP$mun == "oro el"] <- "el oro"
 SIAP$mun[SIAP$mun == "paz la"] <- "la paz"
 SIAP$mun[SIAP$mun == "valle de chalco solidaridad"] <- "valle de chalco"
 # Michoac??n
-SIAP$mun[SIAP$mun == "ting????indin"] <- "tinguindin"
+SIAP$mun[SIAP$mun == "ting?????indin"] <- "tinguindin"
 SIAP$mun[SIAP$mun == "reyes los"] <- "los reyes"
 SIAP$mun[SIAP$mun == "piedad la"] <- "la piedad"
 SIAP$mun[SIAP$mun == "huacana la"] <- "la huacana"
@@ -136,8 +137,102 @@ SIAP$mun[SIAP$mun == "aldamas los"] <- "los aldamas"
 SIAP$mun[SIAP$mun == "carmen"] <- "el carmen"
 SIAP$mun[SIAP$mun == "herrera los"] <- "los herreras"
 SIAP$mun[SIAP$mun == "ramones los"] <- "los ramones"
-# 
-SIAP$mun[SIAP$mun == ""] <- ""
+# Oaxaca
+oaxaca <- SIAP_codes %>% 
+  filter(state=="oaxaca") %>% 
+  count(COV_ID)
+SIAP$mun[SIAP$mun == "barrio de la soledad el"] <- "el barrio de la soledad"
+SIAP$mun[SIAP$mun == "compania la"] <- "la compania"
+SIAP$mun[SIAP$mun == "espinal el"] <- "el espinal"
+SIAP$mun[SIAP$mun == "h. cd. de huajuapan de leon"] <- "heroica ciudad de huajuapan de leon"
+SIAP$mun[SIAP$mun == "juchitan de zaragoza"] <- "heroica ciudad de juchitan de zaragoza"
+SIAP$mun[SIAP$mun == "sta. magdalena jicotlan"] <- "santa magdalena jicotlan"
+SIAP$mun[SIAP$mun == "pe la"] <- "la pe"
+SIAP$mun[SIAP$mun == "reforma la"] <- "la reforma"
+SIAP$mun[SIAP$mun == "san esteban atatlahuaca"] <- "san esteban atatlahuca"
+SIAP$mun[SIAP$mun == "san juan mixtepec - dto. 26"] <- "san juan mixtepec"
+SIAP$mun[SIAP$mun == "san juan ?????umi"] <- "san juan numi"
+SIAP$mun[SIAP$mun == "san pedro mixtepec - dto. 22"] <- "san pedro mixtepec"
+SIAP$mun[SIAP$mun == "san pedro totolapam"] <- "san pedro totolapa"
+SIAP$mun[SIAP$mun == "v. de tututepec de melchor ocampo"] <- "villa de tututepec de melchor ocampo"
+SIAP$mun[SIAP$mun == "sta. catarina zapoquila"] <- "santa catarina zapoquila"
+SIAP$mun[SIAP$mun == "ayouezco de aldama"] <- "ayoquezco de aldama"
+SIAP$mun[SIAP$mun == "sta. maria chachoapam"] <- "santa maria chachoapam"
+SIAP$mun[SIAP$mun == "santo toma tamazulapan"] <- "santo tomas tamazulapan"
+SIAP$mun[SIAP$mun == "h. v. tezoatlan de segura y luna, c. de la i.de o."] <- "tezoatlan de segura y luna"
+SIAP$mun[SIAP$mun == "trinidad vista hermosa la"] <- "la trinidad vista hermosa"
+SIAP$mun[SIAP$mun == "zapotitlan del rio"] <- "san mateo yucutindoo"
+SIAP$mun[SIAP$mun == "sta. ines de zaragoza"] <- "santa ines de zaragoza"
+# Puebla
+puebla <- SIAP_codes %>% 
+  filter(state=="puebla") %>% 
+  count(COV_ID)
+SIAP$mun[SIAP$mun == "ahuehuitla"] <- "ahuehuetitla"
+SIAP$mun[SIAP$mun == "chiautla de tapia"] <- "chiautla"
+SIAP$mun[SIAP$mun == "chila honey"] <- "honey"
+SIAP$mun[SIAP$mun == "juan c bonilla"] <- "juan c. bonilla"
+SIAP$mun[SIAP$mun == "saltillo la fragua"] <- "lafragua"
+SIAP$mun[SIAP$mun == "magdalena tlatlaquitepec la"] <- "la magdalena tlatlauquitepec"
+SIAP$mun[SIAP$mun == "morelos caeada"] <- "canada morelos"
+SIAP$mun[SIAP$mun == "reyes de juarez los"] <- "los reyes de juarez"
+# Quer??taro
+qro <- SIAP_codes %>% 
+  filter(state=="queretaro") %>% 
+  count(COV_ID)
+SIAP$mun[SIAP$mun == "amealco de bonfil"] <- "amealco"
+# San Luis Potosi
+slp <- SIAP_codes %>% 
+  filter(state=="san luis potosi") %>% 
+  count(COV_ID)
+SIAP$mun[SIAP$mun == "tancanhuitz de santos"] <- "tancanhuitz"
+SIAP$mun[SIAP$mun == "rioverde"] <- "rio verde"
+SIAP$mun[SIAP$mun == "salinas de hidalgo"] <- "salinas"
+SIAP$mun[SIAP$mun == "tampamolon corona"] <- "tampamolon"
+SIAP$mun[SIAP$mun == "tierranueva"] <- "tierra nueva"
+# Tamaulipas
+SIAP$mun[SIAP$mun == "g?????emez"] <- "guemez"
+SIAP$mun[SIAP$mun == "el mante"] <- "mante"
+# Tlaxcala
+SIAP$mun[SIAP$mun == "altzayanca"] <- "atltzayanca"
+SIAP$mun[SIAP$mun == "carmen tequexquitla el"] <- "el carmen tequexquitla"
+SIAP$mun[SIAP$mun == "munoz domingo arenas"] <- "munoz de domingo arenas"
+SIAP$mun[SIAP$mun == "tetla de solidaridad"] <- "tetla de la solidaridad"
+SIAP$mun[SIAP$mun == "zitlaltepec de trinidad sanchez"] <- "ziltlaltepec de trinidad sanchez santos"
+SIAP$mun[SIAP$mun == "xicotzinco"] <- "xicohtzinco"
+SIAP$mun[SIAP$mun == "yauhquemecan"] <- "yauhquemehcan"
+SIAP$mun[SIAP$mun == "magdalena tlaltelulco, la"] <- "la magdalena tlaltelulco"
+# Veracruz
+SIAP$mun[SIAP$mun == "adalberto  tejeda"] <- "camaron de tejeda"
+SIAP$mun[SIAP$mun == "alto lucero de gutierrez barrios"] <- "alto lucero"
+SIAP$mun[SIAP$mun == "amatlan tuxpan"] <- "naranjos amatlan"
+SIAP$mun[SIAP$mun == "antigua la"] <- "la antigua"
+SIAP$mun[SIAP$mun == "cosamaloapan de carpio"] <- "cosamaloapan"
+SIAP$mun[SIAP$mun == "choapas las"] <- "las choapas"
+SIAP$mun[SIAP$mun == "jaltipan de morelos"] <- "jaltipan"
+SIAP$mun[SIAP$mun == "minas las"] <- "las minas"
+SIAP$mun[SIAP$mun == "ozuluama de mascarena"] <- "ozuluama de mascarenas"
+SIAP$mun[SIAP$mun == "perla la"] <- "la perla"
+SIAP$mun[SIAP$mun == "vigas de ramirez  las"] <- "las vigas de ramirez"
+SIAP$mun[SIAP$mun == "reyes"] <- "los reyes"
+SIAP$mun[SIAP$mun == "alamo temapache"] <- "temapache"
+SIAP$mun[SIAP$mun == "tlaquilpa"] <- "tlaquilpan"
+SIAP$mun[SIAP$mun == "yecuatla"] <- "yecuatlan"
+SIAP$mun[SIAP$mun == "zontecomatlan de  lopez y fuen"] <- "zontecomatlan de lopez y fuentes"
+SIAP$mun[SIAP$mun == "nanchital de lazaro cardenas"] <- "nanchital de lazaro cardenas del rio"
+# Zacatecas
+SIAP$mun[SIAP$mun == "chalchihuites"] <- "loreto"
+SIAP$mun[SIAP$mun == "general francisco r. murguia"] <- "francisco r. murguia"
+SIAP$mun[SIAP$mun == "general joaquin amaro"] <- "el plateado de joaquin amaro"
+SIAP$mun[SIAP$mun == "salvador el"] <- "el salvador"
+
+
+
+# Test each state
+state_count <- SIAP_codes %>% 
+  filter(state=="nuevo leon") %>% 
+  count(COV_ID)
+
+
 
 SIAP$mun[SIAP$mun == ""] <- ""
 
