@@ -14,7 +14,11 @@ library(broom)
 ##### LOAD DATA #####
 SIAP <- read.csv("/Users/erikaluna/R\ Studio/crop_diversity/SIAP.csv") 
 
+# Municipal level
+SIAP_mun <- read.csv("SIAP_mun.csv")
+
 ##### DATA WRANGLING #####
+# Move this to the SIAP_mun_wrangling script
 SIAP <- SIAP %>% 
   filter(type == "food") # Only interested in food crops
 
@@ -39,15 +43,6 @@ SIAP$region <- as.factor(SIAP$region)
 # Add crop groups
 #Tudu
 
-# Municipal level
-SIAP_mun <- SIAP %>%
-  filter(year > 2002) # data is recorded at the mun level after 2003
-
-SIAP_mun <- SIAP_mun %>% # we create a COV_ID column because mun_code is not id
-  mutate(COV_ID = group_indices(., state_code, mun_code)) # COV_ID is determined by the state code and mun code
-# Look at the municipal boundaries shapefile to understand this (2463 municipalities total)
-# For state_code = 1 (aguas), mun_code = 1 (aguas), COV_ID = 1 
-# For state_code = 2 (bc), mun_code = 1 (ensenada), COV_ID = 2
 
 
 #### Graphing diversity ####
