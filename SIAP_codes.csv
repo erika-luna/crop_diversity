@@ -1,0 +1,2438 @@
+"","state","mun","state_code","mun_code"
+"1","aguascalientes","jesus maria",1,5
+"2","aguascalientes","calvillo",1,3
+"3","aguascalientes","rincon de romos",1,7
+"4","aguascalientes","pabellon de arteaga",1,6
+"5","aguascalientes","cosio",1,4
+"6","aguascalientes","tepezala",1,9
+"7","aguascalientes","san francisco de los romo",1,11
+"8","aguascalientes","aguascalientes",1,1
+"9","aguascalientes","asientos",1,2
+"10","aguascalientes","el llano",1,10
+"11","aguascalientes","san jose de gracia",1,8
+"12","baja california","tecate",2,3
+"13","baja california","ensenada",2,1
+"14","baja california","tijuana",2,4
+"15","baja california","playas de rosarito",2,5
+"16","baja california","mexicali",2,2
+"17","baja california sur","comondu",3,1
+"18","baja california sur","la paz",3,3
+"19","baja california sur","mulege",3,2
+"20","baja california sur","los cabos",3,8
+"21","baja california sur","loreto",3,9
+"22","campeche","hecelchakan",4,5
+"23","campeche","tenabo",4,8
+"24","campeche","campeche",4,2
+"25","campeche","calkini",4,1
+"26","campeche","champoton",4,4
+"27","campeche","palizada",4,7
+"28","campeche","candelaria",4,11
+"29","campeche","escarcega",4,9
+"30","campeche","el carmen",4,3
+"31","campeche","calakmul",4,10
+"32","campeche","hopelchen",4,6
+"33","chiapas","la trinitaria",7,99
+"34","chiapas","altamirano",7,4
+"35","chiapas","san lucas",7,110
+"36","chiapas","pantelho",7,66
+"37","chiapas","chenalho",7,26
+"38","chiapas","larrainzar",7,49
+"39","chiapas","tuzantan",7,103
+"40","chiapas","amatenango del valle",7,7
+"41","chiapas","acacoyagua",7,1
+"42","chiapas","totolapa",7,98
+"43","chiapas","teopisca",7,94
+"44","chiapas","huehuetan",7,37
+"45","chiapas","villa comaltitlan",7,71
+"46","chiapas","acala",7,2
+"47","chiapas","chiapilla",7,28
+"48","chiapas","huixtla",7,40
+"49","chiapas","tenejapa",7,93
+"50","chiapas","frontera comalapa",7,34
+"51","chiapas","las rosas",7,75
+"52","chiapas","san cristobal de las casas",7,78
+"53","chiapas","frontera hidalgo",7,35
+"54","chiapas","acapetahua",7,3
+"55","chiapas","escuintla",7,32
+"56","chiapas","mazatan",7,54
+"57","chiapas","suchiate",7,87
+"58","chiapas","tapachula",7,89
+"59","chiapas","mapastepec",7,51
+"60","chiapas","tuxtla chico",7,102
+"61","chiapas","metapa",7,55
+"62","chiapas","salto de agua",7,77
+"63","chiapas","amatan",7,5
+"64","chiapas","juarez",7,48
+"65","chiapas","palenque",7,65
+"66","chiapas","reforma",7,74
+"67","chiapas","chicomuselo",7,30
+"68","chiapas","cintalapa",7,17
+"69","chiapas","villaflores",7,108
+"70","chiapas","ocozocoautla de espinosa",7,61
+"71","chiapas","chiapa de corzo",7,27
+"72","chiapas","jiquipilas",7,46
+"73","chiapas","suchiapa",7,86
+"74","chiapas","ixtacomitan",7,43
+"75","chiapas","tecpatan",7,92
+"76","chiapas","ixtapangajoya",7,45
+"77","chiapas","benemerito de las americas",7,114
+"78","chiapas","sunuapa",7,88
+"79","chiapas","ocosingo",7,59
+"80","chiapas","pichucalco",7,68
+"81","chiapas","solosuchiapa",7,84
+"82","chiapas","marques de comillas",7,116
+"83","chiapas","tumbala",7,100
+"84","chiapas","ostuacan",7,62
+"85","chiapas","bella vista",7,11
+"86","chiapas","pijijiapan",7,69
+"87","chiapas","chalchihuitan",7,22
+"88","chiapas","chilon",7,31
+"89","chiapas","coapilla",7,18
+"90","chiapas","amatenango de la frontera",7,6
+"91","chiapas","la independencia",7,41
+"92","chiapas","san juan cancuc",7,112
+"93","chiapas","villa corzo",7,107
+"94","chiapas","la concordia",7,20
+"95","chiapas","siltepec",7,80
+"96","chiapas","motozintla",7,57
+"97","chiapas","sabanilla",7,76
+"98","chiapas","berriozabal",7,12
+"99","chiapas","cacahoatan",7,15
+"100","chiapas","union juarez",7,105
+"101","chiapas","bejucal de ocampo",7,10
+"102","chiapas","la grandeza",7,36
+"103","chiapas","el porvenir",7,70
+"104","chiapas","ixtapa",7,44
+"105","chiapas","tila",7,96
+"106","chiapas","san fernando",7,79
+"107","chiapas","angel albino corzo",7,8
+"108","chiapas","el bosque",7,14
+"109","chiapas","chapultenango",7,25
+"110","chiapas","las margaritas",7,52
+"111","chiapas","simojovel",7,81
+"112","chiapas","pueblo nuevo solistahuacan",7,72
+"113","chiapas","ocotepec",7,60
+"114","chiapas","huitiupan",7,39
+"115","chiapas","sitala",7,82
+"116","chiapas","yajalon",7,109
+"117","chiapas","tuxtla gutierrez",7,101
+"118","chiapas","copainala",7,21
+"119","chiapas","ixhuatan",7,42
+"120","chiapas","tapilula",7,91
+"121","chiapas","jitotol",7,47
+"122","chiapas","rayon",7,73
+"123","chiapas","pantepec",7,67
+"124","chiapas","tapalapa",7,90
+"125","chiapas","oxchuc",7,64
+"126","chiapas","venustiano carranza",7,106
+"127","chiapas","tzimol",7,104
+"128","chiapas","socoltenango",7,83
+"129","chiapas","catazaja",7,16
+"130","chiapas","la libertad",7,50
+"131","chiapas","zinacantan",7,111
+"132","chiapas","huixtan",7,38
+"133","chiapas","chamula",7,23
+"134","chiapas","chanal",7,24
+"135","chiapas","mitontic",7,56
+"136","chiapas","mazapa de madero",7,53
+"137","chiapas","comitan de dominguez",7,19
+"138","chiapas","nicolas ruiz",7,58
+"139","chiapas","francisco leon",7,33
+"140","chiapas","bochil",7,13
+"141","chiapas","tonala",7,97
+"142","chiapas","chicoasen",7,29
+"143","chiapas","osumacinta",7,63
+"144","chiapas","arriaga",7,9
+"145","chiapas","soyalo",7,85
+"146","chihuahua","chihuahua",8,19
+"147","chihuahua","ascension",8,5
+"148","chihuahua","gomez farias",8,25
+"149","chihuahua","delicias",8,21
+"150","chihuahua","janos",8,35
+"151","chihuahua","bachiniva",8,6
+"152","chihuahua","carichi",8,12
+"153","chihuahua","cusihuiriachi",8,18
+"154","chihuahua","cuauhtemoc",8,17
+"155","chihuahua","valle de zaragoza",8,67
+"156","chihuahua","ahumada",8,1
+"157","chihuahua","matachi",8,43
+"158","chihuahua","aldama",8,2
+"159","chihuahua","casas grandes",8,13
+"160","chihuahua","ojinaga",8,52
+"161","chihuahua","guerrero",8,31
+"162","chihuahua","namiquipa",8,48
+"163","chihuahua","riva palacio",8,54
+"164","chihuahua","buenaventura",8,10
+"165","chihuahua","matamoros",8,44
+"166","chihuahua","temosachic",8,63
+"167","chihuahua","nuevo casas grandes",8,50
+"168","chihuahua","jimenez",8,36
+"169","chihuahua","galeana",8,23
+"170","chihuahua","meoqui",8,45
+"171","chihuahua","la cruz",8,16
+"172","chihuahua","uruachi",8,66
+"173","chihuahua","chinipas",8,20
+"174","chihuahua","rosales",8,55
+"175","chihuahua","saucillo",8,62
+"176","chihuahua","julimes",8,38
+"177","chihuahua","ocampo",8,51
+"178","chihuahua","urique",8,65
+"179","chihuahua","allende",8,3
+"180","chihuahua","juarez",8,37
+"181","chihuahua","camargo",8,11
+"182","chihuahua","coronado",8,14
+"183","chihuahua","san francisco de conchos",8,58
+"184","chihuahua","hidalgo del parral",8,32
+"185","chihuahua","lopez",8,39
+"186","chihuahua","coyame",8,15
+"187","chihuahua","santa isabel",8,24
+"188","chihuahua","guachochi",8,27
+"189","chihuahua","guazapares",8,30
+"190","chihuahua","guadalupe y calvo",8,29
+"191","chihuahua","manuel benavides",8,42
+"192","chihuahua","maguarichi",8,41
+"193","chihuahua","morelos",8,46
+"194","chihuahua","bocoyna",8,9
+"195","chihuahua","moris",8,47
+"196","chihuahua","balleza",8,7
+"197","chihuahua","batopilas",8,8
+"198","chihuahua","madera",8,40
+"199","chihuahua","el tule",8,64
+"200","chihuahua","huejotitan",8,33
+"201","chihuahua","ignacio zaragoza",8,34
+"202","chihuahua","rosario",8,56
+"203","chihuahua","gran morelos",8,26
+"204","chihuahua","san francisco de borja",8,57
+"205","chihuahua","santa barbara",8,60
+"206","chihuahua","satevo",8,61
+"207","chihuahua","guadalupe",8,28
+"208","chihuahua","praxedis g. guerrero",8,53
+"209","coahuila","monclova",5,18
+"210","coahuila","arteaga",5,4
+"211","coahuila","frontera",5,10
+"212","coahuila","lamadrid",5,16
+"213","coahuila","ramos arizpe",5,27
+"214","coahuila","nava",5,22
+"215","coahuila","nadadores",5,21
+"216","coahuila","zaragoza",5,38
+"217","coahuila","jimenez",5,14
+"218","coahuila","san buenaventura",5,31
+"219","coahuila","morelos",5,19
+"220","coahuila","escobedo",5,8
+"221","coahuila","acuna",5,2
+"222","coahuila","abasolo",5,1
+"223","coahuila","allende",5,3
+"224","coahuila","villa union",5,37
+"225","coahuila","general cepeda",5,11
+"226","coahuila","saltillo",5,30
+"227","coahuila","sacramento",5,29
+"228","coahuila","cuatro cienegas",5,7
+"229","coahuila","parras",5,24
+"230","coahuila","sabinas",5,28
+"231","coahuila","muzquiz",5,20
+"232","coahuila","ocampo",5,23
+"233","coahuila","castanos",5,6
+"234","coahuila","san juan de sabinas",5,32
+"235","coahuila","piedras negras",5,25
+"236","coahuila","sierra mojada",5,34
+"237","coahuila","candela",5,5
+"238","coahuila","progreso",5,26
+"239","coahuila","guerrero",5,12
+"240","coahuila","juarez",5,15
+"241","coahuila","hidalgo",5,13
+"242","colima","comala",6,3
+"243","colima","armeria",6,1
+"244","colima","minatitlan",6,8
+"245","colima","ixtlahuacan",6,6
+"246","colima","cuauhtemoc",6,5
+"247","colima","colima",6,2
+"248","colima","villa de alvarez",6,10
+"249","colima","coquimatlan",6,4
+"250","colima","manzanillo",6,7
+"251","colima","tecoman",6,9
+"252","distrito federal","xochimilco",9,13
+"253","distrito federal","tlahuac",9,11
+"254","distrito federal","milpa alta",9,9
+"255","distrito federal","tlalpan",9,12
+"256","distrito federal","alvaro obregon",9,10
+"257","distrito federal","la magdalena contreras",9,8
+"258","distrito federal","cuajimalpa de morelos",9,4
+"259","durango","durango",10,5
+"260","durango","tamazula",10,34
+"261","durango","pueblo nuevo",10,23
+"262","durango","canelas",10,2
+"263","durango","san dimas",10,26
+"264","durango","topia",10,37
+"265","durango","nombre de dios",10,16
+"266","durango","guadalupe victoria",10,8
+"267","durango","poanas",10,22
+"268","durango","vicente guerrero",10,38
+"269","durango","mezquital",10,14
+"270","durango","penon blanco",10,21
+"271","durango","san juan del rio",10,28
+"272","durango","santiago papasquiaro",10,32
+"273","durango","cuencame",10,4
+"274","durango","suchil",10,33
+"275","durango","tepehuanes",10,35
+"276","durango","coneto de comonfort",10,3
+"277","durango","santa clara",10,31
+"278","durango","ocampo",10,17
+"279","durango","el oro",10,18
+"280","durango","san bernardo",10,25
+"281","durango","guanacevi",10,9
+"282","durango","hidalgo",10,10
+"283","durango","otaez",10,19
+"284","durango","nuevo ideal",10,39
+"285","durango","panuco de coronado",10,20
+"286","durango","canatlan",10,1
+"287","durango","inde",10,11
+"288","guanajuato","cortazar",11,11
+"289","guanajuato","irapuato",11,17
+"290","guanajuato","jaral del progreso",11,18
+"291","guanajuato","abasolo",11,1
+"292","guanajuato","romita",11,26
+"293","guanajuato","silao",11,37
+"294","guanajuato","comonfort",11,9
+"295","guanajuato","celaya",11,7
+"296","guanajuato","cueramaro",11,12
+"297","guanajuato","guanajuato",11,15
+"298","guanajuato","salamanca",11,27
+"299","guanajuato","santa cruz de juventino rosas",11,35
+"300","guanajuato","santiago maravatio",11,36
+"301","guanajuato","villagran",11,44
+"302","guanajuato","jerecuaro",11,19
+"303","guanajuato","apaseo el grande",11,5
+"304","guanajuato","manuel doblado",11,8
+"305","guanajuato","apaseo el alto",11,4
+"306","guanajuato","doctor mora",11,13
+"307","guanajuato","pueblo nuevo",11,24
+"308","guanajuato","penjamo",11,23
+"309","guanajuato","san luis de la paz",11,33
+"310","guanajuato","salvatierra",11,28
+"311","guanajuato","allende",11,3
+"312","guanajuato","valle de santiago",11,42
+"313","guanajuato","huanimaro",11,16
+"314","guanajuato","acambaro",11,2
+"315","guanajuato","leon",11,20
+"316","guanajuato","san diego de la union",11,29
+"317","guanajuato","yuriria",11,46
+"318","guanajuato","san francisco del rincon",11,31
+"319","guanajuato","purisima del rincon",11,25
+"320","guanajuato","tarimoro",11,39
+"321","guanajuato","dolores hidalgo cuna de la independencia nacional",11,14
+"322","guanajuato","san jose iturbide",11,32
+"323","guanajuato","tarandacuao",11,38
+"324","guanajuato","coroneo",11,10
+"325","guanajuato","ocampo",11,22
+"326","guanajuato","san felipe",11,30
+"327","guanajuato","victoria",11,43
+"328","guanajuato","uriangato",11,41
+"329","guanajuato","xichu",11,45
+"330","guanajuato","santa catarina",11,34
+"331","guanajuato","moroleon",11,21
+"332","guanajuato","atarjea",11,6
+"333","guanajuato","tierra blanca",11,40
+"334","guerrero","tlacoachistlahuaca",12,62
+"335","guerrero","xochistlahuaca",12,71
+"336","guerrero","ixcateopan de cuauhtemoc",12,37
+"337","guerrero","tecpan de galeana",12,57
+"338","guerrero","zihuatanejo de azueta",12,38
+"339","guerrero","leonardo bravo",12,40
+"340","guerrero","acapulco de juarez",12,1
+"341","guerrero","chilpancingo de los bravo",12,29
+"342","guerrero","general heliodoro castillo",12,32
+"343","guerrero","petatlan",12,48
+"344","guerrero","ayutla de los libres",12,12
+"345","guerrero","mochitlan",12,44
+"346","guerrero","tetipac",12,60
+"347","guerrero","tecoanapa",12,56
+"348","guerrero","quechultenango",12,51
+"349","guerrero","buenavista de cuellar",12,15
+"350","guerrero","cuetzala del progreso",12,26
+"351","guerrero","teloloapan",12,58
+"352","guerrero","eduardo neri",12,75
+"353","guerrero","san luis acatlan",12,52
+"354","guerrero","cocula",12,17
+"355","guerrero","taxco de alarcon",12,55
+"356","guerrero","atoyac de alvarez",12,11
+"357","guerrero","chilapa de alvarez",12,28
+"358","guerrero","copanatoyac",12,20
+"359","guerrero","zitlala",12,74
+"360","guerrero","san miguel totolapan",12,54
+"361","guerrero","cutzamala de pinzon",12,27
+"362","guerrero","huamuxtitlan",12,33
+"363","guerrero","san marcos",12,53
+"364","guerrero","florencio villarreal",12,30
+"365","guerrero","arcelia",12,7
+"366","guerrero","ajuchitlan del progreso",12,3
+"367","guerrero","marquelia",12,77
+"368","guerrero","tlalchapa",12,64
+"369","guerrero","juan r. escudero",12,39
+"370","guerrero","la union de isidoro montes de oca",12,68
+"371","guerrero","zirandaro",12,73
+"372","guerrero","cuauhtepec",12,25
+"373","guerrero","benito juarez",12,14
+"374","guerrero","tlapehuala",12,67
+"375","guerrero","copala",12,18
+"376","guerrero","copalillo",12,19
+"377","guerrero","cuajinicuilapa",12,23
+"378","guerrero","azoyu",12,13
+"379","guerrero","ometepec",12,46
+"380","guerrero","ahuacuotzingo",12,2
+"381","guerrero","igualapa",12,36
+"382","guerrero","tepecoacuilco de trujano",12,59
+"383","guerrero","huitzuco de los figueroa",12,34
+"384","guerrero","atenango del rio",12,8
+"385","guerrero","iguala de la independencia",12,35
+"386","guerrero","coahuayutla de jose maria izazaga",12,16
+"387","guerrero","coyuca de benitez",12,21
+"388","guerrero","acatepec",12,76
+"389","guerrero","tlacoapa",12,63
+"390","guerrero","metlatonoc",12,43
+"391","guerrero","malinaltepec",12,41
+"392","guerrero","pilcaya",12,49
+"393","guerrero","alpoyeca",12,5
+"394","guerrero","tixtla de guerrero",12,61
+"395","guerrero","pungarabato",12,50
+"396","guerrero","tlapa de comonfort",12,66
+"397","guerrero","tlalixtaquilla de maldonado",12,65
+"398","guerrero","xochihuehuetlan",12,70
+"399","guerrero","olinala",12,45
+"400","guerrero","cualac",12,24
+"401","guerrero","pedro ascencio alquisiras",12,47
+"402","guerrero","atlamajalcingo del monte",12,9
+"403","guerrero","general canuto a. neri",12,31
+"404","guerrero","martir de cuilapan",12,42
+"405","guerrero","atlixtac",12,10
+"406","guerrero","zapotitlan tablas",12,72
+"407","guerrero","coyuca de catalan",12,22
+"408","guerrero","alcozauca de guerrero",12,4
+"409","guerrero","apaxtla",12,6
+"410","guerrero","xalpatlahuac",12,69
+"411","hidalgo","ixmiquilpan",13,30
+"412","hidalgo","nicolas flores",13,43
+"413","hidalgo","jacala de ledezma",13,31
+"414","hidalgo","eloxochitlan",13,20
+"415","hidalgo","zimapan",13,84
+"416","hidalgo","metztitlan",13,37
+"417","hidalgo","tecozautla",13,59
+"418","hidalgo","chilcuautla",13,19
+"419","hidalgo","tlahuiltepa",13,71
+"420","hidalgo","atotonilco el grande",13,12
+"421","hidalgo","metzquititlan",13,36
+"422","hidalgo","cardonal",13,15
+"423","hidalgo","huasca de ocampo",13,24
+"424","hidalgo","san agustin tlaxiaca",13,52
+"425","hidalgo","emiliano zapata",13,21
+"426","hidalgo","tezontepec de aldama",13,67
+"427","hidalgo","mixquiahuala de juarez",13,41
+"428","hidalgo","progreso de obregon",13,50
+"429","hidalgo","zacualtipan de angeles",13,81
+"430","hidalgo","xochicoatlan",13,79
+"431","hidalgo","tianguistengo",13,68
+"432","hidalgo","molango",13,42
+"433","hidalgo","juarez hidalgo",13,33
+"434","hidalgo","epazoyucan",13,22
+"435","hidalgo","tula de allende",13,76
+"436","hidalgo","pacula",13,47
+"437","hidalgo","tepeapulco",13,61
+"438","hidalgo","apan",13,8
+"439","hidalgo","almoloya",13,7
+"440","hidalgo","tlanalapa",13,72
+"441","hidalgo","tizayuca",13,69
+"442","hidalgo","pachuca de soto",13,48
+"443","hidalgo","zempoala",13,83
+"444","hidalgo","huejutla de reyes",13,28
+"445","hidalgo","huautla",13,25
+"446","hidalgo","xochiatipan",13,78
+"447","hidalgo","huehuetla",13,27
+"448","hidalgo","chapulhuacan",13,18
+"449","hidalgo","atlapexco",13,11
+"450","hidalgo","tenango de doria",13,60
+"451","hidalgo","san bartolo tutotepec",13,53
+"452","hidalgo","yahualica",13,80
+"453","hidalgo","tlanchinol",13,73
+"454","hidalgo","pisaflores",13,49
+"455","hidalgo","calnali",13,14
+"456","hidalgo","la mision",13,40
+"457","hidalgo","tepehuacan de guerrero",13,62
+"458","hidalgo","huazalingo",13,26
+"459","hidalgo","lolotla",13,34
+"460","hidalgo","san felipe orizatlan",13,46
+"461","hidalgo","jaltocan",13,32
+"462","hidalgo","tepetitlan",13,64
+"463","hidalgo","actopan",13,3
+"464","hidalgo","francisco i. madero",13,23
+"465","hidalgo","huichapan",13,29
+"466","hidalgo","el arenal",13,9
+"467","hidalgo","tlahuelilpan",13,70
+"468","hidalgo","tlaxcoapan",13,74
+"469","hidalgo","tetepango",13,65
+"470","hidalgo","ajacuba",13,5
+"471","hidalgo","santiago de anaya",13,55
+"472","hidalgo","san salvador",13,54
+"473","hidalgo","atitalaquia",13,10
+"474","hidalgo","tasquillo",13,58
+"475","hidalgo","alfajayucan",13,6
+"476","hidalgo","villa de tezontepec",13,66
+"477","hidalgo","singuilucan",13,57
+"478","hidalgo","acatlan",13,1
+"479","hidalgo","tolcayuca",13,75
+"480","hidalgo","mineral del chico",13,38
+"481","hidalgo","metepec",13,35
+"482","hidalgo","mineral de la reforma",13,51
+"483","hidalgo","cuautepec de hinojosa",13,16
+"484","hidalgo","tulancingo",13,77
+"485","hidalgo","zapotlan de juarez",13,82
+"486","hidalgo","acaxochitlan",13,2
+"487","hidalgo","omitlan de juarez",13,45
+"488","hidalgo","santiago tulantepec",13,56
+"489","hidalgo","nopala de villagran",13,44
+"490","hidalgo","atotonilco de tula",13,13
+"491","hidalgo","chapantongo",13,17
+"492","hidalgo","tepeji del rio de ocampo",13,63
+"493","hidalgo","agua blanca de iturbide",13,4
+"494","hidalgo","mineral del monte",13,39
+"495","jalisco","lagos de moreno",14,53
+"496","jalisco","tonala",14,101
+"497","jalisco","zapotlan el grande",14,23
+"498","jalisco","tlaquepaque",14,98
+"499","jalisco","tlajomulco de zuniga",14,97
+"500","jalisco","san gabriel",14,113
+"501","jalisco","la barca",14,18
+"502","jalisco","zacoalco de torres",14,119
+"503","jalisco","el salto",14,70
+"504","jalisco","jamay",14,47
+"505","jalisco","ameca",14,6
+"506","jalisco","arandas",14,8
+"507","jalisco","ayotlan",14,16
+"508","jalisco","sayula",14,82
+"509","jalisco","cuquio",14,29
+"510","jalisco","ixtlahuacan del rio",14,45
+"511","jalisco","acatic",14,1
+"512","jalisco","amatitan",14,5
+"513","jalisco","tuxcacuesco",14,106
+"514","jalisco","juanacatlan",14,51
+"515","jalisco","etzatlan",14,36
+"516","jalisco","zapotlanejo",14,124
+"517","jalisco","atotonilco el alto",14,13
+"518","jalisco","jesus maria",14,48
+"519","jalisco","hostotipaquillo",14,40
+"520","jalisco","zapotlan del rey",14,123
+"521","jalisco","toliman",14,99
+"522","jalisco","autlan de navarro",14,15
+"523","jalisco","san martin hidalgo",14,77
+"524","jalisco","cocula",14,24
+"525","jalisco","acatlan de juarez",14,2
+"526","jalisco","tepatitlan de morelos",14,93
+"527","jalisco","tequila",14,94
+"528","jalisco","tonaya",14,102
+"529","jalisco","ahualulco de mercado",14,3
+"530","jalisco","san juanito de escobedo",14,7
+"531","jalisco","magdalena",14,55
+"532","jalisco","zapopan",14,120
+"533","jalisco","tototlan",14,105
+"534","jalisco","el arenal",14,9
+"535","jalisco","techaluta de montenegro",14,89
+"536","jalisco","mascota",14,58
+"537","jalisco","tuxcueca",14,107
+"538","jalisco","totatiche",14,104
+"539","jalisco","cabo corrientes",14,20
+"540","jalisco","tala",14,83
+"541","jalisco","colotlan",14,25
+"542","jalisco","teuchitlan",14,95
+"543","jalisco","chimaltitan",14,31
+"544","jalisco","san cristobal de la barranca",14,71
+"545","jalisco","valle de juarez",14,112
+"546","jalisco","bolanos",14,19
+"547","jalisco","talpa de allende",14,84
+"548","jalisco","tonila",14,103
+"549","jalisco","mazamitla",14,59
+"550","jalisco","san martin de bolanos",14,76
+"551","jalisco","mezquitic",14,61
+"552","jalisco","gomez farias",14,79
+"553","jalisco","santa maria de los angeles",14,81
+"554","jalisco","el limon",14,54
+"555","jalisco","amacueca",14,4
+"556","jalisco","villa guerrero",14,115
+"557","jalisco","tamazula de gordiano",14,85
+"558","jalisco","quitupan",14,69
+"559","jalisco","atoyac",14,14
+"560","jalisco","tomatlan",14,100
+"561","jalisco","ixtlahuacan de los membrillos",14,44
+"562","jalisco","guachinango",14,38
+"563","jalisco","ejutla",14,34
+"564","jalisco","encarnacion de diaz",14,35
+"565","jalisco","tecolotlan",14,88
+"566","jalisco","zapotiltic",14,121
+"567","jalisco","mixtlan",14,62
+"568","jalisco","mexticacan",14,60
+"569","jalisco","atenguillo",14,12
+"570","jalisco","villa purificacion",14,68
+"571","jalisco","tuxpan",14,108
+"572","jalisco","pihuamo",14,65
+"573","jalisco","cuautitlan de garcia barragan",14,27
+"574","jalisco","jilotlan de los dolores",14,49
+"575","jalisco","degollado",14,33
+"576","jalisco","san marcos",14,75
+"577","jalisco","tecalitlan",14,87
+"578","jalisco","poncitlan",14,66
+"579","jalisco","el grullo",14,37
+"580","jalisco","tizapan el alto",14,96
+"581","jalisco","huejuquilla el alto",14,42
+"582","jalisco","jocotepec",14,50
+"583","jalisco","teocuitatlan de corona",14,92
+"584","jalisco","chapala",14,30
+"585","jalisco","puerto vallarta",14,67
+"586","jalisco","zapotitlan de vadillo",14,122
+"587","jalisco","la huerta",14,43
+"588","jalisco","union de tula",14,110
+"589","jalisco","casimiro castillo",14,21
+"590","jalisco","villa corona",14,114
+"591","jalisco","ocotlan",14,63
+"592","jalisco","ojuelos de jalisco",14,64
+"593","jalisco","tapalpa",14,86
+"594","jalisco","yahualica de gonzalez gallo",14,118
+"595","jalisco","teocaltiche",14,91
+"596","jalisco","hidalgo",14,116
+"597","jalisco","canadas de obregon",14,117
+"598","jalisco","san juan de los lagos",14,73
+"599","jalisco","jalostotitlan",14,46
+"600","jalisco","chiquilistlan",14,32
+"601","jalisco","cihuatlan",14,22
+"602","jalisco","manzanilla de la paz la",14,57
+"603","jalisco","san diego de alejandria",14,72
+"604","jalisco","juchitlan",14,52
+"605","jalisco","atengo",14,11
+"606","jalisco","valle de guadalupe",14,111
+"607","jalisco","union de san antonio",14,109
+"608","jalisco","tenamaxtlan",14,90
+"609","jalisco","huejucar",14,41
+"610","jalisco","cuautla",14,28
+"611","jalisco","santa maria del oro",14,56
+"612","jalisco","atemajac de brizuela",14,10
+"613","jalisco","san sebastian del oeste",14,80
+"614","jalisco","san miguel el alto",14,78
+"615","jalisco","concepcion de buenos aires",14,26
+"616","jalisco","ayutla",14,17
+"617","jalisco","san julian",14,74
+"618","mexico","chalco",15,25
+"619","mexico","chimalhuacan",15,31
+"620","mexico","chicoloapan",15,29
+"621","mexico","texcoco",15,99
+"622","mexico","ixtapaluca",15,39
+"623","mexico","almoloya de alquisiras",15,4
+"624","mexico","otzoloapan",15,66
+"625","mexico","valle de bravo",15,110
+"626","mexico","ocuilan",15,63
+"627","mexico","amecameca",15,9
+"628","mexico","atlautla",15,15
+"629","mexico","malinalco",15,52
+"630","mexico","ixtapan de la sal",15,40
+"631","mexico","ozumba",15,68
+"632","mexico","villa guerrero",15,113
+"633","mexico","san simon de guerrero",15,77
+"634","mexico","zacualpan",15,117
+"635","mexico","ixtapan del oro",15,41
+"636","mexico","coatepec harinas",15,21
+"637","mexico","sultepec",15,80
+"638","mexico","donato guerra",15,32
+"639","mexico","ecatzingo",15,34
+"640","mexico","amanalco",15,7
+"641","mexico","texcaltitlan",15,97
+"642","mexico","tejupilco",15,82
+"643","mexico","luvianos",15,123
+"644","mexico","villa de allende",15,111
+"645","mexico","amatepec",15,8
+"646","mexico","temascaltepec",15,86
+"647","mexico","tenancingo",15,88
+"648","mexico","teotihuacan",15,92
+"649","mexico","tezoyuca",15,100
+"650","mexico","tepetlixpa",15,94
+"651","mexico","tlalmanalco",15,103
+"652","mexico","ayapango",15,17
+"653","mexico","zumpahuacan",15,119
+"654","mexico","chiautla",15,28
+"655","mexico","tepotzotlan",15,95
+"656","mexico","zumpango",15,120
+"657","mexico","huehuetoca",15,35
+"658","mexico","axapusco",15,16
+"659","mexico","la paz",15,70
+"660","mexico","atlacomulco",15,14
+"661","mexico","otumba",15,65
+"662","mexico","cuautitlan izcalli",15,121
+"663","mexico","temascalapa",15,84
+"664","mexico","temamatla",15,83
+"665","mexico","juchitepec",15,50
+"666","mexico","nicolas romero",15,60
+"667","mexico","san martin de las piramides",15,75
+"668","mexico","hueypoxtla",15,36
+"669","mexico","tenango del valle",15,90
+"670","mexico","rayon",15,72
+"671","mexico","tianguistenco",15,101
+"672","mexico","almoloya del rio",15,6
+"673","mexico","teoloyucan",15,91
+"674","mexico","texcalyacac",15,98
+"675","mexico","tonatico",15,107
+"676","mexico","tlatlaya",15,105
+"677","mexico","tenango del aire",15,89
+"678","mexico","atenco",15,11
+"679","mexico","cocotitlan",15,22
+"680","mexico","tepetlaoxtoc",15,93
+"681","mexico","acolman",15,2
+"682","mexico","ecatepec",15,33
+"683","mexico","zacazonapan",15,116
+"684","mexico","tequixquiac",15,96
+"685","mexico","ixtlahuaca",15,42
+"686","mexico","ocoyoacac",15,62
+"687","mexico","apaxco",15,10
+"688","mexico","nopaltepec",15,61
+"689","mexico","temascalcingo",15,85
+"690","mexico","polotitlan",15,71
+"691","mexico","nextlalpan",15,59
+"692","mexico","villa del carbon",15,112
+"693","mexico","jocotitlan",15,48
+"694","mexico","tecamac",15,81
+"695","mexico","acambay",15,1
+"696","mexico","morelos",15,56
+"697","mexico","timilpan",15,102
+"698","mexico","soyaniquilpan de juarez",15,79
+"699","mexico","aculco",15,3
+"700","mexico","chapultepec",15,27
+"701","mexico","xalatlaco",15,43
+"702","mexico","villa victoria",15,114
+"703","mexico","joquicingo",15,49
+"704","mexico","calimaya",15,18
+"705","mexico","capulhuac",15,19
+"706","mexico","san antonio la isla",15,73
+"707","mexico","mexicaltzingo",15,55
+"708","mexico","toluca",15,106
+"709","mexico","zinacantepec",15,118
+"710","mexico","metepec",15,54
+"711","mexico","atizapan",15,12
+"712","mexico","san jose del rincon",15,124
+"713","mexico","santo tomas",15,78
+"714","mexico","xonacatlan",15,115
+"715","mexico","chapa de mota",15,26
+"716","mexico","jilotepec",15,45
+"717","mexico","tlalnepantla de baz",15,104
+"718","mexico","jaltenco",15,44
+"719","mexico","coyotepec",15,23
+"720","mexico","jiquipilco",15,47
+"721","mexico","lerma",15,51
+"722","mexico","temoaya",15,87
+"723","mexico","san felipe del progreso",15,74
+"724","mexico","huixquilucan",15,37
+"725","mexico","san mateo atenco",15,76
+"726","mexico","otzolotepec",15,67
+"727","mexico","naucalpan de juarez",15,57
+"728","mexico","tultitlan",15,109
+"729","mexico","isidro fabela",15,38
+"730","mexico","tultepec",15,108
+"731","mexico","el oro",15,64
+"732","mexico","chiconcuac",15,30
+"733","mexico","cuautitlan",15,24
+"734","mexico","almoloya de juarez",15,5
+"735","mexico","atizapan de zaragoza",15,13
+"736","mexico","coacalco",15,20
+"737","mexico","jilotzingo",15,46
+"738","mexico","melchor ocampo",15,53
+"739","michoacan","maravatio",16,50
+"740","michoacan","patzcuaro",16,66
+"741","michoacan","tarimbaro",16,88
+"742","michoacan","tocumbo",16,95
+"743","michoacan","tacambaro",16,82
+"744","michoacan","zinapecuaro",16,110
+"745","michoacan","tinguindin",16,91
+"746","michoacan","ziracuaretiro",16,111
+"747","michoacan","tangamandapio",16,84
+"748","michoacan","cotija",16,19
+"749","michoacan","hidalgo",16,34
+"750","michoacan","susupuato",16,81
+"751","michoacan","tancitaro",16,83
+"752","michoacan","jungapeo",16,47
+"753","michoacan","juarez",16,46
+"754","michoacan","acuitzio",16,1
+"755","michoacan","tuxpan",16,98
+"756","michoacan","tingambato",16,90
+"757","michoacan","quiroga",16,73
+"758","michoacan","periban",16,68
+"759","michoacan","los reyes",16,75
+"760","michoacan","tzintzuntzan",16,100
+"761","michoacan","zitacuaro",16,112
+"762","michoacan","tangancicuaro",16,85
+"763","michoacan","ocampo",16,61
+"764","michoacan","apatzingan",16,6
+"765","michoacan","nuevo parangaricutiro",16,58
+"766","michoacan","uruapan",16,102
+"767","michoacan","salvador escalante",16,79
+"768","michoacan","erongaricuaro",16,32
+"769","michoacan","huiramba",16,39
+"770","michoacan","chilchota",16,25
+"771","michoacan","madero",16,49
+"772","michoacan","purepero",16,70
+"773","michoacan","lagunillas",16,48
+"774","michoacan","turicato",16,97
+"775","michoacan","taretan",16,87
+"776","michoacan","ario",16,9
+"777","michoacan","panindicuaro",16,63
+"778","michoacan","buenavista",16,12
+"779","michoacan","churumuco",16,29
+"780","michoacan","aquila",16,8
+"781","michoacan","san lucas",16,77
+"782","michoacan","caracuaro",16,13
+"783","michoacan","tiquicheo de nicolas romero",16,92
+"784","michoacan","paracuaro",16,64
+"785","michoacan","mugica",16,55
+"786","michoacan","la huacana",16,35
+"787","michoacan","tumbiscatio",16,96
+"788","michoacan","tuzantla",16,99
+"789","michoacan","tepalcatepec",16,89
+"790","michoacan","huetamo",16,38
+"791","michoacan","nuevo urecho",16,59
+"792","michoacan","gabriel zamora",16,33
+"793","michoacan","charo",16,22
+"794","michoacan","charapan",16,21
+"795","michoacan","jacona",16,43
+"796","michoacan","zamora",16,108
+"797","michoacan","ixtlan",16,42
+"798","michoacan","copandaro",16,18
+"799","michoacan","coahuayana",16,14
+"800","michoacan","nocupetaro",16,57
+"801","michoacan","chavinda",16,23
+"802","michoacan","ecuandureo",16,30
+"803","michoacan","vista hermosa",16,105
+"804","michoacan","villamar",16,104
+"805","michoacan","lazaro cardenas",16,52
+"806","michoacan","alvaro obregon",16,3
+"807","michoacan","contepec",16,17
+"808","michoacan","jiquilpan",16,45
+"809","michoacan","sahuayo",16,76
+"810","michoacan","jose sixto verduzco",16,113
+"811","michoacan","yurecuaro",16,106
+"812","michoacan","irimbo",16,41
+"813","michoacan","cojumatlan de regules",16,74
+"814","michoacan","tanhuato",16,86
+"815","michoacan","angamacutiro",16,4
+"816","michoacan","venustiano carranza",16,103
+"817","michoacan","pajacuaran",16,62
+"818","michoacan","brisenas",16,11
+"819","michoacan","indaparapeo",16,40
+"820","michoacan","puruandiro",16,71
+"821","michoacan","aguililla",16,2
+"822","michoacan","tzitzio",16,101
+"823","michoacan","santa ana maya",16,78
+"824","michoacan","churintzio",16,28
+"825","michoacan","numaran",16,60
+"826","michoacan","angangueo",16,5
+"827","michoacan","penjamillo",16,67
+"828","michoacan","la piedad",16,69
+"829","michoacan","querendaro",16,72
+"830","michoacan","cuitzeo",16,20
+"831","michoacan","chucandiro",16,27
+"832","michoacan","epitacio huerta",16,31
+"833","michoacan","senguio",16,80
+"834","michoacan","cheran",16,24
+"835","michoacan","tlalpujahua",16,93
+"836","michoacan","morelos",16,54
+"837","michoacan","paracho",16,65
+"838","michoacan","aporo",16,7
+"839","michoacan","nahuatzen",16,56
+"840","michoacan","morelia",16,53
+"841","michoacan","zacapu",16,107
+"842","michoacan","tlazazalca",16,94
+"843","michoacan","chinicuila",16,26
+"844","michoacan","huandacareo",16,36
+"845","michoacan","coalcoman de vazquez pallares",16,15
+"846","michoacan","arteaga",16,10
+"847","michoacan","jimenez",16,44
+"848","michoacan","huaniqueo",16,37
+"849","michoacan","coeneo",16,16
+"850","michoacan","marcos castellanos",16,51
+"851","michoacan","zinaparo",16,109
+"852","morelos","miacatlan",17,15
+"853","morelos","totolapan",17,27
+"854","morelos","tepoztlan",17,20
+"855","morelos","huitzilac",17,9
+"856","morelos","tlalnepantla",17,23
+"857","morelos","yecapixtla",17,30
+"858","morelos","yautepec",17,29
+"859","morelos","ocuituco",17,16
+"860","morelos","tetela del volcan",17,22
+"861","morelos","tlaltizapan",17,24
+"862","morelos","tetecala",17,21
+"863","morelos","puente de ixtla",17,17
+"864","morelos","atlatlahucan",17,2
+"865","morelos","tlaquiltenango",17,25
+"866","morelos","cuautla",17,6
+"867","morelos","amacuzac",17,1
+"868","morelos","axochiapan",17,3
+"869","morelos","mazatepec",17,14
+"870","morelos","emiliano zapata",17,8
+"871","morelos","ayala",17,4
+"872","morelos","temoac",17,33
+"873","morelos","jantetelco",17,10
+"874","morelos","xochitepec",17,28
+"875","morelos","coatlan del rio",17,5
+"876","morelos","jiutepec",17,11
+"877","morelos","zacatepec",17,31
+"878","morelos","temixco",17,18
+"879","morelos","jojutla",17,12
+"880","morelos","cuernavaca",17,7
+"881","morelos","jonacatepec",17,13
+"882","morelos","zacualpan",17,32
+"883","morelos","tlayacapan",17,26
+"884","morelos","tepalcingo",17,19
+"885","nayarit","ixtlan del rio",18,6
+"886","nayarit","bahia de banderas",18,20
+"887","nayarit","san blas",18,12
+"888","nayarit","santiago ixcuintla",18,15
+"889","nayarit","tepic",18,17
+"890","nayarit","ahuacatlan",18,2
+"891","nayarit","santa maria del oro",18,14
+"892","nayarit","compostela",18,4
+"893","nayarit","amatlan de canas",18,3
+"894","nayarit","xalisco",18,8
+"895","nayarit","huajicori",18,5
+"896","nayarit","rosamorada",18,10
+"897","nayarit","ruiz",18,11
+"898","nayarit","tuxpan",18,18
+"899","nayarit","tecuala",18,16
+"900","nayarit","jala",18,7
+"901","nayarit","del nayar",18,9
+"902","nayarit","acaponeta",18,1
+"903","nayarit","san pedro lagunillas",18,13
+"904","nayarit","la yesca",18,19
+"905","nuevo leon","galeana",19,17
+"906","nuevo leon","bustamante",19,8
+"907","nuevo leon","general zaragoza",19,24
+"908","nuevo leon","cadereyta jimenez",19,9
+"909","nuevo leon","rayones",19,43
+"910","nuevo leon","allende",19,4
+"911","nuevo leon","sabinas hidalgo",19,44
+"912","nuevo leon","aramberri",19,7
+"913","nuevo leon","linares",19,33
+"914","nuevo leon","villaldama",19,51
+"915","nuevo leon","general teran",19,22
+"916","nuevo leon","montemorelos",19,38
+"917","nuevo leon","santiago",19,49
+"918","nuevo leon","anahuac",19,5
+"919","nuevo leon","mina",19,37
+"920","nuevo leon","garcia",19,18
+"921","nuevo leon","lampazos de naranjo",19,32
+"922","nuevo leon","vallecillo",19,50
+"923","nuevo leon","salinas victoria",19,45
+"924","nuevo leon","iturbide",19,30
+"925","nuevo leon","doctor arroyo",19,14
+"926","nuevo leon","doctor gonzalez",19,16
+"927","nuevo leon","paras",19,40
+"928","nuevo leon","pesqueria",19,41
+"929","nuevo leon","cerralvo",19,11
+"930","nuevo leon","santa catarina",19,48
+"931","nuevo leon","doctor coss",19,15
+"932","nuevo leon","general escobedo",19,21
+"933","nuevo leon","general zuazua",19,25
+"934","nuevo leon","juarez",19,31
+"935","nuevo leon","los ramones",19,42
+"936","nuevo leon","cienega de flores",19,12
+"937","nuevo leon","hidalgo",19,47
+"938","nuevo leon","general bravo",19,20
+"939","nuevo leon","mier y noriega",19,36
+"940","nuevo leon","agualeguas",19,2
+"941","nuevo leon","apodaca",19,6
+"942","nuevo leon","hualahuises",19,29
+"943","nuevo leon","abasolo",19,1
+"944","nuevo leon","el carmen",19,10
+"945","nuevo leon","general trevino",19,23
+"946","nuevo leon","los aldamas",19,3
+"947","nuevo leon","melchor ocampo",19,35
+"948","nuevo leon","china",19,13
+"949","nuevo leon","los herreras",19,27
+"950","oaxaca","san francisco sola",20,149
+"951","oaxaca","san lorenzo albarradas",20,226
+"952","oaxaca","san jeronimo sosola",20,161
+"953","oaxaca","san martin tilcajete",20,243
+"954","oaxaca","san pedro totolapa",20,333
+"955","oaxaca","san jeronimo taviche",20,162
+"956","oaxaca","santa cruz mixtepec",20,378
+"957","oaxaca","san francisco telixtlahuaca",20,150
+"958","oaxaca","san bartolome quialana",20,118
+"959","oaxaca","asuncion tlacolulita",20,8
+"960","oaxaca","nejapa de madero",20,64
+"961","oaxaca","heroica ciudad de ejutla de crespo",20,28
+"962","oaxaca","santa ana tavela",20,357
+"963","oaxaca","santa maria ecatepec",20,410
+"964","oaxaca","magdalena tequisistlan",20,52
+"965","oaxaca","san luis amatlan",20,235
+"966","oaxaca","san pedro quiatoni",20,325
+"967","oaxaca","villa diaz ordaz",20,560
+"968","oaxaca","miahuatlan de porfirio diaz",20,59
+"969","oaxaca","ocotlan de morelos",20,68
+"970","oaxaca","santa maria guelace",20,411
+"971","oaxaca","santiago matatlan",20,475
+"972","oaxaca","san sebastian tutla",20,350
+"973","oaxaca","san juan guelavia",20,197
+"974","oaxaca","santa catarina minas",20,368
+"975","oaxaca","santa ana del valle",20,356
+"976","oaxaca","san bartolo yautepec",20,122
+"977","oaxaca","san carlos yautepec",20,125
+"978","oaxaca","la compania",20,17
+"979","oaxaca","san miguel tilquiapam",20,284
+"980","oaxaca","magdalena teitipac",20,51
+"981","oaxaca","san francisco lachigolo",20,145
+"982","oaxaca","san ildefonso sola",20,155
+"983","oaxaca","santa maria zoquitlan",20,449
+"984","oaxaca","santa catalina quieri",20,361
+"985","oaxaca","san sebastian teitipac",20,349
+"986","oaxaca","ayoquezco de aldama",20,398
+"987","oaxaca","zimatlan de alvarez",20,570
+"988","oaxaca","san dionisio ocotepec",20,131
+"989","oaxaca","santo domingo albarradas",20,506
+"990","oaxaca","teotitlan del valle",20,546
+"991","oaxaca","san jeronimo tlacochahuaya",20,550
+"992","oaxaca","san miguel tenango",20,282
+"993","oaxaca","coatecas altas",20,15
+"994","oaxaca","monjas",20,61
+"995","oaxaca","san juan lachigalla",20,203
+"996","oaxaca","san agustin amatengo",20,80
+"997","oaxaca","yaxe",20,561
+"998","oaxaca","san pablo villa de mitla",20,298
+"999","oaxaca","villa sola de vega",20,277
+"1000","oaxaca","san pedro martir quiechapa",20,316
+"1001","oaxaca","santa maria quiegolani",20,428
+"1002","oaxaca","san pedro taviche",20,328
+"1003","oaxaca","san juan lajarcia",20,204
+"1004","oaxaca","san baltazar chichicapam",20,112
+"1005","oaxaca","san vicente coatlan",20,534
+"1006","oaxaca","san pedro apostol",20,301
+"1007","oaxaca","san lucas quiavini",20,233
+"1008","oaxaca","santa catarina quioquitani",20,74
+"1009","oaxaca","san pablo huitzo",20,294
+"1010","oaxaca","tlacolula de matamoros",20,551
+"1011","oaxaca","san juan bautista cuicatlan",20,177
+"1012","oaxaca","santa maria tecomavaca",20,431
+"1013","oaxaca","santa maria tlahuitoltepec",20,437
+"1014","oaxaca","villa de tamazulapam del progreso",20,540
+"1015","oaxaca","teotitlan de flores magon",20,545
+"1016","oaxaca","santiago laxopa",20,473
+"1017","oaxaca","san pedro ocopetatillo",20,322
+"1018","oaxaca","san miguel santa flor",20,276
+"1019","oaxaca","santa ana tlapacoyan",20,358
+"1020","oaxaca","san juan tepeuxila",20,220
+"1021","oaxaca","san juan de los cues",20,206
+"1022","oaxaca","santiago xiacui",20,496
+"1023","oaxaca","santa maria tlalixtac",20,438
+"1024","oaxaca","cuyamecalco villa de zaragoza",20,24
+"1025","oaxaca","san pedro y san pablo ayutla",20,337
+"1026","oaxaca","animas trujano",20,174
+"1027","oaxaca","santiago nacaltepec",20,478
+"1028","oaxaca","san cristobal lachirioag",20,128
+"1029","oaxaca","san jeronimo tecoatl",20,163
+"1030","oaxaca","santa maria tepantlali",20,435
+"1031","oaxaca","san bernardo mixtepec",20,123
+"1032","oaxaca","san juan juquila mixes",20,200
+"1033","oaxaca","santa maria temaxcalapa",20,432
+"1034","oaxaca","san juan del rio",20,194
+"1035","oaxaca","san ildefonso villa alta",20,156
+"1036","oaxaca","villa de chilapa de diaz",20,405
+"1037","oaxaca","san martin toxpalan",20,244
+"1038","oaxaca","asuncion ocotlan",20,7
+"1039","oaxaca","san juan yaee",20,222
+"1040","oaxaca","santa maria sola",20,429
+"1041","oaxaca","cuilapam de guerrero",20,23
+"1042","oaxaca","tamazulapam del espiritu santo",20,31
+"1043","oaxaca","san francisco huehuetlan",20,142
+"1044","oaxaca","villa talea de castro",20,280
+"1045","oaxaca","tanetze de zaragoza",20,541
+"1046","oaxaca","san antonino el alto",20,104
+"1047","oaxaca","concepcion papalo",20,19
+"1048","oaxaca","mazatlan villa de flores",20,58
+"1049","oaxaca","santa maria teopoxco",20,434
+"1050","oaxaca","ixtlan de juarez",20,42
+"1051","oaxaca","santo domingo tonala",20,520
+"1052","oaxaca","totontepec villa de morelos",20,554
+"1053","oaxaca","santo domingo tepuxtepec",20,517
+"1054","oaxaca","cienega de zimatlan",20,13
+"1055","oaxaca","guadalupe etla",20,33
+"1056","oaxaca","san lucas zoquiapam",20,234
+"1057","oaxaca","san mateo yucutindoo",20,566
+"1058","oaxaca","hidalgo",20,38
+"1059","oaxaca","magdalena mixtepec",20,48
+"1060","oaxaca","santos reyes papalo",20,527
+"1061","oaxaca","santo domingo xagacia",20,522
+"1062","oaxaca","tezoatlan de segura y luna",20,549
+"1063","oaxaca","san juan tabaa",20,216
+"1064","oaxaca","santiago texcalcingo",20,490
+"1065","oaxaca","santa maria papalo",20,425
+"1066","oaxaca","san miguel mixtepec",20,271
+"1067","oaxaca","san pedro yaneri",20,335
+"1068","oaxaca","san juan chicomezuchil",20,191
+"1069","oaxaca","santiago camotlan",20,457
+"1070","oaxaca","san sebastian tecomaxtlahuaca",20,348
+"1071","oaxaca","santiago juxtlahuaca",20,469
+"1072","oaxaca","san antonino castillo velasco",20,103
+"1073","oaxaca","san ildefonso amatlan",20,154
+"1074","oaxaca","santa cruz papalutla",20,380
+"1075","oaxaca","san sebastian abasolo",20,343
+"1076","oaxaca","martires de tacubaya",20,56
+"1077","oaxaca","pinotepa de don luis",20,70
+"1078","oaxaca","villa de tututepec de melchor ocampo",20,334
+"1079","oaxaca","santa maria jalapa del marques",20,418
+"1080","oaxaca","santiago tapextla",20,485
+"1081","oaxaca","san pedro huilotepec",20,308
+"1082","oaxaca","san mateo del mar",20,248
+"1083","oaxaca","chahuites",20,25
+"1084","oaxaca","santo domingo tehuantepec",20,515
+"1085","oaxaca","san pedro huamelula",20,307
+"1086","oaxaca","reforma de pineda",20,75
+"1087","oaxaca","san juan bautista lo de soto",20,180
+"1088","oaxaca","salina cruz",20,79
+"1089","oaxaca","san pedro comitancillo",20,305
+"1090","oaxaca","san pedro tapanatepec",20,327
+"1091","oaxaca","san pedro mixtepec",20,318
+"1092","oaxaca","el espinal",20,30
+"1093","oaxaca","santa maria huazolotitlan",20,414
+"1094","oaxaca","santiago jamiltepec",20,467
+"1095","oaxaca","santiago astata",20,453
+"1096","oaxaca","san miguel tlacamama",20,285
+"1097","oaxaca","santa maria tonameca",20,439
+"1098","oaxaca","heroica ciudad de juchitan de zaragoza",20,43
+"1099","oaxaca","santiago pinotepa nacional",20,482
+"1100","oaxaca","san blas atempa",20,124
+"1101","oaxaca","santa maria cortijo",20,402
+"1102","oaxaca","santiago laollaga",20,472
+"1103","oaxaca","san jose estancia grande",20,168
+"1104","oaxaca","asuncion ixtaltepec",20,5
+"1105","oaxaca","santa maria colotepec",20,401
+"1106","oaxaca","magdalena tlacotepec",20,53
+"1107","oaxaca","san juan cacahuatepec",20,185
+"1108","oaxaca","santiago llano grande",20,474
+"1109","oaxaca","san pedro atoyac",20,302
+"1110","oaxaca","santo domingo zanatepec",20,525
+"1111","oaxaca","union hidalgo",20,557
+"1112","oaxaca","san francisco ixhuatan",20,143
+"1113","oaxaca","santo domingo armenta",20,507
+"1114","oaxaca","santa maria mixtequilla",20,421
+"1115","oaxaca","san pedro pochutla",20,324
+"1116","oaxaca","san sebastian ixcapa",20,345
+"1117","oaxaca","santa maria huatulco",20,413
+"1118","oaxaca","santiago niltepec",20,66
+"1119","oaxaca","san dionisio del mar",20,130
+"1120","oaxaca","san antonio tepetlapa",20,111
+"1121","oaxaca","san pedro jicayan",20,312
+"1122","oaxaca","san andres huaxpaltepec",20,90
+"1123","oaxaca","san francisco del mar",20,141
+"1124","oaxaca","heroica ciudad de huajuapan de leon",20,39
+"1125","oaxaca","santiago huajolotitlan",20,462
+"1126","oaxaca","san juan bautista tuxtepec",20,184
+"1127","oaxaca","san miguel soyaltepec",20,278
+"1128","oaxaca","acatlan de perez figueroa",20,2
+"1129","oaxaca","san lucas ojitlan",20,232
+"1130","oaxaca","guadalupe de ramirez",20,34
+"1131","oaxaca","fresnillo de trujano",20,32
+"1132","oaxaca","villa de zaachila",20,565
+"1133","oaxaca","santiago ayuquililla",20,455
+"1134","oaxaca","santa cruz tacache de mina",20,381
+"1135","oaxaca","san jose ayuquila",20,165
+"1136","oaxaca","santiago tamazola",20,484
+"1137","oaxaca","san miguel amatitlan",20,261
+"1138","oaxaca","san nicolas hidalgo",20,290
+"1139","oaxaca","san raymundo jalpan",20,342
+"1140","oaxaca","mariscala de juarez",20,55
+"1141","oaxaca","san simon zahuatlan",20,352
+"1142","oaxaca","san felipe jalapa de diaz",20,134
+"1143","oaxaca","san juan comaltepec",20,189
+"1144","oaxaca","san juan petlapa",20,212
+"1145","oaxaca","santiago choapam",20,460
+"1146","oaxaca","san juan lalana",20,205
+"1147","oaxaca","cosolapa",20,21
+"1148","oaxaca","san juan cotzocon",20,190
+"1149","oaxaca","santa maria jacatepec",20,417
+"1150","oaxaca","san juan bautista valle nacional",20,559
+"1151","oaxaca","santiago jocotepec",20,468
+"1152","oaxaca","san felipe usila",20,136
+"1153","oaxaca","ayotzintepec",20,9
+"1154","oaxaca","san pedro ixcatlan",20,309
+"1155","oaxaca","san jose chiltepec",20,166
+"1156","oaxaca","san jose independencia",20,169
+"1157","oaxaca","santiago yaveo",20,498
+"1158","oaxaca","santiago comaltepec",20,458
+"1159","oaxaca","san francisco cahuacua",20,137
+"1160","oaxaca","san miguel panixtlahuaca",20,272
+"1161","oaxaca","pluma hidalgo",20,71
+"1162","oaxaca","san francisco ozolotepec",20,148
+"1163","oaxaca","san juan bautista tlacoatzintepec",20,182
+"1164","oaxaca","san juan ozolotepec",20,211
+"1165","oaxaca","santa maria temaxcaltepec",20,433
+"1166","oaxaca","san bartolome ayautla",20,116
+"1167","oaxaca","san juan quiahije",20,213
+"1168","oaxaca","san juan juquila vijanos",20,201
+"1169","oaxaca","san jose tenango",20,171
+"1170","oaxaca","san juan yatzona",20,223
+"1171","oaxaca","santa maria yucuhiti",20,446
+"1172","oaxaca","santiago atitlan",20,454
+"1173","oaxaca","santa ana cuauhtemoc",20,355
+"1174","oaxaca","santa maria la asuncion",20,396
+"1175","oaxaca","san sebastian coatlan",20,344
+"1176","oaxaca","tataltepec de valdes",20,543
+"1177","oaxaca","san baltazar loxicha",20,113
+"1178","oaxaca","san miguel del puerto",20,266
+"1179","oaxaca","santa maria guienagati",20,412
+"1180","oaxaca","san juan lachao",20,202
+"1181","oaxaca","santa cruz itundujia",20,377
+"1182","oaxaca","san pedro sochiapam",20,326
+"1183","oaxaca","putla villa de guerrero",20,73
+"1184","oaxaca","la reforma",20,76
+"1185","oaxaca","san miguel quetzaltepec",20,275
+"1186","oaxaca","santa lucia monteverde",20,392
+"1187","oaxaca","santa maria zacatepec",20,447
+"1188","oaxaca","san pedro teutila",20,330
+"1189","oaxaca","san jeronimo coatlan",20,159
+"1190","oaxaca","santiago zacatepec",20,502
+"1191","oaxaca","santiago xanica",20,495
+"1192","oaxaca","san andres cabecera nueva",20,88
+"1193","oaxaca","san mateo yoloxochitlan",20,249
+"1194","oaxaca","santiago ixcuintepec",20,465
+"1195","oaxaca","san francisco chapulapa",20,139
+"1196","oaxaca","san melchor betaza",20,257
+"1197","oaxaca","san pedro ocotepec",20,323
+"1198","oaxaca","santa cruz acatepec",20,374
+"1199","oaxaca","san mateo pinas",20,253
+"1200","oaxaca","guevea de humboldt",20,36
+"1201","oaxaca","santiago lachiguiri",20,470
+"1202","oaxaca","santiago nuyoo",20,481
+"1203","oaxaca","san bartolome loxicha",20,117
+"1204","oaxaca","san gabriel mixtepec",20,153
+"1205","oaxaca","eloxochitlan de flores magon",20,29
+"1206","oaxaca","san juan quiotepec",20,214
+"1207","oaxaca","santa maria chimalapa",20,407
+"1208","oaxaca","santa ana ateixtlahuaca",20,354
+"1209","oaxaca","santo domingo roayaga",20,514
+"1210","oaxaca","santo domingo petapa",20,513
+"1211","oaxaca","san lorenzo texmelucan",20,229
+"1212","oaxaca","candelaria loxicha",20,12
+"1213","oaxaca","san pablo coatlan",20,291
+"1214","oaxaca","santa maria ozolotepec",20,424
+"1215","oaxaca","san pedro yolox",20,336
+"1216","oaxaca","santa maria chilchotla",20,406
+"1217","oaxaca","santo domingo teojomulco",20,516
+"1218","oaxaca","santiago lalopa",20,471
+"1219","oaxaca","san miguel suchixtepec",20,279
+"1220","oaxaca","san lucas camotlan",20,231
+"1221","oaxaca","huautla de jimenez",20,41
+"1222","oaxaca","santa catarina juquila",20,364
+"1223","oaxaca","san agustin loxicha",20,85
+"1224","oaxaca","santa catarina loxicha",20,366
+"1225","oaxaca","chiquihuitlan de benito juarez",20,27
+"1226","oaxaca","santa maria alotepec",20,394
+"1227","oaxaca","san lorenzo",20,225
+"1228","oaxaca","san juan mazatlan",20,207
+"1229","oaxaca","san andres teotilalpam",20,98
+"1230","oaxaca","santa maria zaniza",20,448
+"1231","oaxaca","san pedro el alto",20,306
+"1232","oaxaca","san juan guichicovi",20,198
+"1233","oaxaca","asuncion cacalotepec",20,3
+"1234","oaxaca","san andres yaa",20,100
+"1235","oaxaca","san agustin chayuco",20,82
+"1236","oaxaca","santos reyes nopala",20,526
+"1237","oaxaca","san mateo rio hondo",20,254
+"1238","oaxaca","constancia del rosario",20,20
+"1239","oaxaca","huautepec",20,40
+"1240","oaxaca","santiago yaitepec",20,497
+"1241","oaxaca","san juan coatzospam",20,187
+"1242","oaxaca","santiago ixtayutla",20,466
+"1243","oaxaca","san juan colorado",20,188
+"1244","oaxaca","san andres solaga",20,97
+"1245","oaxaca","magdalena ocotlan",20,49
+"1246","oaxaca","san pablo huixtepec",20,295
+"1247","oaxaca","santa ines del monte",20,388
+"1248","oaxaca","san agustin atenango",20,81
+"1249","oaxaca","san felipe tejalapam",20,135
+"1250","oaxaca","santa maria camotlan",20,400
+"1251","oaxaca","santiago apostol",20,452
+"1252","oaxaca","asuncion cuyotepeji",20,4
+"1253","oaxaca","santiago suchilquitongo",20,483
+"1254","oaxaca","san marcos arteaga",20,237
+"1255","oaxaca","san jorge nuchita",20,164
+"1256","oaxaca","santiago miltepec",20,476
+"1257","oaxaca","ciudad ixtepec",20,14
+"1258","oaxaca","loma bonita",20,44
+"1259","oaxaca","santo domingo ingenio",20,505
+"1260","oaxaca","santa gertrudis",20,387
+"1261","oaxaca","san antonio nanahuatipam",20,109
+"1262","oaxaca","san miguel peras",20,273
+"1263","oaxaca","santiago yolomecatl",20,499
+"1264","oaxaca","santa magdalena jicotlan",20,47
+"1265","oaxaca","tlacotepec plumas",20,552
+"1266","oaxaca","tepelmeme villa de morelos",20,548
+"1267","oaxaca","santiago tillo",20,493
+"1268","oaxaca","san miguel tulancingo",20,287
+"1269","oaxaca","santiago ihuitlan plumas",20,464
+"1270","oaxaca","teotongo",20,547
+"1271","oaxaca","san miguel tequixtepec",20,283
+"1272","oaxaca","san juan evangelista analco",20,196
+"1273","oaxaca","san pedro molinos",20,320
+"1274","oaxaca","santa maria jaltianguis",20,419
+"1275","oaxaca","san pedro ixtlahuaca",20,310
+"1276","oaxaca","santa catarina ticua",20,371
+"1277","oaxaca","chalcatongo de hidalgo",20,26
+"1278","oaxaca","santa maria del tule",20,409
+"1279","oaxaca","san juan atepec",20,173
+"1280","oaxaca","santa catarina lachatao",20,365
+"1281","oaxaca","santa catarina ixtepeji",20,363
+"1282","oaxaca","guelatao de juarez",20,35
+"1283","oaxaca","tlalixtac de cabrera",20,553
+"1284","oaxaca","santa cruz amilpas",20,375
+"1285","oaxaca","san pablo yaganiza",20,299
+"1286","oaxaca","san andres huayapam",20,91
+"1287","oaxaca","san bartolo coyotepec",20,115
+"1288","oaxaca","san juan teitipac",20,219
+"1289","oaxaca","santa cruz xoxocotlan",20,385
+"1290","oaxaca","capulalpam de mendez",20,247
+"1291","oaxaca","san pedro cajonos",20,303
+"1292","oaxaca","santiago zoochila",20,503
+"1293","oaxaca","nuevo zoquiapam",20,504
+"1294","oaxaca","santiago tetepec",20,489
+"1295","oaxaca","san mateo cajonos",20,246
+"1296","oaxaca","san pedro amuzgos",20,300
+"1297","oaxaca","santa maria totolapilla",20,440
+"1298","oaxaca","san juan bautista atatlahuca",20,175
+"1299","oaxaca","santa lucia ocotlan",20,393
+"1300","oaxaca","trinidad zaachila",20,555
+"1301","oaxaca","santa maria atzompa",20,399
+"1302","oaxaca","san lorenzo cacaotepec",20,227
+"1303","oaxaca","san andres ixtlahuaca",20,92
+"1304","oaxaca","san miguel ejutla",20,268
+"1305","oaxaca","san miguel amatlan",20,262
+"1306","oaxaca","san miguel aloapam",20,260
+"1307","oaxaca","santa maria yavesia",20,443
+"1308","oaxaca","san pablo macuiltianguis",20,296
+"1309","oaxaca","san francisco cajonos",20,138
+"1310","oaxaca","santa maria yalina",20,442
+"1311","oaxaca","mixistlan de la reforma",20,60
+"1312","oaxaca","santo domingo chihuitan",20,508
+"1313","oaxaca","santo domingo ixcatlan",20,510
+"1314","oaxaca","villa tejupam de la union",20,486
+"1315","oaxaca","san esteban atatlahuca",20,133
+"1316","oaxaca","san antonino monte verde",20,105
+"1317","oaxaca","san juan teposcolula",20,221
+"1318","oaxaca","heroica ciudad de tlaxiaco",20,397
+"1319","oaxaca","santa cruz nundaco",20,379
+"1320","oaxaca","santo tomas tamazulapan",20,533
+"1321","oaxaca","santiago nundiche",20,480
+"1322","oaxaca","santo tomas ocotepec",20,532
+"1323","oaxaca","san juan mixtepec",20,208
+"1324","oaxaca","concepcion buenavista",20,18
+"1325","oaxaca","san pablo cuatro venados",20,292
+"1326","oaxaca","san pedro mixtepec",20,319
+"1327","oaxaca","san lorenzo cuaunecuiltitla",20,228
+"1328","oaxaca","san cristobal amatlan",20,126
+"1329","oaxaca","san pedro martir",20,315
+"1330","oaxaca","san lorenzo victoria",20,230
+"1331","oaxaca","san juan bautista jayacatlan",20,179
+"1332","oaxaca","san pedro coxcaltepec cantaros",20,304
+"1333","oaxaca","santa catarina quiane",20,369
+"1334","oaxaca","san agustin de las juntas",20,83
+"1335","oaxaca","santa maria ixcatlan",20,416
+"1336","oaxaca","santos reyes yucuna",20,529
+"1337","oaxaca","santiago nejapilla",20,479
+"1338","oaxaca","silacayoapam",20,537
+"1339","oaxaca","santiago textitlan",20,491
+"1340","oaxaca","matias romero avendano",20,57
+"1341","oaxaca","santo domingo tlatayapam",20,518
+"1342","oaxaca","san pedro topiltepec",20,332
+"1343","oaxaca","san pedro y san pablo teposcolula",20,339
+"1344","oaxaca","san jose del progreso",20,72
+"1345","oaxaca","san miguel huautla",20,270
+"1346","oaxaca","santiago tepetlapa",20,488
+"1347","oaxaca","santa maria ipalapa",20,415
+"1348","oaxaca","teococuilco de marcos perez",20,544
+"1349","oaxaca","santa ana zegache",20,360
+"1350","oaxaca","san andres dinicuiti",20,89
+"1351","oaxaca","santa maria texcatitlan",20,436
+"1352","oaxaca","valerio trujano",20,558
+"1353","oaxaca","nazareno etla",20,63
+"1354","oaxaca","san pedro nopala",20,321
+"1355","oaxaca","santa catarina tayata",20,370
+"1356","oaxaca","san bartolome yucuane",20,119
+"1357","oaxaca","santiago cacaloxtepec",20,456
+"1358","oaxaca","santo tomas jalieza",20,530
+"1359","oaxaca","san andres zautla",20,102
+"1360","oaxaca","oaxaca de juarez",20,67
+"1361","oaxaca","santa maria nativitas",20,422
+"1362","oaxaca","san mateo etlatongo",20,250
+"1363","oaxaca","san miguel tecomatlan",20,281
+"1364","oaxaca","santo domingo tomaltepec",20,519
+"1365","oaxaca","santo domingo tonaltepec",20,521
+"1366","oaxaca","san antonio de la cal",20,107
+"1367","oaxaca","san pedro teozacoalco",20,329
+"1368","oaxaca","el barrio de la soledad",20,10
+"1369","oaxaca","san miguel coatlan",20,263
+"1370","oaxaca","santiago minas",20,477
+"1371","oaxaca","san antonio acutla",20,106
+"1372","oaxaca","santa maria nduayaco",20,423
+"1373","oaxaca","magdalena jaltepec",20,46
+"1374","oaxaca","san pedro tidaa",20,331
+"1375","oaxaca","san juan tamazola",20,217
+"1376","oaxaca","santa maria penoles",20,426
+"1377","oaxaca","santa cruz zenzontepec",20,386
+"1378","oaxaca","asuncion nochixtlan",20,6
+"1379","oaxaca","santo domingo de morelos",20,509
+"1380","oaxaca","santa ines de zaragoza",20,569
+"1381","oaxaca","abejones",20,1
+"1382","oaxaca","san martin lachila",20,241
+"1383","oaxaca","san antonio huitepec",20,108
+"1384","oaxaca","san jacinto amilpas",20,157
+"1385","oaxaca","san juan diuxi",20,195
+"1386","oaxaca","santo domingo yanhuitlan",20,523
+"1387","oaxaca","san miguel chimalapa",20,265
+"1388","oaxaca","santa maria del rosario",20,408
+"1389","oaxaca","san miguel del rio",20,267
+"1390","oaxaca","santa ana",20,353
+"1391","oaxaca","san juan chilateca",20,192
+"1392","oaxaca","san francisco teopan",20,151
+"1393","oaxaca","la trinidad vista hermosa",20,556
+"1394","oaxaca","san francisco jaltepetongo",20,144
+"1395","oaxaca","san miguel chicahua",20,264
+"1396","oaxaca","san andres zabache",20,101
+"1397","oaxaca","taniche",20,542
+"1398","oaxaca","san andres sinaxtla",20,96
+"1399","oaxaca","santa ines yatzeche",20,389
+"1400","oaxaca","san juan yucuita",20,224
+"1401","oaxaca","san juan achiutla",20,172
+"1402","oaxaca","san juan numi",20,210
+"1403","oaxaca","reyes etla",20,77
+"1404","oaxaca","santa catarina zapoquila",20,373
+"1405","oaxaca","san pedro juchatengo",20,314
+"1406","oaxaca","santa maria apazco",20,395
+"1407","oaxaca","santa maria petapa",20,427
+"1408","oaxaca","san pedro martir yucuxaco",20,317
+"1409","oaxaca","san jose del penasco",20,167
+"1410","oaxaca","santa ana yareni",20,359
+"1411","oaxaca","san miguel tlacotepec",20,286
+"1412","oaxaca","san andres nuxino",20,94
+"1413","oaxaca","san francisco chindua",20,140
+"1414","oaxaca","san francisco nuxano",20,147
+"1415","oaxaca","santiago yosondua",20,500
+"1416","oaxaca","yogana",20,563
+"1417","oaxaca","san vicente lachixio",20,535
+"1418","oaxaca","santa maria coyotepec",20,403
+"1419","oaxaca","san francisco tlapancingo",20,152
+"1420","oaxaca","santa lucia miahuatlan",20,391
+"1421","oaxaca","san bartolome zoogocho",20,120
+"1422","oaxaca","san juan sayultepec",20,215
+"1423","oaxaca","santo domingo nuxaa",20,511
+"1424","oaxaca","san miguel el grande",20,269
+"1425","oaxaca","santa maria tataltepec",20,430
+"1426","oaxaca","san juan del estado",20,193
+"1427","oaxaca","san jacinto tlacotepec",20,158
+"1428","oaxaca","la pe",20,69
+"1429","oaxaca","san juan bautista tlachichilco",20,183
+"1430","oaxaca","san baltazar yatzachi el bajo",20,114
+"1431","oaxaca","san bartolo soyaltepec",20,121
+"1432","oaxaca","san cristobal suchixtlahuaca",20,129
+"1433","oaxaca","san mateo tlapiltepec",20,256
+"1434","oaxaca","san vicente nunu",20,536
+"1435","oaxaca","san mateo sindihui",20,255
+"1436","oaxaca","san pedro jaltepetongo",20,311
+"1437","oaxaca","santiago huauclilla",20,463
+"1438","oaxaca","santiago tilantongo",20,492
+"1439","oaxaca","sitio de xitlapehua",20,538
+"1440","oaxaca","san miguel yotao",20,288
+"1441","oaxaca","cosoltepec",20,22
+"1442","oaxaca","san jeronimo silacayoapilla",20,160
+"1443","oaxaca","san andres lagunas",20,93
+"1444","oaxaca","san pedro yucunama",20,341
+"1445","oaxaca","san sebastian nicananduta",20,346
+"1446","oaxaca","magdalena zahuatlan",20,54
+"1447","oaxaca","san martin huamelulpam",20,239
+"1448","oaxaca","san pablo tijaltepec",20,297
+"1449","oaxaca","san martin de los cansecos",20,238
+"1450","oaxaca","santa cruz xitla",20,384
+"1451","oaxaca","santiago amoltepec",20,450
+"1452","oaxaca","zapotitlan palmas",20,568
+"1453","oaxaca","santiago apoala",20,451
+"1454","oaxaca","santa catarina yosonotu",20,372
+"1455","oaxaca","magdalena apasco",20,45
+"1456","oaxaca","rojas de cuauhtemoc",20,78
+"1457","oaxaca","santa maria lachixio",20,420
+"1458","oaxaca","san pedro jocotipac",20,313
+"1459","oaxaca","calihuala",20,11
+"1460","oaxaca","san pedro y san pablo tequixtepec",20,340
+"1461","oaxaca","santiago chazumba",20,459
+"1462","oaxaca","santiago del rio",20,461
+"1463","oaxaca","santos reyes tepejillo",20,528
+"1464","oaxaca","san pablo etla",20,293
+"1465","oaxaca","santa maria chachoapam",20,404
+"1466","oaxaca","santa maria yolotepec",20,444
+"1467","oaxaca","san agustin etla",20,84
+"1468","oaxaca","san dionisio ocotlan",20,132
+"1469","oaxaca","santa cruz tayata",20,383
+"1470","oaxaca","santo domingo yodohino",20,524
+"1471","oaxaca","san juan bautista coixtlahuaca",20,176
+"1472","oaxaca","santo tomas mazaltepec",20,531
+"1473","oaxaca","magdalena yodocono de porfirio diaz",20,562
+"1474","oaxaca","santa catarina cuixtla",20,362
+"1475","oaxaca","san juan bautista suchitepec",20,181
+"1476","oaxaca","san miguel ahuehuetitlan",20,259
+"1477","oaxaca","san juan bautista guelache",20,178
+"1478","oaxaca","san nicolas",20,289
+"1479","oaxaca","san mateo penasco",20,252
+"1480","oaxaca","natividad",20,62
+"1481","oaxaca","san martin zacatepec",20,245
+"1482","oaxaca","san andres paxtlan",20,95
+"1483","oaxaca","santa catarina mechoacan",20,367
+"1484","oaxaca","santiago tenango",20,487
+"1485","oaxaca","san francisco logueche",20,146
+"1486","oaxaca","san miguel piedras",20,274
+"1487","oaxaca","magdalena penasco",20,50
+"1488","oaxaca","san martin itunyoso",20,240
+"1489","oaxaca","mesones hidalgo",20,37
+"1490","oaxaca","villa de etla",20,338
+"1491","oaxaca","santa maria xadani",20,441
+"1492","oaxaca","santa maria yosoyua",20,445
+"1493","oaxaca","santo domingo ozolotepec",20,512
+"1494","oaxaca","zapotitlan lagunas",20,567
+"1495","oaxaca","san juan teita",20,218
+"1496","oaxaca","san agustin yatareni",20,87
+"1497","oaxaca","coicoyan de las flores",20,16
+"1498","oaxaca","santa cruz tacahua",20,382
+"1499","oaxaca","santa lucia del camino",20,390
+"1500","oaxaca","santiago tlazoyaltepec",20,494
+"1501","oaxaca","san jose lachiguiri",20,170
+"1502","oaxaca","san sebastian rio hondo",20,347
+"1503","oaxaca","san andres tepetlapa",20,99
+"1504","oaxaca","san cristobal amoltepec",20,127
+"1505","oaxaca","santiago yucuyachi",20,501
+"1506","oaxaca","soledad etla",20,539
+"1507","oaxaca","san agustin tlacotepec",20,86
+"1508","oaxaca","san juan ihualtepec",20,199
+"1509","oaxaca","san juan cieneguilla",20,186
+"1510","oaxaca","san miguel achiutla",20,258
+"1511","oaxaca","san simon almolongas",20,351
+"1512","oaxaca","san martin peras",20,242
+"1513","oaxaca","san marcial ozolotepec",20,236
+"1514","oaxaca","san mateo nejapam",20,251
+"1515","oaxaca","yutanduchi de guerrero",20,564
+"1516","oaxaca","san juan mixtepec",20,209
+"1517","oaxaca","santa cruz de bravo",20,376
+"1518","oaxaca","san antonio sinicahua",20,110
+"1519","oaxaca","ixpantepec nieves",20,65
+"1520","puebla","tlaltenango",21,181
+"1521","puebla","tlahuapan",21,180
+"1522","puebla","huaquechula",21,69
+"1523","puebla","cuapiaxtla de madero",21,38
+"1524","puebla","atlixco",21,19
+"1525","puebla","acatzingo",21,4
+"1526","puebla","santa isabel cholula",21,148
+"1527","puebla","los reyes de juarez",21,118
+"1528","puebla","san pedro cholula",21,140
+"1529","puebla","tepeaca",21,164
+"1530","puebla","san jeronimo tecuanipan",21,126
+"1531","puebla","san salvador el verde",21,143
+"1532","puebla","san martin texmelucan",21,132
+"1533","puebla","san matias tlalancaleca",21,134
+"1534","puebla","xiutetelco",21,199
+"1535","puebla","petlalcingo",21,112
+"1536","puebla","teziutlan",21,174
+"1537","puebla","tlatlauquitepec",21,186
+"1538","puebla","izucar de matamoros",21,85
+"1539","puebla","cuautinchan",21,40
+"1540","puebla","yaonahuac",21,204
+"1541","puebla","tochimilco",21,188
+"1542","puebla","zacapoaxtla",21,207
+"1543","puebla","juan galindo",21,91
+"1544","puebla","hueyapan",21,75
+"1545","puebla","quimixtlan",21,116
+"1546","puebla","zacapala",21,206
+"1547","puebla","zautla",21,212
+"1548","puebla","san andres cholula",21,119
+"1549","puebla","tepexi de rodriguez",21,169
+"1550","puebla","chilchotla",21,58
+"1551","puebla","tetela de ocampo",21,172
+"1552","puebla","teteles de avila castillo",21,173
+"1553","puebla","cuautempan",21,39
+"1554","puebla","huauchinango",21,71
+"1555","puebla","chignautla",21,54
+"1556","puebla","xochiapulco",21,200
+"1557","puebla","chietla",21,51
+"1558","puebla","nealtican",21,102
+"1559","puebla","atempan",21,17
+"1560","puebla","tianguismanalco",21,175
+"1561","puebla","tehuacan",21,156
+"1562","puebla","san salvador el seco",21,142
+"1563","puebla","aquixtla",21,16
+"1564","puebla","tochtepec",21,189
+"1565","puebla","tepanco de lopez",21,161
+"1566","puebla","san gabriel chilac",21,124
+"1567","puebla","tecamachalco",21,154
+"1568","puebla","san felipe teotlalcingo",21,122
+"1569","puebla","san salvador huixcolotla",21,144
+"1570","puebla","atzitzintla",21,23
+"1571","puebla","chalchicomula de sesma",21,45
+"1572","puebla","aljojuca",21,12
+"1573","puebla","esperanza",21,63
+"1574","puebla","zacatlan",21,208
+"1575","puebla","san nicolas de los ranchos",21,138
+"1576","puebla","lafragua",21,93
+"1577","puebla","tlachichuca",21,179
+"1578","puebla","chignahuapan",21,53
+"1579","puebla","quecholac",21,115
+"1580","puebla","chiautzingo",21,48
+"1581","puebla","general felipe angeles",21,65
+"1582","puebla","palmar de bravo",21,110
+"1583","puebla","oriental",21,108
+"1584","puebla","santo tomas hueyotlipan",21,151
+"1585","puebla","cuyoaco",21,44
+"1586","puebla","tepeyahualco de cuauhtemoc",21,171
+"1587","puebla","san jose chiapa",21,128
+"1588","puebla","huitziltepec",21,79
+"1589","puebla","san nicolas buenos aires",21,137
+"1590","puebla","libres",21,94
+"1591","puebla","francisco z. mena",21,64
+"1592","puebla","huehuetlan el chico",21,73
+"1593","puebla","tlapanala",21,185
+"1594","puebla","venustiano carranza",21,194
+"1595","puebla","naupan",21,100
+"1596","puebla","honey",21,57
+"1597","puebla","pantepec",21,111
+"1598","puebla","ahuacatlan",21,6
+"1599","puebla","tlacuilotepec",21,178
+"1600","puebla","san felipe tepatlan",21,123
+"1601","puebla","zoquiapan",21,216
+"1602","puebla","acateno",21,2
+"1603","puebla","zapotitlan de mendez",21,210
+"1604","puebla","pahuatlan",21,109
+"1605","puebla","zihuateutla",21,213
+"1606","puebla","ajalpan",21,10
+"1607","puebla","tepango de rodriguez",21,162
+"1608","puebla","camocuautla",21,28
+"1609","puebla","amixtlan",21,14
+"1610","puebla","cuetzalan del progreso",21,43
+"1611","puebla","coatepec",21,30
+"1612","puebla","zongozotla",21,215
+"1613","puebla","tlaola",21,183
+"1614","puebla","tepetzintla",21,167
+"1615","puebla","hueytamalco",21,76
+"1616","puebla","hueytlalpan",21,77
+"1617","puebla","jopala",21,89
+"1618","puebla","huitzilan de serdan",21,78
+"1619","puebla","tenampulco",21,158
+"1620","puebla","tlaxco",21,187
+"1621","puebla","hermenegildo galeana",21,68
+"1622","puebla","caxhuacan",21,29
+"1623","puebla","zoquitlan",21,217
+"1624","puebla","huehuetla",21,72
+"1625","puebla","tlapacoya",21,184
+"1626","puebla","jalpan",21,86
+"1627","puebla","xicotepec",21,197
+"1628","puebla","san sebastian tlacotepec",21,145
+"1629","puebla","chichiquila",21,50
+"1630","puebla","atlequizayan",21,80
+"1631","puebla","coyomeapan",21,36
+"1632","puebla","eloxochitlan",21,61
+"1633","puebla","xochitlan de vicente suarez",21,202
+"1634","puebla","chiconcuautla",21,49
+"1635","puebla","tuzamapan de galeana",21,192
+"1636","puebla","jonotla",21,88
+"1637","puebla","ayotoxco de guerrero",21,25
+"1638","puebla","ixtepec",21,84
+"1639","puebla","olintla",21,107
+"1640","puebla","guadalupe",21,66
+"1641","puebla","nopalucan",21,104
+"1642","puebla","coatzingo",21,31
+"1643","puebla","juan n. mendez",21,92
+"1644","puebla","acatlan",21,3
+"1645","puebla","altepexi",21,13
+"1646","puebla","juan c. bonilla",21,90
+"1647","puebla","coyotepec",21,37
+"1648","puebla","san pedro yeloixtlahuaca",21,141
+"1649","puebla","atzala",21,21
+"1650","puebla","teopantlan",21,159
+"1651","puebla","tepeojuma",21,166
+"1652","puebla","zinacatepec",21,214
+"1653","puebla","san miguel xoxtla",21,136
+"1654","puebla","chila",21,55
+"1655","puebla","ixcaquixtla",21,82
+"1656","puebla","atoyatempan",21,20
+"1657","puebla","cuautlancingo",21,41
+"1658","puebla","san pablo anicano",21,139
+"1659","puebla","calpan",21,26
+"1660","puebla","atexcal",21,18
+"1661","puebla","epatlan",21,62
+"1662","puebla","yehualtepec",21,205
+"1663","puebla","san martin totoltepec",21,133
+"1664","puebla","tilapa",21,176
+"1665","puebla","molcaxac",21,98
+"1666","puebla","cuayuca de andrade",21,42
+"1667","puebla","acajete",21,1
+"1668","puebla","amozoc",21,15
+"1669","puebla","tepatlaxco de hidalgo",21,163
+"1670","puebla","puebla",21,114
+"1671","puebla","rafael lara grajales",21,117
+"1672","puebla","coxcatlan",21,35
+"1673","puebla","santiago miahuatlan",21,149
+"1674","puebla","huehuetlan el grande",21,150
+"1675","puebla","san jose miahuatlan",21,129
+"1676","puebla","xochiltepec",21,201
+"1677","puebla","chiautla",21,47
+"1678","puebla","tepeyahualco",21,170
+"1679","puebla","ocotepec",21,105
+"1680","puebla","vicente guerrero",21,195
+"1681","puebla","ahuazotepec",21,8
+"1682","puebla","soltepec",21,152
+"1683","puebla","san juan atenco",21,130
+"1684","puebla","mazapiltepec de juarez",21,96
+"1685","puebla","ixtacamaxtitlan",21,83
+"1686","puebla","coronango",21,34
+"1687","puebla","tecali de herrera",21,153
+"1688","puebla","mixtla",21,97
+"1689","puebla","tlacotepec de benito juarez",21,177
+"1690","puebla","xochitlan todos santos",21,203
+"1691","puebla","tulcingo",21,191
+"1692","puebla","huatlatlauca",21,70
+"1693","puebla","domingo arenas",21,60
+"1694","puebla","huejotzingo",21,74
+"1695","puebla","guadalupe victoria",21,67
+"1696","puebla","canada morelos",21,99
+"1697","puebla","san antonio canada",21,120
+"1698","puebla","tepexco",21,168
+"1699","puebla","ocoyucan",21,106
+"1700","puebla","chapulco",21,46
+"1701","puebla","tlanepantla",21,182
+"1702","puebla","zapotitlan",21,209
+"1703","puebla","caltepec",21,27
+"1704","puebla","san gregorio atzompa",21,125
+"1705","puebla","tepemaxalco",21,165
+"1706","puebla","san juan atzompa",21,131
+"1707","puebla","chigmecatitlan",21,52
+"1708","puebla","nicolas bravo",21,103
+"1709","puebla","atzitzihuacan",21,22
+"1710","puebla","santa ines ahuatempan",21,147
+"1711","puebla","santa catarina tlaltempan",21,146
+"1712","puebla","la magdalena tlatlauquitepec",21,95
+"1713","puebla","xicotlan",21,198
+"1714","puebla","san jeronimo xayacatlan",21,127
+"1715","puebla","tecomatlan",21,155
+"1716","puebla","tehuitzingo",21,157
+"1717","puebla","chinantla",21,59
+"1718","puebla","piaxtla",21,113
+"1719","puebla","cohetzala",21,32
+"1720","puebla","tzicatlacoyan",21,193
+"1721","puebla","ixcamilpa de guerrero",21,81
+"1722","puebla","jolalpan",21,87
+"1723","puebla","nauzontla",21,101
+"1724","puebla","zaragoza",21,211
+"1725","puebla","axutla",21,24
+"1726","puebla","xayacatlan de bravo",21,196
+"1727","puebla","teotlalco",21,160
+"1728","puebla","ahuehuetitla",21,9
+"1729","queretaro","penamiller",22,13
+"1730","queretaro","corregidora",22,6
+"1731","queretaro","san joaquin",22,15
+"1732","queretaro","cadereyta de montes",22,4
+"1733","queretaro","toliman",22,18
+"1734","queretaro","pedro escobedo",22,12
+"1735","queretaro","marques  el",22,11
+"1736","queretaro","colon",22,5
+"1737","queretaro","tequisquiapan",22,17
+"1738","queretaro","landa de matamoros",22,10
+"1739","queretaro","pinal de amoles",22,2
+"1740","queretaro","queretaro",22,14
+"1741","queretaro","huimilpan",22,8
+"1742","queretaro","arroyo seco",22,3
+"1743","queretaro","ezequiel montes",22,7
+"1744","queretaro","san juan del rio",22,16
+"1745","queretaro","jalpan de serra",22,9
+"1746","queretaro","amealco",22,1
+"1747","quintana roo","felipe carrillo puerto",23,2
+"1748","quintana roo","lazaro cardenas",23,7
+"1749","quintana roo","othon p. blanco",23,4
+"1750","quintana roo","jose maria morelos",23,6
+"1751","quintana roo","benito juarez",23,5
+"1752","quintana roo","solidaridad",23,8
+"1753","quintana roo","isla mujeres",23,3
+"1754","quintana roo","cozumel",23,1
+"1755","san luis potosi","mexquitic de carmona",24,21
+"1756","san luis potosi","soledad de graciano sanchez",24,35
+"1757","san luis potosi","santa maria del rio",24,32
+"1758","san luis potosi","rio verde",24,24
+"1759","san luis potosi","villa de reyes",24,50
+"1760","san luis potosi","san ciro de acosta",24,27
+"1761","san luis potosi","villa de arriaga",24,46
+"1762","san luis potosi","san luis potosi",24,28
+"1763","san luis potosi","ciudad fernandez",24,11
+"1764","san luis potosi","san nicolas tolentino",24,30
+"1765","san luis potosi","xilitla",24,54
+"1766","san luis potosi","matlapa",24,57
+"1767","san luis potosi","tamazunchale",24,37
+"1768","san luis potosi","huehuetlan",24,18
+"1769","san luis potosi","axtla de terrazas",24,53
+"1770","san luis potosi","aquismon",24,3
+"1771","san luis potosi","tancanhuitz",24,12
+"1772","san luis potosi","coxcatlan",24,14
+"1773","san luis potosi","venado",24,45
+"1774","san luis potosi","ahualulco",24,1
+"1775","san luis potosi","cedral",24,7
+"1776","san luis potosi","villa de guadalupe",24,47
+"1777","san luis potosi","vanegas",24,44
+"1778","san luis potosi","matehuala",24,20
+"1779","san luis potosi","san vicente tancuayalab",24,34
+"1780","san luis potosi","tamuin",24,40
+"1781","san luis potosi","ebano",24,16
+"1782","san luis potosi","tierra nueva",24,43
+"1783","san luis potosi","el naranjo",24,58
+"1784","san luis potosi","ciudad valles",24,13
+"1785","san luis potosi","tanlajas",24,41
+"1786","san luis potosi","ciudad del maiz",24,10
+"1787","san luis potosi","san martin chalchicuautla",24,29
+"1788","san luis potosi","tampacan",24,38
+"1789","san luis potosi","tamasopo",24,36
+"1790","san luis potosi","san antonio",24,26
+"1791","san luis potosi","tampamolon",24,39
+"1792","san luis potosi","tanquian de escobedo",24,42
+"1793","san luis potosi","villa de ramos",24,49
+"1794","san luis potosi","salinas",24,25
+"1795","san luis potosi","villa de arista",24,56
+"1796","san luis potosi","hidalgo",24,51
+"1797","san luis potosi","santo domingo",24,33
+"1798","san luis potosi","moctezuma",24,22
+"1799","san luis potosi","armadillo de los infante",24,4
+"1800","san luis potosi","guadalcazar",24,17
+"1801","san luis potosi","cardenas",24,5
+"1802","san luis potosi","villa juarez",24,52
+"1803","san luis potosi","charcas",24,15
+"1804","san luis potosi","cerritos",24,8
+"1805","san luis potosi","lagunillas",24,19
+"1806","san luis potosi","rayon",24,23
+"1807","san luis potosi","zaragoza",24,55
+"1808","san luis potosi","cerro de san pedro",24,9
+"1809","san luis potosi","catorce",24,6
+"1810","san luis potosi","santa catarina",24,31
+"1811","san luis potosi","alaquines",24,2
+"1812","san luis potosi","villa de la paz",24,48
+"1813","sinaloa","navolato",25,18
+"1814","sinaloa","culiacan",25,6
+"1815","sinaloa","guasave",25,11
+"1816","sinaloa","sinaloa",25,17
+"1817","sinaloa","mocorito",25,13
+"1818","sinaloa","badiraguato",25,3
+"1819","sinaloa","choix",25,7
+"1820","sinaloa","angostura",25,2
+"1821","sinaloa","salvador alvarado",25,15
+"1822","sinaloa","elota",25,8
+"1823","sinaloa","el fuerte",25,10
+"1824","sinaloa","san ignacio",25,16
+"1825","sinaloa","cosala",25,5
+"1826","sinaloa","ahome",25,1
+"1827","sinaloa","concordia",25,4
+"1828","sinaloa","escuinapa",25,9
+"1829","sinaloa","mazatlan",25,12
+"1830","sinaloa","rosario",25,14
+"1831","sonora","general plutarco elias calles",26,70
+"1832","sonora","trincheras",26,64
+"1833","sonora","pitiquito",26,47
+"1834","sonora","caborca",26,17
+"1835","sonora","altar",26,4
+"1836","sonora","hermosillo",26,30
+"1837","sonora","etchojoa",26,26
+"1838","sonora","navojoa",26,42
+"1839","sonora","huatabampo",26,33
+"1840","sonora","huepac",26,34
+"1841","sonora","arivechi",26,5
+"1842","sonora","opodepe",26,45
+"1843","sonora","bacoachi",26,11
+"1844","sonora","imuris",26,35
+"1845","sonora","sahuaripa",26,52
+"1846","sonora","arizpe",26,6
+"1847","sonora","san felipe de jesus",26,53
+"1848","sonora","atil",26,7
+"1849","sonora","magdalena",26,36
+"1850","sonora","aconchi",26,1
+"1851","sonora","ures",26,66
+"1852","sonora","baviacora",26,14
+"1853","sonora","hidalgo",26,67
+"1854","sonora","rosario",26,51
+"1855","sonora","alamos",26,3
+"1856","sonora","quiriego",26,49
+"1857","sonora","benito juarez",26,71
+"1858","sonora","san luis rio colorado",26,55
+"1859","sonora","cajeme",26,18
+"1860","sonora","bacum",26,12
+"1861","sonora","san miguel de horcasitas",26,56
+"1862","sonora","bacanora",26,9
+"1863","sonora","cumpas",26,23
+"1864","sonora","rayon",26,50
+"1865","sonora","yecora",26,69
+"1866","sonora","moctezuma",26,38
+"1867","sonora","cananea",26,19
+"1868","sonora","san ignacio rio muerto",26,72
+"1869","sonora","nogales",26,43
+"1870","sonora","carbo",26,20
+"1871","sonora","guaymas",26,29
+"1872","sonora","empalme",26,25
+"1873","sonora","fronteras",26,27
+"1874","sonora","saric",26,60
+"1875","sonora","agua prieta",26,2
+"1876","sonora","cucurpe",26,22
+"1877","sonora","oquitoa",26,46
+"1878","sonora","tubutama",26,65
+"1879","sonora","santa cruz",26,59
+"1880","sonora","bacerac",26,10
+"1881","sonora","bavispe",26,15
+"1882","sonora","huachinera",26,31
+"1883","sonora","banamichi",26,13
+"1884","sonora","bacadehuachi",26,8
+"1885","sonora","santa ana",26,58
+"1886","sonora","huasabas",26,32
+"1887","sonora","tepache",26,63
+"1888","sonora","divisaderos",26,24
+"1889","sonora","granados",26,28
+"1890","sonora","naco",26,39
+"1891","tabasco","tenosique",27,17
+"1892","tabasco","emiliano zapata",27,7
+"1893","tabasco","centro",27,4
+"1894","tabasco","comalcalco",27,5
+"1895","tabasco","centla",27,3
+"1896","tabasco","jalpa de mendez",27,10
+"1897","tabasco","macuspana",27,12
+"1898","tabasco","jalapa",27,9
+"1899","tabasco","jonuta",27,11
+"1900","tabasco","cunduacan",27,6
+"1901","tabasco","cardenas",27,2
+"1902","tabasco","balancan",27,1
+"1903","tabasco","huimanguillo",27,8
+"1904","tabasco","tacotalpa",27,15
+"1905","tabasco","nacajuca",27,13
+"1906","tabasco","teapa",27,16
+"1907","tabasco","paraiso",27,14
+"1908","tamaulipas","ocampo",28,29
+"1909","tamaulipas","jaumave",28,17
+"1910","tamaulipas","gonzalez",28,12
+"1911","tamaulipas","llera",28,19
+"1912","tamaulipas","gomez farias",28,11
+"1913","tamaulipas","mante",28,21
+"1914","tamaulipas","antiguo morelos",28,4
+"1915","tamaulipas","altamira",28,3
+"1916","tamaulipas","villagran",28,42
+"1917","tamaulipas","mainero",28,20
+"1918","tamaulipas","mendez",28,23
+"1919","tamaulipas","miguel aleman",28,25
+"1920","tamaulipas","aldama",28,2
+"1921","tamaulipas","matamoros",28,22
+"1922","tamaulipas","reynosa",28,32
+"1923","tamaulipas","abasolo",28,1
+"1924","tamaulipas","nuevo morelos",28,28
+"1925","tamaulipas","xicotencatl",28,43
+"1926","tamaulipas","rio bravo",28,33
+"1927","tamaulipas","san carlos",28,34
+"1928","tamaulipas","san fernando",28,35
+"1929","tamaulipas","padilla",28,30
+"1930","tamaulipas","miquihuana",28,26
+"1931","tamaulipas","camargo",28,7
+"1932","tamaulipas","tula",28,39
+"1933","tamaulipas","valle hermoso",28,40
+"1934","tamaulipas","hidalgo",28,16
+"1935","tamaulipas","victoria",28,41
+"1936","tamaulipas","gustavo diaz ordaz",28,15
+"1937","tamaulipas","cruillas",28,10
+"1938","tamaulipas","soto la marina",28,37
+"1939","tamaulipas","burgos",28,5
+"1940","tamaulipas","palmillas",28,31
+"1941","tamaulipas","jimenez",28,18
+"1942","tamaulipas","casas",28,8
+"1943","tamaulipas","guemez",28,13
+"1944","tamaulipas","mier",28,24
+"1945","tamaulipas","bustamante",28,6
+"1946","tamaulipas","nuevo laredo",28,27
+"1947","tlaxcala","nativitas",29,23
+"1948","tlaxcala","tepetitla de lardizabal",29,19
+"1949","tlaxcala","ixtacuixtla de mariano matamoros",29,15
+"1950","tlaxcala","huamantla",29,13
+"1951","tlaxcala","nanacamilpa de mariano arista",29,21
+"1952","tlaxcala","lazaro cardenas",29,47
+"1953","tlaxcala","xaltocan",29,40
+"1954","tlaxcala","xaloztoc",29,39
+"1955","tlaxcala","cuapiaxtla",29,8
+"1956","tlaxcala","atltzayanca",29,4
+"1957","tlaxcala","hueyotlipan",29,14
+"1958","tlaxcala","atlangatepec",29,3
+"1959","tlaxcala","sanctorum de lazaro cardenas",29,20
+"1960","tlaxcala","benito juarez",29,45
+"1961","tlaxcala","espanita",29,12
+"1962","tlaxcala","tlaxco",29,34
+"1963","tlaxcala","munoz de domingo arenas",29,11
+"1964","tlaxcala","tetla de la solidaridad",29,31
+"1965","tlaxcala","calpulalpan",29,6
+"1966","tlaxcala","apizaco",29,5
+"1967","tlaxcala","tocatlan",29,35
+"1968","tlaxcala","san jose teacalco",29,52
+"1969","tlaxcala","yauhquemehcan",29,43
+"1970","tlaxcala","terrenate",29,30
+"1971","tlaxcala","san damian texoloc",29,49
+"1972","tlaxcala","panotla",29,24
+"1973","tlaxcala","el carmen tequexquitla",29,7
+"1974","tlaxcala","tepeyanco",29,29
+"1975","tlaxcala","santa apolonia teacalco",29,57
+"1976","tlaxcala","tetlatlahuca",29,32
+"1977","tlaxcala","ziltlaltepec de trinidad sanchez santos",29,37
+"1978","tlaxcala","ixtenco",29,16
+"1979","tlaxcala","amaxac de guerrero",29,1
+"1980","tlaxcala","cuaxomulco",29,9
+"1981","tlaxcala","contla de juan cuamatzi",29,18
+"1982","tlaxcala","la magdalena tlaltelulco",29,48
+"1983","tlaxcala","mazatecochco de jose maria morelos",29,17
+"1984","tlaxcala","san juan huactzinco",29,53
+"1985","tlaxcala","san jeronimo zacualpan",29,51
+"1986","tlaxcala","chiautempan",29,10
+"1987","tlaxcala","san francisco tetlanohcan",29,50
+"1988","tlaxcala","santa isabel xiloxoxtla",29,60
+"1989","tlaxcala","san lucas tecopilco",29,55
+"1990","tlaxcala","papalotla de xicohtencatl",29,41
+"1991","tlaxcala","san pablo del monte",29,25
+"1992","tlaxcala","acuamanala de miguel hidalgo",29,22
+"1993","tlaxcala","apetatitlan de antonio carvajal",29,2
+"1994","tlaxcala","santa cruz quilehtla",29,59
+"1995","tlaxcala","teolocholco",29,28
+"1996","tlaxcala","xicohtzinco",29,42
+"1997","tlaxcala","santa ana nopalucan",29,56
+"1998","tlaxcala","zacatelco",29,44
+"1999","tlaxcala","santa catarina ayometla",29,58
+"2000","tlaxcala","tlaxcala",29,33
+"2001","tlaxcala","tenancingo",29,27
+"2002","tlaxcala","totolac",29,36
+"2003","tlaxcala","santa cruz tlaxcala",29,26
+"2004","tlaxcala","san lorenzo axocomanitla",29,54
+"2005","tlaxcala","tzompantepec",29,38
+"2006","tlaxcala","emiliano zapata",29,46
+"2007","veracruz","maltrata",30,99
+"2008","veracruz","zongolica",30,201
+"2009","veracruz","coscomatepec",30,47
+"2010","veracruz","tehuipango",30,159
+"2011","veracruz","tlaquilpan",30,184
+"2012","veracruz","texhuacan",30,171
+"2013","veracruz","alpatlahuac",30,8
+"2014","veracruz","altotonga",30,10
+"2015","veracruz","los reyes",30,137
+"2016","veracruz","calcahualco",30,29
+"2017","veracruz","jalacingo",30,86
+"2018","veracruz","ayahualulco",30,25
+"2019","veracruz","perote",30,128
+"2020","veracruz","manlio fabio altamirano",30,100
+"2021","veracruz","medellin",30,105
+"2022","veracruz","carrillo puerto",30,31
+"2023","veracruz","papantla",30,124
+"2024","veracruz","tampico alto",30,152
+"2025","veracruz","jamapa",30,90
+"2026","veracruz","cotaxtla",30,49
+"2027","veracruz","soledad de doblado",30,148
+"2028","veracruz","veracruz",30,193
+"2029","veracruz","tantoyuca",30,155
+"2030","veracruz","texistepec",30,172
+"2031","veracruz","tierra blanca",30,174
+"2032","veracruz","jaltipan",30,89
+"2033","veracruz","hidalgotitlan",30,70
+"2034","veracruz","san juan evangelista",30,142
+"2035","veracruz","oluta",30,116
+"2036","veracruz","sayula de aleman",30,144
+"2037","veracruz","tres valles",30,207
+"2038","veracruz","isla",30,77
+"2039","veracruz","las choapas",30,61
+"2040","veracruz","otatitlan",30,119
+"2041","veracruz","alvarado",30,11
+"2042","veracruz","puente nacional",30,134
+"2043","veracruz","tlacotalpan",30,178
+"2044","veracruz","jose azueta",30,169
+"2045","veracruz","jesus carranza",30,91
+"2046","veracruz","ixhuatlan del sureste",30,82
+"2047","veracruz","moloacan",30,111
+"2048","veracruz","cosamaloapan",30,45
+"2049","veracruz","tlalixcoyan",30,181
+"2050","veracruz","acayucan",30,3
+"2051","veracruz","tlacojalpan",30,176
+"2052","veracruz","agua dulce",30,204
+"2053","veracruz","actopan",30,4
+"2054","veracruz","minatitlan",30,108
+"2055","veracruz","villa aldama",30,194
+"2056","veracruz","zacualpan",30,198
+"2057","veracruz","huayacocotla",30,72
+"2058","veracruz","paso de ovejas",30,126
+"2059","veracruz","la antigua",30,16
+"2060","veracruz","ursulo galvan",30,191
+"2061","veracruz","alto lucero",30,9
+"2062","veracruz","jalcomulco",30,88
+"2063","veracruz","zontecomatlan de lopez y fuentes",30,202
+"2064","veracruz","martinez de la torre",30,102
+"2065","veracruz","tlaltetela",30,24
+"2066","veracruz","atzalan",30,23
+"2067","veracruz","catemaco",30,32
+"2068","veracruz","mecayapan",30,104
+"2069","veracruz","cuichapa",30,52
+"2070","veracruz","platon sanchez",30,129
+"2071","veracruz","hueyapan de ocampo",30,73
+"2072","veracruz","tequila",30,168
+"2073","veracruz","soteapan",30,149
+"2074","veracruz","rafael delgado",30,135
+"2075","veracruz","tlacotepec de mejia",30,179
+"2076","veracruz","cosautlan de carvajal",30,46
+"2077","veracruz","magdalena",30,98
+"2078","veracruz","tenampa",30,162
+"2079","veracruz","xico",30,92
+"2080","veracruz","tonayan",30,187
+"2081","veracruz","naranjal",30,113
+"2082","veracruz","tenochtitlan",30,163
+"2083","veracruz","tlilapan",30,185
+"2084","veracruz","naolinco",30,112
+"2085","veracruz","chocaman",30,62
+"2086","veracruz","ixtaczoquitlan",30,85
+"2087","veracruz","atoyac",30,21
+"2088","veracruz","xalapa",30,87
+"2089","veracruz","teocelo",30,164
+"2090","veracruz","chiconquiaco",30,57
+"2091","veracruz","fortin",30,68
+"2092","veracruz","texcatepec",30,170
+"2093","veracruz","comapa",30,43
+"2094","veracruz","miahuatlan",30,106
+"2095","veracruz","sochiapa",30,146
+"2096","veracruz","totutla",30,188
+"2097","veracruz","cordoba",30,44
+"2098","veracruz","ilamatlan",30,76
+"2099","veracruz","coetzala",30,41
+"2100","veracruz","amatlan de los reyes",30,14
+"2101","veracruz","ixhuatlan de madero",30,83
+"2102","veracruz","vega de alatorre",30,192
+"2103","veracruz","tlapacoyan",30,183
+"2104","veracruz","misantla",30,109
+"2105","veracruz","tatatila",30,156
+"2106","veracruz","tepatlaxco",30,165
+"2107","veracruz","mixtla de altamirano",30,110
+"2108","veracruz","huatusco",30,71
+"2109","veracruz","yecuatlan",30,197
+"2110","veracruz","coatepec",30,38
+"2111","veracruz","ixhuacan de los reyes",30,79
+"2112","veracruz","tlachichilco",30,180
+"2113","veracruz","tomatlan",30,186
+"2114","veracruz","nautla",30,114
+"2115","veracruz","ixhuatlan del cafe",30,80
+"2116","veracruz","emiliano zapata",30,65
+"2117","veracruz","juchique de ferrer",30,95
+"2118","veracruz","tezonapa",30,173
+"2119","veracruz","las minas",30,107
+"2120","veracruz","omealca",30,117
+"2121","veracruz","san andres tuxtla",30,141
+"2122","veracruz","jilotepec",30,93
+"2123","veracruz","paso del macho",30,125
+"2124","veracruz","colipa",30,42
+"2125","veracruz","tepetlan",30,166
+"2126","veracruz","yanga",30,196
+"2127","veracruz","zentla",30,200
+"2128","veracruz","acultzingo",30,6
+"2129","veracruz","ozuluama de mascarenas",30,121
+"2130","veracruz","panuco",30,123
+"2131","veracruz","coatzintla",30,40
+"2132","veracruz","tihuatlan",30,175
+"2133","veracruz","castillo de teayo",30,157
+"2134","veracruz","gutierrez zamora",30,69
+"2135","veracruz","tecolutla",30,158
+"2136","veracruz","cazones de herrera",30,33
+"2137","veracruz","temapache",30,160
+"2138","veracruz","camaron de tejeda",30,7
+"2139","veracruz","mariano escobedo",30,101
+"2140","veracruz","angel r. cabada",30,15
+"2141","veracruz","chalma",30,55
+"2142","veracruz","cuitlahuac",30,53
+"2143","veracruz","el higo",30,205
+"2144","veracruz","benito juarez",30,27
+"2145","veracruz","santiago tuxtla",30,143
+"2146","veracruz","chinampa de gorostiza",30,60
+"2147","veracruz","amatitlan",30,12
+"2148","veracruz","saltabarranca",30,139
+"2149","veracruz","rio blanco",30,138
+"2150","veracruz","chicontepec",30,58
+"2151","veracruz","ixmatlahuacan",30,84
+"2152","veracruz","pueblo viejo",30,133
+"2153","veracruz","chacaltianguis",30,54
+"2154","veracruz","carlos a. carrillo",30,208
+"2155","veracruz","acula",30,5
+"2156","veracruz","banderilla",30,26
+"2157","veracruz","lerdo de tejada",30,97
+"2158","veracruz","atzacan",30,22
+"2159","veracruz","tuxtilla",30,190
+"2160","veracruz","chontla",30,63
+"2161","veracruz","ixcatepec",30,78
+"2162","veracruz","chiconamel",30,56
+"2163","veracruz","ixhuatlancillo",30,81
+"2164","veracruz","astacinga",30,19
+"2165","veracruz","la perla",30,127
+"2166","veracruz","tamiahua",30,151
+"2167","veracruz","playa vicente",30,130
+"2168","veracruz","chumatlan",30,64
+"2169","veracruz","espinal",30,66
+"2170","veracruz","coxquihui",30,50
+"2171","veracruz","coyutla",30,51
+"2172","veracruz","tuxpan",30,189
+"2173","veracruz","uxpanapa",30,209
+"2174","veracruz","apazapan",30,17
+"2175","veracruz","juan rodriguez clara",30,94
+"2176","veracruz","las vigas de ramirez",30,132
+"2177","veracruz","atlahuilco",30,20
+"2178","veracruz","chinameca",30,59
+"2179","veracruz","pajapan",30,122
+"2180","veracruz","xoxocotla",30,195
+"2181","veracruz","coahuitlan",30,37
+"2182","veracruz","soconusco",30,145
+"2183","veracruz","citlaltepetl",30,35
+"2184","veracruz","nogales",30,115
+"2185","veracruz","coatzacoalcos",30,39
+"2186","veracruz","soledad atzompa",30,147
+"2187","veracruz","filomeno mata",30,67
+"2188","veracruz","zozocolco de hidalgo",30,203
+"2189","veracruz","naranjos amatlan",30,13
+"2190","veracruz","ignacio de la llave",30,75
+"2191","veracruz","nanchital de lazaro cardenas del rio",30,206
+"2192","veracruz","tlalnelhuayocan",30,182
+"2193","veracruz","boca del rio",30,28
+"2194","veracruz","tamalin",30,150
+"2195","veracruz","aquila",30,18
+"2196","veracruz","huiloapan de cuauhtemoc",30,74
+"2197","veracruz","camerino z. mendoza",30,30
+"2198","veracruz","mecatlan",30,103
+"2199","veracruz","tantima",30,154
+"2200","veracruz","san andres tenejapan",30,140
+"2201","veracruz","tancoco",30,153
+"2202","veracruz","tempoal",30,161
+"2203","veracruz","cosoleacaque",30,48
+"2204","veracruz","cerro azul",30,34
+"2205","veracruz","tepetzintla",30,167
+"2206","veracruz","acajete",30,1
+"2207","veracruz","tatahuicapan de juarez",30,210
+"2208","veracruz","acatlan",30,2
+"2209","veracruz","landero y coss",30,96
+"2210","veracruz","oteapan",30,120
+"2211","veracruz","zaragoza",30,199
+"2212","veracruz","rafael lucio",30,136
+"2213","veracruz","tlacolulan",30,177
+"2214","veracruz","coacoatzintla",30,36
+"2215","yucatan","oxkutzcab",31,56
+"2216","yucatan","tahdziu",31,73
+"2217","yucatan","tekax",31,79
+"2218","yucatan","akil",31,3
+"2219","yucatan","tixmehuac",31,94
+"2220","yucatan","chacsinkin",31,16
+"2221","yucatan","peto",31,58
+"2222","yucatan","muna",31,53
+"2223","yucatan","tzucacab",31,98
+"2224","yucatan","cuzama",31,15
+"2225","yucatan","buctzotz",31,6
+"2226","yucatan","san felipe",31,65
+"2227","yucatan","dzidzantun",31,27
+"2228","yucatan","hoctun",31,35
+"2229","yucatan","temax",31,84
+"2230","yucatan","ucu",31,100
+"2231","yucatan","kanasin",31,41
+"2232","yucatan","seye",31,67
+"2233","yucatan","homun",31,36
+"2234","yucatan","tekit",31,80
+"2235","yucatan","dzilam gonzalez",31,29
+"2236","yucatan","chochola",31,23
+"2237","yucatan","suma",31,72
+"2238","yucatan","panaba",31,57
+"2239","yucatan","kinchil",31,44
+"2240","yucatan","temozon",31,85
+"2241","yucatan","abala",31,1
+"2242","yucatan","acanceh",31,2
+"2243","yucatan","chumayel",31,24
+"2244","yucatan","dzan",31,25
+"2245","yucatan","ticul",31,89
+"2246","yucatan","sacalum",31,62
+"2247","yucatan","cacalchen",31,7
+"2248","yucatan","tizimin",31,96
+"2249","yucatan","mani",31,47
+"2250","yucatan","uman",31,101
+"2251","yucatan","tekanto",31,78
+"2252","yucatan","merida",31,50
+"2253","yucatan","calotmul",31,8
+"2254","yucatan","tunkas",31,97
+"2255","yucatan","sanahcat",31,64
+"2256","yucatan","cansahcab",31,9
+"2257","yucatan","hunucma",31,38
+"2258","yucatan","dzoncauich",31,31
+"2259","yucatan","izamal",31,40
+"2260","yucatan","sucila",31,70
+"2261","yucatan","chemax",31,19
+"2262","yucatan","opichen",31,55
+"2263","yucatan","santa elena",31,66
+"2264","yucatan","tinum",31,91
+"2265","yucatan","progreso",31,59
+"2266","yucatan","dzilam de bravo",31,28
+"2267","yucatan","yobain",31,106
+"2268","yucatan","tixkokob",31,93
+"2269","yucatan","chicxulub pueblo",31,20
+"2270","yucatan","tecoh",31,76
+"2271","yucatan","motul",31,52
+"2272","yucatan","sinanche",31,68
+"2273","yucatan","baca",31,4
+"2274","yucatan","tixpehual",31,95
+"2275","yucatan","conkal",31,13
+"2276","yucatan","halacho",31,33
+"2277","yucatan","mococha",31,51
+"2278","yucatan","tahmek",31,74
+"2279","yucatan","hocaba",31,34
+"2280","yucatan","dzemul",31,26
+"2281","yucatan","telchac pueblo",31,82
+"2282","yucatan","cantamayec",31,10
+"2283","yucatan","mayapan",31,49
+"2284","yucatan","yaxcaba",31,104
+"2285","yucatan","maxcanu",31,48
+"2286","yucatan","timucuy",31,90
+"2287","yucatan","espita",31,32
+"2288","yucatan","kantunil",31,42
+"2289","yucatan","sotuta",31,69
+"2290","yucatan","bokoba",31,5
+"2291","yucatan","uayma",31,99
+"2292","yucatan","chikindzonot",31,22
+"2293","yucatan","chankom",31,17
+"2294","yucatan","cuncunul",31,14
+"2295","yucatan","kaua",31,43
+"2296","yucatan","tekom",31,81
+"2297","yucatan","chichimila",31,21
+"2298","yucatan","rio lagartos",31,61
+"2299","yucatan","valladolid",31,102
+"2300","yucatan","tixcacalcupul",31,92
+"2301","yucatan","huhi",31,37
+"2302","yucatan","yaxkukul",31,105
+"2303","yucatan","muxupip",31,54
+"2304","yucatan","ixil",31,39
+"2305","yucatan","chapab",31,18
+"2306","yucatan","mama",31,46
+"2307","yucatan","telchac puerto",31,83
+"2308","yucatan","celestun",31,11
+"2309","yucatan","quintana roo",31,60
+"2310","yucatan","samahil",31,63
+"2311","yucatan","tekal de venegas",31,77
+"2312","yucatan","xocchel",31,103
+"2313","yucatan","teya",31,88
+"2314","yucatan","sudzal",31,71
+"2315","yucatan","tepakan",31,86
+"2316","yucatan","kopoma",31,45
+"2317","yucatan","cenotillo",31,12
+"2318","yucatan","dzitas",31,30
+"2319","yucatan","teabo",31,75
+"2320","yucatan","tetiz",31,87
+"2321","zacatecas","trinidad garcia de la cadena",32,11
+"2322","zacatecas","teul de gonzalez ortega",32,47
+"2323","zacatecas","susticacan",32,43
+"2324","zacatecas","moyahua de estrada",32,33
+"2325","zacatecas","apozol",32,1
+"2326","zacatecas","mezquital del oro",32,28
+"2327","zacatecas","nochistlan de mejia",32,34
+"2328","zacatecas","juchipila",32,23
+"2329","zacatecas","ojocaliente",32,36
+"2330","zacatecas","hidalgo",32,54
+"2331","zacatecas","morelos",32,32
+"2332","zacatecas","villa de cos",32,51
+"2333","zacatecas","loreto",32,9
+"2334","zacatecas","noria de angeles",32,35
+"2335","zacatecas","fresnillo",32,10
+"2336","zacatecas","vetagrande",32,50
+"2337","zacatecas","panuco",32,37
+"2338","zacatecas","zacatecas",32,56
+"2339","zacatecas","calera",32,5
+"2340","zacatecas","general enrique estrada",32,13
+"2341","zacatecas","guadalupe",32,17
+"2342","zacatecas","sain alto",32,40
+"2343","zacatecas","valparaiso",32,49
+"2344","zacatecas","canitas de felipe pescador",32,6
+"2345","zacatecas","luis moya",32,25
+"2346","zacatecas","tlaltenango de sanchez roman",32,48
+"2347","zacatecas","tepechitlan",32,45
+"2348","zacatecas","jalpa",32,19
+"2349","zacatecas","huanusco",32,18
+"2350","zacatecas","tabasco",32,44
+"2351","zacatecas","momax",32,30
+"2352","zacatecas","pinos",32,38
+"2353","zacatecas","general panfilo natera",32,16
+"2354","zacatecas","villanueva",32,55
+"2355","zacatecas","rio grande",32,39
+"2356","zacatecas","juan aldama",32,22
+"2357","zacatecas","jerez",32,20
+"2358","zacatecas","genaro codina",32,12
+"2359","zacatecas","apulco",32,2
+"2360","zacatecas","villa gonzalez ortega",32,53
+"2361","zacatecas","cuauhtemoc",32,8
+"2362","zacatecas","villa garcia",32,52
+"2363","zacatecas","tepetongo",32,46
+"2364","zacatecas","concepcion del oro",32,7
+"2365","zacatecas","melchor ocampo",32,27
+"2366","zacatecas","miguel auza",32,29
+"2367","zacatecas","mazapil",32,26
+"2368","zacatecas","sombrerete",32,42
+"2369","zacatecas","francisco r. murguia",32,14
+"2370","zacatecas","benito juarez",32,4
+"2371","zacatecas","el salvador",32,41
+"2372","zacatecas","jimenez del teul",32,21
+"2373","zacatecas","monte escobedo",32,31
+"2374","zacatecas","el plateado de joaquin amaro",32,15
+"2375","zacatecas","atolinga",32,3
+"2376","chihuahua","san francisco del oro",8,59
+"2377","puebla","cohuecan",21,33
+"2378","puebla","ahuatlan",21,7
+"2379","puebla","totoltepec de guerrero",21,190
+"2380","puebla","albino zertuche",21,11
+"2381","puebla","acteopan",21,5
+"2382","puebla","san miguel ixitlan",21,135
+"2383","puebla","chila de la sal",21,56
+"2384","puebla","san diego la mesa tochimiltzingo",21,121
+"2385","sonora","nacori chico",26,40
+"2386","tamaulipas","guerrero",28,14
+"2387","mexico","papalotla",15,69
+"2388","mexico","valle de chalco",15,122
+"2389","nuevo leon","marin",19,34
+"2390","sonora","la colorada",26,21
+"2391","sonora","soyopa",26,61
+"2392","sonora","san javier",26,54
+"2393","sonora","benjamin hill",26,16
+"2394","chiapas","montecristo de guerrero",7,117
+"2395","chihuahua","doctor belisario dominguez",8,22
+"2396","chihuahua","nonoava",8,49
+"2397","mexico","tonanitla",15,125
+"2398","nuevo leon","guadalupe",19,26
+"2399","veracruz","poza rica de hidalgo",30,131
+"2400","zacatecas","santa maria de la paz",32,58
+"2401","zacatecas","trancoso",32,57
+"2402","chiapas","santiago el pinar",7,119
+"2403","chiapas","aldama",7,113
+"2404","chiapas","maravilla tenejapa",7,115
+"2405","chiapas","san andres duraznal",7,118
+"2406","chihuahua","aquiles serdan",8,4
+"2407","guerrero","jose joaquin de herrera",12,79
+"2408","guerrero","iliatenco",12,81
+"2409","guerrero","cochoapa el grande",12,78
+"2410","guerrero","juchitan",12,80
+"2411","sonora","puerto penasco",26,48
+"2412","tamaulipas","san nicolas",28,36
+"2413","quintana roo","tulum",23,9
+"2414","veracruz","santiago sochiapan",30,212
+"2415","veracruz","san rafael",30,211
+"2416","coahuila","san pedro",5,33
+"2417","coahuila","viesca",5,36
+"2418","coahuila","matamoros",5,17
+"2419","coahuila","torreon",5,35
+"2420","coahuila","francisco i. madero",5,9
+"2421","durango","lerdo",10,12
+"2422","durango","rodeo",10,24
+"2423","durango","nazas",10,15
+"2424","durango","gomez palacio",10,7
+"2425","durango","mapimi",10,13
+"2426","durango","general simon bolivar",10,6
+"2427","durango","san pedro del gallo",10,30
+"2428","durango","san juan de guadalupe",10,27
+"2429","durango","tlahualilo",10,36
+"2430","nuevo leon","higueras",19,28
+"2431","quintana roo","bacalar",23,10
+"2432","veracruz","orizaba",30,118
+"2433","durango","san luis del cordero",10,29
+"2434","michoacan","tingùindin",16,91
+"2435","oaxaca","san juan ãumi",20,210
+"2436","queretaro","el marques",22,11
+"2437","tamaulipas","gùemez",28,13
