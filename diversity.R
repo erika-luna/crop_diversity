@@ -223,11 +223,11 @@ perc_area %>%
 # Measuring taxonomic crop alpha diversity 
 library(vegan)
 
-#data <- SIAP %>% 
+data <- SIAP %>% 
   #filter(year > 1993) %>% 
-data <- SIAP_mun %>% 
-  #group_by(region, crop, year) %>% # modify for region, state or municipal level
-  group_by(COV_ID, crop, year) %>% # modify for region, state or municipal level
+#data <- SIAP_mun %>% 
+  group_by(region, crop, year) %>% # modify for region, state or municipal level
+  #group_by(COV_ID, crop, year) %>% # modify for region, state or municipal level
   summarise(ag_harv = sum(harvested))
 
 # Matrix
@@ -240,23 +240,23 @@ data <- as.data.frame(data)
 
 # indices with vegan
 abundance <- data %>%
-  group_by(COV_ID, year) %>% # modify for region, state or municipal level
+  group_by(region, year) %>% # modify for region, state or municipal level
   group_modify(~ broom::tidy(diversity(.x))) # this is H index (Shannon - species abundance)
-colnames(abundance) <- c("COV_ID", "year", "abundance") # modify for region, state or municipal level
+colnames(abundance) <- c("region", "year", "abundance") # modify for region, state or municipal level
 
 simpson <- data %>% 
-  group_by(COV_ID, year) %>%
+  group_by(region, year) %>%
   group_modify(~ broom::tidy(diversity(.x, "simpson"))) # this is D index (Simpson - species abundance)
-colnames(simpson) <- c("COV_ID", "year", "simpson")
+colnames(simpson) <- c("region", "year", "simpson")
 
 richness <- data %>% 
-  group_by(COV_ID, year) %>% 
+  group_by(region, year) %>% 
   group_modify(~ broom::tidy(specnumber(.x))) # this is S index (Species richness)
-colnames(richness) <- c("COV_ID", "year", "richness")
+colnames(richness) <- c("region", "year", "richness")
 
 # Indices data frame
-indices <- left_join(abundance, simpson, by = c("COV_ID", "year")) %>% 
-              left_join(., richness, by=c("COV_ID", "year")) 
+indices <- left_join(abundance, simpson, by = c("region", "year")) %>% 
+              left_join(., richness, by=c("region", "year")) 
 
 indices <- indices %>% 
   mutate(evenness = abundance/log(richness)) # this is J index (Pielou's evenness)
@@ -264,8 +264,8 @@ indices <- indices %>%
 indices <- indices %>% 
   mutate(encs = exp(abundance)) # this is ENCS (Effective Number of Crop Species)
 
-write.csv(indices, file = "indices_COV_ID.csv")
-indices <- read.csv("indices_COV_ID.csv")
+write.csv(indices, file = "indices_region_37.csv")
+indices <- read.csv("indices_region_37.csv")
   
 # Plots
 H_plot <- indices %>% 
@@ -367,7 +367,8 @@ j <- summ(m0, digits = 3)
 # Tud??
 data(dune)
 data(dune.env)
-alpha <- with(dune.env, tapply(specnumber(dune), Management, mean))
+
+alpha <- with(data, tapply(specnumber(dune), Management, mean))
 gamma <- with(dune.env, specnumber(dune, Management))
 gamma/alpha - 1
 
@@ -445,6 +446,55 @@ write.csv(tmp, "ag_harv_coeff.csv")
 
 m0$coefficients
 
+
+#### ANOVA ####
+# Summary statistics
+
+indices %>% 
+group_by(region) %>%
+  summarise(
+    count = n(),
+    mean = mean(encs, na.rm = TRUE),
+    sd = sd(encs, na.rm = TRUE)
+  )
+
+# Pairwise comparisons
+library(rstatix)
+pwc <- indices %>% 
+  pairwise_t_test(
+    encs ~ region
+  )
+pwc
+
+
+# Box plots
+# ++++++++++++++++++++
+# Plot weight by group and color by group
+library("ggpubr")
+ggboxplot(indices, x = "region", y = "evenness", 
+          color = "region",
+          legend = "none",
+          #rotate_x_text(angle = 90, hjust = NULL, vjust = NULL),
+          ylab = "evenness", xlab = "Region")
+
+summary(aov(encs~year*region, data=indices))
+
+
+# Compute the analysis of variance
+res.aov <- aov(encs ~ region*year, data = indices)
+# Summary of the analysis
+summary(res.aov)
+
+##### Breakpoint analysis #####
+library(segmented)
+library(strucchange)
+bp <- breakpoints(richness ~ year, h=,data = indices)
+
+plot(richness ~ region*year, pch = 19, data = indices)
+
+
+lines(fitted(bp, breaks = 1) ~ y, col = 4, lwd = 1.5)
+lines(fitted(bp, breaks = 2) ~ y, col = 2, lwd = 1.5)
 
 
 #### Just one crop ####
