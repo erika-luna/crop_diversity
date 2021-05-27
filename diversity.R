@@ -192,9 +192,9 @@ cities = unique(data$region)
 city_plots = list()
   for(city_ in cities) {
     city_plots[[city_]] = ggplot(data %>% filter(region == city_), aes(x=year, y=value)) +
-      #geom_point(aes(color = area, linetype = water)) +
-      geom_smooth(aes(color = area, linetype = water), method = lm, 
-                  se = FALSE, fullrange = TRUE)+
+      geom_point(aes(color = area, linetype = water)) +
+      #geom_smooth(aes(color = area, linetype = water), method = lm, 
+       #           se = FALSE, fullrange = TRUE)+
       scale_color_manual(values = c("#00AFBB", "#E7B800")) +
       scale_y_continuous(limits = c(0,4000000), labels = comma) +
       ggtitle(city_)
@@ -226,7 +226,7 @@ library(vegan)
 data <- SIAP %>% 
   #filter(year > 1993) %>% 
 #data <- SIAP_mun %>% 
-  group_by(region, crop, year) %>% # modify for region, state or municipal level
+  group_by(region, state, crop, year) %>% # modify for region, state or municipal level
   #group_by(COV_ID, crop, year) %>% # modify for region, state or municipal level
   summarise(ag_harv = sum(harvested))
 
@@ -240,23 +240,26 @@ data <- as.data.frame(data)
 
 # indices with vegan
 abundance <- data %>%
-  group_by(region, year) %>% # modify for region, state or municipal level
+  group_by(region, state, year) %>% # modify for region, state or municipal level
   group_modify(~ broom::tidy(diversity(.x))) # this is H index (Shannon - species abundance)
-colnames(abundance) <- c("region", "year", "abundance") # modify for region, state or municipal level
+#colnames(abundance) <- c("region", "year", "abundance") # modify for region, state or municipal level
+colnames(abundance) <- c("region", "state","year", "abundance")
 
 simpson <- data %>% 
-  group_by(region, year) %>%
+  group_by(region, state, year) %>%
   group_modify(~ broom::tidy(diversity(.x, "simpson"))) # this is D index (Simpson - species abundance)
-colnames(simpson) <- c("region", "year", "simpson")
+#colnames(simpson) <- c("region", "year", "simpson")
+colnames(simpson) <- c("region", "state","year", "simpson")
+
 
 richness <- data %>% 
-  group_by(region, year) %>% 
+  group_by(region,state, year) %>% 
   group_modify(~ broom::tidy(specnumber(.x))) # this is S index (Species richness)
-colnames(richness) <- c("region", "year", "richness")
+colnames(richness) <- c("region","state", "year", "richness")
 
 # Indices data frame
-indices <- left_join(abundance, simpson, by = c("region", "year")) %>% 
-              left_join(., richness, by=c("region", "year")) 
+indices <- left_join(abundance, simpson, by = c("state","region","year")) %>% 
+              left_join(., richness, by=c("state", "region","year")) 
 
 indices <- indices %>% 
   mutate(evenness = abundance/log(richness)) # this is J index (Pielou's evenness)

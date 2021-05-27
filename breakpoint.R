@@ -1,8 +1,102 @@
+#### LOAD PACKAGES ####
 library(ggplot2)
+library(tidyverse)
+library(segmented)
+library(ggpubr)
+library(purrr)
+library(broom)
+library(plotly)
+library(hrbrthemes)
+library(dplyr)
+library(tidyr)
+library(viridis)
+library(lme4)
+library(gridExtra)
 
-df <- read.csv("indices_region_37.csv")
-df <- df %>% 
-  filter(region == "south")
+##### LOAD DATA ####
+#df <- read.csv("indices_region_37.csv") # This csv has diversity indices for each region for the whole 37 year period. 
+indices <- read.csv("indices_states_37.csv")
+indices <- indices %>% 
+  filter(region == "north_east")
+
+#### EXPLORE THE DATA ####
+### Diversity density plots
+
+# Without transparency (left)
+#p1 <- ggplot(data=df, aes(x=abundance, group=region, fill=region)) +
+#geom_density(adjust=1.5) 
+
+# With transparency (right)
+ggplot(df, aes(x = richness, fill = state)) +
+  geom_density(alpha = .3)
+
+ggplot(df, aes(x = abundance, fill = state)) +
+  geom_density(alpha = .3)
+
+ggplot(df, aes(x = evenness, fill = state)) +
+  geom_density(alpha = .3)
+
+ggplot(df, aes(x = encs, fill = state)) +
+  geom_density(alpha = .3)
+
+### Linear trends 
+H_plot <- indices %>% 
+  ggplot(aes(year, abundance, color = state)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "Shannon index (H) - crop abundance", x = "year", y = "H") 
+H_plot + scale_y_continuous(expand = c(0, 0))
+
+D_plot <- indices %>% 
+  ggplot(aes(year, simpson, color = state)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "Simpson index (D) - crop abundance", x = "year", y = "D") 
+
+S_plot <- indices %>% 
+  ggplot(aes(year, richness, color = state)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "Richness index (S) - crop richness", x = "year", y = "n") 
+
+J_plot <- indices %>% 
+  ggplot(aes(year, evenness, color = state)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "Pielou's index (J) - crop evenness", x = "year", y = "J")
+
+ENCS_plot <- indices %>% 
+  ggplot(aes(year, encs, color = state)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "ENCS", x = "year", y = "ENCS")
+ENCS_plot
+ggarrange(H_plot, D_plot, S_plot, J_plot,nrow = 1, common.legend = TRUE, legend="bottom")
+
+encs_regions_plot <- indices %>% 
+  ggplot(aes(year, encs, color = state)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "ENCS", x = "year", y = "ENCS") +
+  facet_grid(cols = vars(region),  strip.position="top")
+
+
+xs <- split(indices,f = indices$region)
+p1 <- ggplot(xs$central,aes(x = year,y = encs,group = 1,colour = state)) + 
+  geom_jitter(size=0.5) + 
+  geom_smooth(method="lm", se=T) +
+  scale_y_continuous(limits = c(0, 16))+
+  theme(legend.title = element_blank(), legend.position=c(0.2, 0.8)) +
+  facet_wrap(~region, ncol=1)
+
+p2 <- p1 %+% xs$south
+p3 <- p1 %+% xs$central_west
+p4 <- p1 %+% xs$north_east
+p5 <- p1 %+% xs$north_west
+
+grid.arrange(p1,p2,p3,p4,p5, ncol = 5)
+
+
 
 # create a figure to get an idea of the data
 p <- ggplot(df, aes(x = year, y = evenness)) + geom_line()
@@ -11,9 +105,9 @@ p
 my.lm <- lm(evenness ~ year, data = df)
 summary(my.lm)
 
-# a linear model with data for the part after 16 km
-#my.lm2 <- lm(evenness ~ year, data = df[df$year > 1993, ])
-#summary(my.lm2)
+# a linear model with data for the part after 1994
+my.lm2 <- lm(evenness ~ year, data = df[df$year > 1993, ])
+summary(my.lm2)
 
 # Extract te coefficients from the overall model
 my.coef <- coef(my.lm)
@@ -22,23 +116,28 @@ my.coef <- coef(my.lm)
 # setting the aesthetics to a constant - this provides a name that we can reference later when we add additional layers
 p <- p + geom_abline(intercept = my.coef[1], 
                      slope = my.coef[2], 
-                     aes(colour = "overall"))
-p
+                     aes(color = "royalblue")) ### fix this, is not using the color argument
+p 
 
-# -------------------
-# analyse breakpoints
-# -------------------
-# http://cran.r-project.org/doc/Rnews/Rnews_2008-1.pdf
-library(segmented)
+##### Analyse breakpoints #####
 
-my.lm <- lm(evenness ~ year, data = df)
-summary(my.lm)
+### TRY 1 (with segmented)
+# https://rpubs.com/MarkusLoew/12164
 
 # have to provide estimates for breakpoints.
 # after looking a the data, 
 my.seg <- segmented(my.lm, 
-                    seg.Z = ~ year, 
-                    psi = list(year = c(1990,2000)))
+                    seg.Z = ~ year)
+                    #seg.Z = ~ year,
+                    #psi = list(year = c(1990,2000,2010)))
+
+#test for the 2nd breakpoint in the variable z
+pscore.test(my.seg, seg.Z = ~year, more.break=T)
+pscore.test(my.seg)
+
+
+plot(df$year,df$evenness)
+
 
 # When not providing estimates for the breakpoints "psi = NA" can be used.
 # The number of breakpoints that will show up is not defined
@@ -50,28 +149,221 @@ my.seg <- segmented(my.lm,
 summary(my.seg)
 # get the breakpoints
 my.seg$psi
+# get the slopes
+slope(my.seg)
+# get the fitted data
+my.fitted <- fitted(my.seg)
+my.model <- data.frame(year = df$year, evenness = my.fitted)
+# plot the fitted model
+ggplot(my.model, aes(x = year, y = evenness)) + geom_line()
+# add the fitted data to the exisiting plot
+p <- p + geom_line(data = my.model, aes(x = year, y = evenness), colour = "maroon")
+# add vertical lines to indicate the break locations
+# second row of the psi-matrix
+my.lines <- my.seg$psi[, 2]
+p<- p + geom_vline(xintercept = my.lines, linetype = "dashed")
+p + labs(title = "North East") 
+p
+
+### to get all plots in one
+
+fits <- lmList(evenness ~ year | region, data=df)
+fits$central
+
+
+fitted_models = df %>% group_by(region) %>% do(model = lm(evenness ~ year, data = .))
+tibble::glimpse(fitted_models)
+
+rowwise(fitted_models) %>% tidy(model)
+
+do.call(grid.arrange,city_plots)
+
+
+# TRY 2 (with segmented too)
+# https://stackoverflow.com/questions/8758646/piecewise-regression-with-r-plotting-the-segments
+
+#o <- segmented(my.lm, seg.Z = ~year, psi = list(year = c(1990,2000)),
+o <- segmented(my.lm, seg.Z = ~year,
+               control = seg.control(display = FALSE))
+dat2 = data.frame(x = c(1980:2016), y = broken.line(o)$fit)
+
+ggplot(dat2, aes(x = x, y = y)) +
+  #geom_point() #+
+  geom_line(color = 'blue')
+
+# TRY 3
+# Unraveling Spline Regression in R
+# https://towardsdatascience.com/unraveling-spline-regression-in-r-937626bc3d96
+
+# Look at the data
+plot_ly(df,x=~year,
+        y=~evenness,
+        type="scatter"
+)
+
+# Linear model
+fit <- lm(evenness ~ year, data=df)
+summary(fit)
+
+plot_ly(df,x=~year,
+        y=~evenness,
+        type="scatter") %>% 
+  add_lines(x =  ~year, y = fitted(fit))
+
+# Degree 2 Polynomial 
+fit2 <- lm(evenness ~ poly(year,2) + year, data=df)
+summary(fit2)
+
+plot_ly(df,x=~year,
+        y=~evenness,
+        type="scatter") %>% add_lines(x =  ~year, y = fitted(fit2))
+
+# Xbar here is called the Knot value.
+df$Xbar <- ifelse(df$year>1994,1,0)
+df$diff <- df$year - 1994
+df$X <- df$diff*df$Xbar
+
+df
+
+reg <- lm(evenness ~ year + X, data = df)
+
+plot_ly(df,x=~year,
+        y=~evenness,
+        type="scatter") %>% add_lines(x =  ~year, y = fitted(reg))
+
+summary(reg)
+
+# Same as above but now with segmented 
+fit_seg <- segmented(fit, seg.Z = ~year, psi = list(year=c(1994, 2010)))
+
+plot_ly(df,x=~year,
+        y=~evenness,
+        type="scatter") %>% add_lines(x =  ~year, y = fitted(fit_seg))
+
+#### Summaries of models into tables ####
+write.csv(tidy(my.lm) , "coefs.csv") # tidy() from broom package
+write.csv(glance(my.lm) , "an.csv") # glance() from broom package
+write.csv(tidy(my.seg) , "my.seg.csv") # tidy() from broom package
+
+
+# Or ... 
+fitted_models <- df %>% 
+  group_by(region) %>% 
+  do(model = lm(evenness ~ year, data = .))
+
+summary(fitted_models)
+
+fitted_models %>% tidy(model)
+fitted_models %>% glance(model)
+
+# Or ...
+library(lme4)
+fits <- lmList(evenness ~ year | region, data=df)
+glance(fits$central)
+
+##### Linear Models #####
+# Evenness ~ year by region
+lm_regions <- df %>% 
+  group_by(region) %>%
+  do(my.lm = lm(evenness ~ year, data = .)) %>% 
+  ungroup %>% 
+  transmute(region, RegionsCoef = map(my.lm, tidy)) %>% 
+  unnest(RegionsCoef)
+
+
+segmented.mod <- segmented(my.lm, seg.Z=~year)
+fit <- numeric(length(df$year)) * NA
+fit[complete.cases(rowSums(cbind(ChH, CL)))]
+  
+  
+tmp <- broken.line(segmented.mod)$fit
+
+data1 <- data.frame(CL = CL, ChH = ChH, fit = fit)
+
+ggplot(data1, aes(x = CL, y = ChH)) + 
+  geom_point() +
+  geom_line(aes(x = CL, y = fit), color = 'blue')
+
+str(my.seg)
+
+my.seg$coefficients
+plot(tmp)
+names(summary(my.lm))
+names(summary(my.seg))
+
+sink("hola.csv")
+print(summary(my.seg))
+sink()
+
+library(xtable)
+print(xtable(summary(my.seg)), file = "myfile.csv")
+
+
+tidy.mlm(my.seg)
+glance(my.seg)
+
+
+
+
+lapply(names(df)[2:ncol(df)], function(x)run_mod(x, df))
+
+
+breakpoints <- as.data.frame(my.seg$psi)
+coefs <- as.data.frame(my.seg$coefficients)
+jaja <- as.data.frame(left_join(breakpoints, coefs))
+
 
 # get the slopes
 slope(my.seg)
 
-# get the fitted data
-my.fitted <- fitted(my.seg)
-my.model <- data.frame(year = df$year, evenness = my.fitted)
 
-# plot the fitted model
-ggplot(my.model, aes(x = year, y = evenness)) + geom_line()
+##### SIAP ####
+# Load data
+SIAP_mun <- read.csv("SIAP_mun.csv")
+SIAP <- read.csv("SIAP.csv")
 
-# add the fitted data to the exisiting plot
-p <- p + geom_line(data = my.model, aes(x = year, y = evenness), colour = "tomato")
+# Aggregate data at the state level
+SIAP_state <- SIAP %>% 
+  group_by(region, state_code, year) %>%
+  summarise(ag_harv = sum(harvested))
 
-# add vertical lines to indicate the break locations
-# second row of the psi-matrix
-my.lines <- my.seg$psi[, 2]
+# Descriptive statistics
+SIAP_state %>% 
+  group_by(region) %>% 
+  summarise(max_harv = max(ag_harv),
+            min_harv = min(ag_harv),
+            range_harv = max(ag_harv)-min(ag_harv),
+            sd_harv = sd(ag_harv),
+            mean_harv = mean(ag_harv),
+            median_harv = median(ag_harv)) 
 
-p<- p + geom_vline(xintercept = my.lines, linetype = "dashed")
-p
+ggboxplot(SIAP_state, x = "region", y = "ag_harv", 
+          color = "region",
+          legend = "none",
+          ylab = "Harvested area", xlab = "Region")
+
+summary(aov(ag_harv~year*region, data=SIAP_state))
+
+# Read attribute table from states boundaries shapefile
+states_area <- read.csv("csv/states_area.csv")
+colnames(states_area) <- c("cve_ent", "state", "capital", "area", "perimeter", "COV_", "state_code")
+
+area_covered <- left_join(SIAP_state, states_area, by = "state_code")
+area_covered$perc_covered <- area_covered$ag_harv*100/area_covered$area
+
+ggplot(area_covered, aes(region, perc_covered, colour = region)) +
+  geom_boxplot()
+
+ggplot(area_covered, aes(x = perc_covered, fill = region)) +
+  geom_density(alpha = .3)
+
+plot_ly(area_covered, x=~region, 
+        y=~perc_covered,
+        type="box")
 
 
+
+##### ARCHIVE #####
 # get the slopes manually - excercise!!
 my.slopes <- coef(my.seg)
 
@@ -118,42 +410,7 @@ p <- p + geom_abline(intercept = b0, slope = b1,
                      aes(colour = "first part"), show_guide = TRUE)
 p
 
-######
-library(segmented)
-set.seed(12)
-xx <- 1:100
-zz <- runif(100)
-yy <- 2 + 1.5*pmax(xx - 35, 0) - 1.5*pmax(xx - 70, 0) + 15*pmax(zz - .5, 0) + 
-  rnorm(100,0,2)
-dati <- data.frame(x = xx, y = yy, z = zz)
-out.lm <- lm(evenness ~ year, data = df)
-o <- segmented(my.lm, seg.Z = ~year, psi = list(year = c(1990,2000,2010)),
-               control = seg.control(display = FALSE))
-dat2 = data.frame(x = c(1980:2016), y = broken.line(o)$fit)
-
-library(ggplot2)
-ggplot(dat2, aes(x = x, y = y)) +
-  #geom_point() #+
-  geom_line(color = 'blue')
-
-
-#####
-# Fit segmented model
-exp10 <- function(x)10^x
-
-sfit <- segmented(my.lm, seg.Z = ~ year)
-exp10(sfit$psi)
-summary(sfit)
-
-bpoints <- 10^(sfit$psi)[, 2]
-newx <- c(0.2, bpoints, 50)
-newy <- predict(sfit, data.frame(year = log10(newx)))
-
-ggplot(aes(y = x, x = y), data = df) + 
-  geom_path(data = data.frame(Distance = newx, Speed = newy), colour = "grey 50", size = 2) +
-  #geom_point(aes(colour = Standard.Event), size = 3) + 
-  #geom_text(data = labels1, aes(label = Text), hjust = -0.2, vjust = -0.2) +
-  #geom_text(data = labels2, aes(label = Text), hjust = 1.2, vjust = -0) +
-  scale_x_log10() + 
-  theme_bw(16) + 
-  ggtitle("World record speed for mens running events")
+# DENSITY PLOTS
+# Kernel Density Plot
+d <- density(df$abundance) # returns the density data
+plot(d) # plots the results
