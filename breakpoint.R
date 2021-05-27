@@ -73,22 +73,174 @@ ENCS_plot <- indices %>%
 ENCS_plot
 ggarrange(H_plot, D_plot, S_plot, J_plot,nrow = 1, common.legend = TRUE, legend="bottom")
 
+#### all states ####
+
+regions <- c(
+  `central` = "Central",
+  `central_west` = "Central West",
+  `north_east` = "North East",
+  `north_west` = "North West",
+  `south` = "South"
+)
+
+# ENCS
 encs_regions_plot <- indices %>% 
   ggplot(aes(year, encs, color = state)) +
-  geom_point() +
-  geom_smooth(method = "lm") +
-  labs(title = "ENCS", x = "year", y = "ENCS") +
-  facet_grid(cols = vars(region),  strip.position="top")
+  #ggplot(aes(year, encs, group = 1, color = state)) +
+  geom_point(show.legend = FALSE) +
+  geom_smooth(method="lm", se = T) +
+  directlabels::geom_dl(aes(label = state), method = "smart.grid") +
+  labs(title = "Effective Number of Crop Species", x = "year", y = "ENCS") +
+  theme(legend.position = "none")+
+    facet_grid(cols = vars(region), labeller = as_labeller(regions))
+encs_regions_plot
+ggsave(encs_regions_plot, file=paste0("plots/indices/encs_regions_lm_plot.png"), width = 44.45, height = 27.78, units = "cm", dpi=300)
+
+# Evenness 
+evenness_regions_plot <- indices %>% 
+  #ggplot(aes(year, evenness, color = state)) +
+  ggplot(aes(year, evenness, group = 1, color = state)) +
+  geom_point(show.legend = FALSE) +
+  geom_smooth(method="lm", se = T) +
+  directlabels::geom_dl(aes(label = state), method = "smart.grid") +
+  labs(title = "Pielou's index (J) - crop evenness", x = "year", y = "evenness") +
+  theme(legend.position = "none")+
+  facet_grid(cols = vars(region), labeller = as_labeller(regions))
+evenness_regions_plot
+ggsave(evenness_regions_plot, file=paste0("plots/indices/evenness_regions_lm_plot.png"), width = 44.45, height = 27.78, units = "cm", dpi=300)
+
+# Richness
+richness_regions_plot <- indices %>% 
+  ggplot(aes(year, richness, color = state)) +
+  #ggplot(aes(year, richness, group = 1, color = state)) +
+  geom_point(show.legend = FALSE) +
+  geom_smooth(method="lm", se = F) +
+  directlabels::geom_dl(aes(label = state), method = "smart.grid") +
+  labs(title = "Richness index (S) - crop richness", x = "year", y = "richness") +
+  theme(legend.position = "none")+
+  facet_grid(cols = vars(region), labeller = as_labeller(regions))
+richness_regions_plot
+ggsave(richness_regions_plot, file=paste0("plots/indices/richness_regions_plot.png"), width = 44.45, height = 27.78, units = "cm", dpi=300)
+
+# Abundance
+abundance_regions_plot <- indices %>% 
+  #ggplot(aes(year, abundance, color = state)) +
+  ggplot(aes(year, abundance, group = 1, color = state)) +
+  geom_point(show.legend = FALSE) +
+  geom_smooth(method="lm", se = T) +
+  directlabels::geom_dl(aes(label = state), method = "smart.grid") +
+  labs(title = "Shannon index (H) - crop abundance", x = "year", y = "abundance") +
+  theme(legend.position = "none")+
+  facet_grid(cols = vars(region), labeller = as_labeller(regions))
+abundance_regions_plot
+ggsave(abundance_regions_plot, file=paste0("plots/indices/abundance_regions_lm_plot.png"), width = 44.45, height = 27.78, units = "cm", dpi=300)
 
 
+
+
+
+fits_encs <- lmList(encs ~ year | state, data=indices)
+summary(fits_encs)
+summary(fits_encs$aguascalientes)
+coefs_encs <- coef(fits_encs)
+
+
+
+
+# lm for every state
+df = group_by(indices, state) %>%
+  do(m1 = lm(encs ~ year, data = .)) # change the name of diversity index,
+
+lm_state <- tidy(df, m1)   # gives coefficients, SE, p-value, etc.
+lm_state_sig <- lm_encs_state %>%
+  filter(term == "year", p.value < 0.05)
+
+write.csv(lm_state_sig, file = "lm/encs_lm_state_sig.csv")
+
+lm_state_sig_encs <- left_join(indices, lm_state_sig, by = "state") 
+
+# hacer que todo lo que tenga un pvalue menor a 0.05 se ponga gris
+lm_state_sig_encs %>% mutate(Color = ifelse(!is.na(p.value), "gray", "red")) %>%
+  ggplot(aes(year, encs, color = Color)) +
+  #ggplot(aes(year, encs, group = 1, color = state)) +
+  #geom_point(show.legend = FALSE) +
+  geom_smooth(method="lm", se = T) +
+  directlabels::geom_dl(aes(label = state), method = "smart.grid") +
+  labs(title = "Effective Number of Crop Species", x = "year", y = "ENCS") +
+  theme(legend.position = "none")+
+  facet_grid(cols = vars(region), labeller = as_labeller(regions))
+encs_regions_plot
+
+
+# lm for every region
+df = group_by(indices, region) %>%
+  do(m1 = lm(encs ~ year, data = .)) # change the name of diversity index, there MUST be a way to do this at once i.e. for loop, lapply
+
+lm_region <- tidy(df, m1)   # gives coefficients, SE, p-value, etc.
+lm_region_sig <- lm_encs_region %>%
+  filter(term == "year", p.value < 0.05)
+
+write.csv(lm_region_sig, file = "encs_lm_region_sig.csv")
+
+# try to do it for every diversity index at once
+
+
+
+
+### 
+glance(fits_encs)
 xs <- split(indices,f = indices$region)
+# ENCS
+p1 <- ggplot(xs$central,aes(x = year,y = encs,group = 1,colour = state)) + 
+  geom_jitter() + 
+  geom_smooth(method="lm", se=T) +
+  scale_y_continuous(limits = c(0, 16))+
+  theme(legend.title = element_blank(), legend.position=c(0.1, 0.9)) +
+  facet_wrap(~region, ncol=1)
+p1
+p2 <- p1 %+% xs$south
+p3 <- p1 %+% xs$central_west
+p4 <- p1 %+% xs$north_east
+p5 <- p1 %+% xs$north_west
+
+grid.arrange(p1,p2,p3,p4,p5, ncol = 5)
+
+# Evenness
+p1 <- ggplot(xs$central,aes(x = year,y = evenness,group = 1,colour = state)) + 
+  geom_jitter(size=0.5) + 
+  geom_smooth(method="lm", se=T) +
+  scale_y_continuous(limits = c(0, 1))+
+  theme(legend.title = element_blank(), legend.position=c(0.1, 0.9)) +
+  facet_wrap(~region, ncol=1)
+p1
+p2 <- p1 %+% xs$south
+p3 <- p1 %+% xs$central_west
+p4 <- p1 %+% xs$north_east
+p5 <- p1 %+% xs$north_west
+
+grid.arrange(p1,p2,p3,p4,p5, ncol = 5)
+
 p1 <- ggplot(xs$central,aes(x = year,y = encs,group = 1,colour = state)) + 
   geom_jitter(size=0.5) + 
   geom_smooth(method="lm", se=T) +
   scale_y_continuous(limits = c(0, 16))+
-  theme(legend.title = element_blank(), legend.position=c(0.2, 0.8)) +
+  theme(legend.title = element_blank(), legend.position=c(0.1, 0.9)) +
   facet_wrap(~region, ncol=1)
+p1
+p2 <- p1 %+% xs$south
+p3 <- p1 %+% xs$central_west
+p4 <- p1 %+% xs$north_east
+p5 <- p1 %+% xs$north_west
 
+grid.arrange(p1,p2,p3,p4,p5, ncol = 5)
+
+p1 <- ggplot(xs$central,aes(x = year,y = encs,group = 1,colour = state)) + 
+  geom_jitter(size=0.5) + 
+  geom_smooth(method="lm", se=T) +
+  scale_y_continuous(limits = c(0, 16))+
+  theme(legend.title = element_blank(), legend.position=c(0.1, 0.9)) +
+  facet_wrap(~region, ncol=1)
+p1
 p2 <- p1 %+% xs$south
 p3 <- p1 %+% xs$central_west
 p4 <- p1 %+% xs$north_east
