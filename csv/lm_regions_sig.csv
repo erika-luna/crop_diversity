@@ -1,0 +1,26 @@
+,region,index,term,estimate,std.error,statistic,p.value
+1,central,abundance,year,0.012298886,0.00117884,10.43304529,significant
+6,central_west,abundance,year,0.010600105,0.001368866,7.743711455,significant
+11,north_east,abundance,year,0.009018474,0.001133789,7.954280799,significant
+16,north_west,abundance,year,-0.000562282,0.001342112,-0.418952728,non significant
+21,south,abundance,year,0.001915724,0.00120009,1.596316891,non significant
+2,central,encs,year,0.075615313,0.007048515,10.72783589,significant
+7,central_west,encs,year,0.067062678,0.00849109,7.898006004,significant
+12,north_east,encs,year,0.064750302,0.008254898,7.843864185,significant
+17,north_west,encs,year,-0.007234196,0.016082454,-0.449819175,non significant
+22,south,encs,year,0.009834365,0.006131898,1.603804417,non significant
+3,central,evenness,year,0.001700117,0.000260534,6.525502773,significant
+8,central_west,evenness,year,0.001693442,0.000276931,6.115021819,significant
+13,north_east,evenness,year,0.001341411,0.000254522,5.270323825,significant
+18,north_west,evenness,year,-0.001344985,0.000297207,-4.525410718,significant
+23,south,evenness,year,-0.000181546,0.000251026,-0.723216441,non significant
+4,central,richness,year,1.326458037,0.056858898,23.32894367,significant
+9,central_west,richness,year,0.70934092,0.063048241,11.25076469,significant
+14,north_east,richness,year,0.588904694,0.051095896,11.52547942,significant
+19,north_west,richness,year,1.131104789,0.056826974,19.9043642,significant
+24,south,richness,year,0.615931721,0.074605298,8.255871019,significant
+5,central,simpson,year,0.003928651,0.000396279,9.913848288,significant
+10,central_west,simpson,year,0.001283634,0.000457926,2.803148485,significant
+15,north_east,simpson,year,0.001453901,0.000192949,7.535166275,significant
+20,north_west,simpson,year,-0.000621193,0.000248858,-2.496171342,significant
+25,south,simpson,year,0.00032861,0.000391413,0.83954686,non significant

@@ -1,0 +1,145 @@
+"","X","crops","perc"
+"1","Beverage crops and spices","Beverage.crops.and.spices",82.41373342
+"2","Cereals","Beverage.crops.and.spices",0.431961755
+"3","Fibres","Beverage.crops.and.spices",0.419019858
+"4","Fruits","Beverage.crops.and.spices",0.426385331
+"5","Nuts","Beverage.crops.and.spices",0.416388937
+"6","Oils","Beverage.crops.and.spices",0.426971791
+"7","Pulses","Beverage.crops.and.spices",0.421028107
+"8","Roots and tubers","Beverage.crops.and.spices",0.415732091
+"9","Sugar crops and sweetners","Beverage.crops.and.spices",0.432744937
+"10","Vegetables","Beverage.crops.and.spices",0.42219441
+"11",NA,"Beverage.crops.and.spices",0.415288527
+"12","Live plants","Beverage.crops.and.spices",0.415298752
+"13","Beverage crops and spices","Cereals",3.877566158
+"14","Cereals","Cereals",85.3679358
+"15","Fibres","Cereals",3.896222196
+"16","Fruits","Cereals",3.964709451
+"17","Nuts","Cereals",3.871758791
+"18","Oils","Cereals",3.970162604
+"19","Pulses","Cereals",3.914895741
+"20","Roots and tubers","Cereals",3.865651163
+"21","Sugar crops and sweetners","Cereals",4.023843733
+"22","Vegetables","Cereals",3.925740509
+"23",NA,"Cereals",3.861526719
+"24","Live plants","Cereals",3.861621799
+"25","Beverage crops and spices","Fibres",0.895837282
+"26","Cereals","Fibres",0.927949462
+"27","Fibres","Fibres",82.8102486
+"28","Fruits","Fibres",0.915970069
+"29","Nuts","Fibres",0.894495602
+"30","Oils","Fibres",0.917229915
+"31","Pulses","Fibres",0.904461567
+"32","Roots and tubers","Fibres",0.893084551
+"33","Sugar crops and sweetners","Fibres",0.92963191
+"34","Vegetables","Fibres",0.906967042
+"35",NA,"Fibres",0.892131678
+"36","Live plants","Fibres",0.892153644
+"37","Beverage crops and spices","Fruits",2.614987762
+"38","Cereals","Fruits",2.708724603
+"39","Fibres","Fruits",2.627569188
+"40","Fruits","Fruits",84.26587569
+"41","Nuts","Fruits",2.611071337
+"42","Oils","Fruits",2.677433781
+"43","Pulses","Fruits",2.64016242
+"44","Roots and tubers","Fruits",2.606952421
+"45","Sugar crops and sweetners","Fruits",2.713635742
+"46","Vegetables","Fruits",2.647476012
+"47",NA,"Fruits",2.604170941
+"48","Live plants","Fruits",2.604235062
+"49","Beverage crops and spices","Nuts",0.267020496
+"50","Cereals","Nuts",0.276592112
+"51","Fibres","Nuts",0.268305205
+"52","Fruits","Nuts",0.273021437
+"53","Nuts","Nuts",82.29030373
+"54","Oils","Nuts",0.273396957
+"55","Pulses","Nuts",0.26959112
+"56","Roots and tubers","Nuts",0.266199995
+"57","Sugar crops and sweetners","Nuts",0.277093596
+"58","Vegetables","Nuts",0.270337922
+"59",NA,"Nuts",0.265915974
+"60","Live plants","Nuts",0.265922521
+"61","Beverage crops and spices","Oils",2.749322147
+"62","Cereals","Oils",2.847874338
+"63","Fibres","Oils",2.762549893
+"64","Fruits","Oils",2.811109613
+"65","Nuts","Oils",2.745204533
+"66","Oils","Oils",84.38177691
+"67","Pulses","Oils",2.775790052
+"68","Roots and tubers","Oils",2.740874023
+"69","Sugar crops and sweetners","Oils",2.853037767
+"70","Vegetables","Oils",2.783479349
+"71",NA,"Oils",2.737949657
+"72","Live plants","Oils",2.738017072
+"73","Beverage crops and spices","Pulses",1.370540387
+"74","Cereals","Pulses",1.419668772
+"75","Fibres","Pulses",1.377134434
+"76","Fruits","Pulses",1.401341513
+"77","Nuts","Pulses",1.368487751
+"78","Oils","Pulses",1.40326895
+"79","Pulses","Pulses",83.20713584
+"80","Roots and tubers","Pulses",1.366328987
+"81","Sugar crops and sweetners","Pulses",1.422242748
+"82","Vegetables","Pulses",1.387567793
+"83",NA,"Pulses",1.364871187
+"84","Live plants","Pulses",1.364904793
+"85","Beverage crops and spices","Roots.and.tubers",0.108786128
+"86","Cereals","Roots.and.tubers",0.112685675
+"87","Fibres","Roots.and.tubers",0.109309528
+"88","Fruits","Roots.and.tubers",0.111230956
+"89","Nuts","Roots.and.tubers",0.108623201
+"90","Oils","Roots.and.tubers",0.111383946
+"91","Pulses","Roots.and.tubers",0.109833419
+"92","Roots and tubers","Roots.and.tubers",82.16049231
+"93","Sugar crops and sweetners","Roots.and.tubers",0.112889984
+"94","Vegetables","Roots.and.tubers",0.110137672
+"95",NA,"Roots.and.tubers",0.108336137
+"96","Live plants","Roots.and.tubers",0.108338805
+"97","Beverage crops and spices","Sugar.crops.and.sweetners",4.052283272
+"98","Cereals","Sugar.crops.and.sweetners",4.197541403
+"99","Fibres","Sugar.crops.and.sweetners",4.071779923
+"100","Fruits","Sugar.crops.and.sweetners",4.143353108
+"101","Nuts","Sugar.crops.and.sweetners",4.046214235
+"102","Oils","Sugar.crops.and.sweetners",4.149051971
+"103","Pulses","Sugar.crops.and.sweetners",4.091294869
+"104","Roots and tubers","Sugar.crops.and.sweetners",4.039831407
+"105","Sugar crops and sweetners","Sugar.crops.and.sweetners",85.52271483
+"106","Vegetables","Sugar.crops.and.sweetners",4.102628285
+"107",NA,"Sugar.crops.and.sweetners",4.035521121
+"108","Live plants","Sugar.crops.and.sweetners",4.035620486
+"109","Beverage crops and spices","Vegetables",1.644153982
+"110","Cereals","Vegetables",1.703090319
+"111","Fibres","Vegetables",1.652064459
+"112","Fruits","Vegetables",1.68110422
+"113","Nuts","Vegetables",1.641691559
+"114","Oils","Vegetables",1.683416449
+"115","Pulses","Vegetables",1.65998236
+"116","Roots and tubers","Vegetables",1.639101821
+"117","Sugar crops and sweetners","Vegetables",1.706178161
+"118","Vegetables","Vegetables",83.43763037
+"119",NA,"Vegetables",1.637352987
+"120","Live plants","Vegetables",1.637393303
+"121","Beverage crops and spices","NA.",0.001648275
+"122","Cereals","NA.",0.001707359
+"123","Fibres","NA.",0.001656205
+"124","Fruits","NA.",0.001685318
+"125","Nuts","NA.",0.001645806
+"126","Oils","NA.",0.001687636
+"127","Pulses","NA.",0.001664143
+"128","Roots and tubers","NA.",0.00164321
+"129","Sugar crops and sweetners","NA.",0.001710454
+"130","Vegetables","NA.",0.001668753
+"131",NA,"NA.",82.07283143
+"132","Live plants","NA.",0.001641497
+"133","Beverage crops and spices","Live.plants",0.004120687
+"134","Cereals","Live.plants",0.004268397
+"135","Fibres","Live.plants",0.004140512
+"136","Fruits","Live.plants",0.004213294
+"137","Nuts","Live.plants",0.004114515
+"138","Oils","Live.plants",0.004219089
+"139","Pulses","Live.plants",0.004160357
+"140","Roots and tubers","Live.plants",0.004108025
+"141","Sugar crops and sweetners","Live.plants",0.004276136
+"142","Vegetables","Live.plants",0.004171882
+"143",NA,"Live.plants",0.004103642
+"144","Live plants","Live.plants",82.07485227

@@ -14,19 +14,11 @@ library(lme4)
 library(gridExtra)
 
 ##### LOAD DATA ####
-#df <- read.csv("indices_region_37.csv") # This csv has diversity indices for each region for the whole 37 year period. 
+indices <- read.csv("indices_region_37.csv") # This csv has diversity indices for each region for the whole 37 year period. 
 indices <- read.csv("indices_states_37.csv")
-indices <- indices %>% 
-  filter(region == "north_east")
 
 #### EXPLORE THE DATA ####
 ### Diversity density plots
-
-# Without transparency (left)
-#p1 <- ggplot(data=df, aes(x=abundance, group=region, fill=region)) +
-#geom_density(adjust=1.5) 
-
-# With transparency (right)
 ggplot(df, aes(x = richness, fill = state)) +
   geom_density(alpha = .3)
 
@@ -94,7 +86,7 @@ encs_regions_plot <- indices %>%
   theme(legend.position = "none")+
     facet_grid(cols = vars(region), labeller = as_labeller(regions))
 encs_regions_plot
-ggsave(encs_regions_plot, file=paste0("plots/indices/encs_regions_lm_plot.png"), width = 44.45, height = 27.78, units = "cm", dpi=300)
+#ggsave(encs_regions_plot, file=paste0("plots/indices/encs_regions_lm_plot.png"), width = 44.45, height = 27.78, units = "cm", dpi=300)
 
 # Evenness 
 evenness_regions_plot <- indices %>% 
@@ -107,7 +99,7 @@ evenness_regions_plot <- indices %>%
   theme(legend.position = "none")+
   facet_grid(cols = vars(region), labeller = as_labeller(regions))
 evenness_regions_plot
-ggsave(evenness_regions_plot, file=paste0("plots/indices/evenness_regions_lm_plot.png"), width = 44.45, height = 27.78, units = "cm", dpi=300)
+#ggsave(evenness_regions_plot, file=paste0("plots/indices/evenness_regions_lm_plot.png"), width = 44.45, height = 27.78, units = "cm", dpi=300)
 
 # Richness
 richness_regions_plot <- indices %>% 
@@ -136,142 +128,147 @@ abundance_regions_plot
 ggsave(abundance_regions_plot, file=paste0("plots/indices/abundance_regions_lm_plot.png"), width = 44.45, height = 27.78, units = "cm", dpi=300)
 
 
+##### lm for every state and for every diversity index #####
+indices <- indices %>% 
+  gather("index", "value", 5:9)
 
+lm_state <- indices %>% 
+  group_by(region, state, index) %>%
+  do(m1 = tidy(lm(value ~ year, data = .))) %>% # change the name of diversity index,
+  unnest(m1)
 
+lm_state_sig <- lm_state %>%
+  filter(term == "year") %>% 
+  mutate(p.value = case_when(p.value < 0.05 ~ "significant",
+                        p.value >= 0.05  ~ "non significant"))
 
-fits_encs <- lmList(encs ~ year | state, data=indices)
-summary(fits_encs)
-summary(fits_encs$aguascalientes)
-coefs_encs <- coef(fits_encs)
+lm_state_sig <- right_join(indices, lm_state_sig, by = c("state", "index")) 
 
-
-
-
-# lm for every state
-df = group_by(indices, state) %>%
-  do(m1 = lm(encs ~ year, data = .)) # change the name of diversity index,
-
-lm_state <- tidy(df, m1)   # gives coefficients, SE, p-value, etc.
-lm_state_sig <- lm_encs_state %>%
-  filter(term == "year", p.value < 0.05)
-
-write.csv(lm_state_sig, file = "lm/encs_lm_state_sig.csv")
-
-lm_state_sig_encs <- left_join(indices, lm_state_sig, by = "state") 
-
-# hacer que todo lo que tenga un pvalue menor a 0.05 se ponga gris
-lm_state_sig_encs %>% mutate(Color = ifelse(!is.na(p.value), "gray", "red")) %>%
-  ggplot(aes(year, encs, color = Color)) +
-  #ggplot(aes(year, encs, group = 1, color = state)) +
-  #geom_point(show.legend = FALSE) +
-  geom_smooth(method="lm", se = T) +
+# Graph showing where lm is significant and non significant 
+lm_state_sig_encs_plot <- lm_state_sig %>% 
+  ggplot(aes(year, encs, group = state, color = p.value)) +
+  scale_color_manual(values=c("gray40", "indianred1")) +
+  geom_smooth(method="lm", se = T, show.legend = T) +
   directlabels::geom_dl(aes(label = state), method = "smart.grid") +
   labs(title = "Effective Number of Crop Species", x = "year", y = "ENCS") +
-  theme(legend.position = "none")+
   facet_grid(cols = vars(region), labeller = as_labeller(regions))
-encs_regions_plot
+lm_state_sig_encs_plot
+ggsave(lm_state_sig_encs_plot, file=paste0("plots/indices/lm_state_sig_encs_plot.png"), width = 44.45, height = 27.78, units = "cm", dpi=300)
 
+cities = unique(lm_state_sig$index)
+city_plots = list()
+for(city_ in cities) {
+  city_plots[[city_]] = ggplot(lm_state_sig %>% filter(index == city_), aes(x=year, y=value)) +
+    geom_smooth(aes(group = state, color = p.value), method = lm, 
+               se = FALSE, fullrange = TRUE)+
+    directlabels::geom_dl(aes(label = state, color=p.value), method = "smart.grid") +
+    scale_color_manual(values=c("gray40", "indianred1")) +
+    facet_grid(cols = vars(region.x), labeller = as_labeller(regions))+
+    ggtitle(city_)
+  
+  print(city_plots[[city_]])
+  ggsave(city_plots[[city_]], file=paste0("plots/indices/lm_state_sig_plot_", city_,".png"), width = 44.45, height = 27.78, units = "cm", dpi=300)
+}
 
-# lm for every region
-df = group_by(indices, region) %>%
-  do(m1 = lm(encs ~ year, data = .)) # change the name of diversity index, there MUST be a way to do this at once i.e. for loop, lapply
+do.call(grid.arrange,city_plots)
 
-lm_region <- tidy(df, m1)   # gives coefficients, SE, p-value, etc.
-lm_region_sig <- lm_encs_region %>%
-  filter(term == "year", p.value < 0.05)
+#### lm for every region and for every diversity index ####
 
-write.csv(lm_region_sig, file = "encs_lm_region_sig.csv")
+#indices <- read.csv("indices_region_37.csv")  ### Fixed Effects
+#indices <- indices %>% 
+ # gather("index", "value", 4:8)
 
-# try to do it for every diversity index at once
+indices <- read.csv("indices_states_37.csv")  ### Random Effects
+indices <- indices %>% 
+  gather("index", "value", 5:9)
 
+lm_regions <- indices %>% 
+  group_by(region, index) %>%
+  do(m1 = tidy(lm(value ~ year, data = .))) %>%
+  unnest(m1)
 
+lm_regions_sig <- lm_regions %>%
+  filter(term == "year") %>% 
+  mutate(p.value = case_when(p.value < 0.05 ~ "significant",
+                             p.value >= 0.05  ~ "non significant"))
 
+lm_regions_sig <- right_join(indices, lm_regions_sig, by = c("region", "index")) 
 
-### 
-glance(fits_encs)
-xs <- split(indices,f = indices$region)
-# ENCS
-p1 <- ggplot(xs$central,aes(x = year,y = encs,group = 1,colour = state)) + 
-  geom_jitter() + 
-  geom_smooth(method="lm", se=T) +
-  scale_y_continuous(limits = c(0, 16))+
-  theme(legend.title = element_blank(), legend.position=c(0.1, 0.9)) +
-  facet_wrap(~region, ncol=1)
-p1
-p2 <- p1 %+% xs$south
-p3 <- p1 %+% xs$central_west
-p4 <- p1 %+% xs$north_east
-p5 <- p1 %+% xs$north_west
+#write.csv(lm_regions_sig, file = "csv/lm_regions_sig_states.csv")
 
-grid.arrange(p1,p2,p3,p4,p5, ncol = 5)
+###############################
+##### Breakpoint Analysis #####
+###############################
 
-# Evenness
-p1 <- ggplot(xs$central,aes(x = year,y = evenness,group = 1,colour = state)) + 
-  geom_jitter(size=0.5) + 
-  geom_smooth(method="lm", se=T) +
-  scale_y_continuous(limits = c(0, 1))+
-  theme(legend.title = element_blank(), legend.position=c(0.1, 0.9)) +
-  facet_wrap(~region, ncol=1)
-p1
-p2 <- p1 %+% xs$south
-p3 <- p1 %+% xs$central_west
-p4 <- p1 %+% xs$north_east
-p5 <- p1 %+% xs$north_west
+# The following analysis is divided into random and fixed effects
 
-grid.arrange(p1,p2,p3,p4,p5, ncol = 5)
-
-p1 <- ggplot(xs$central,aes(x = year,y = encs,group = 1,colour = state)) + 
-  geom_jitter(size=0.5) + 
-  geom_smooth(method="lm", se=T) +
-  scale_y_continuous(limits = c(0, 16))+
-  theme(legend.title = element_blank(), legend.position=c(0.1, 0.9)) +
-  facet_wrap(~region, ncol=1)
-p1
-p2 <- p1 %+% xs$south
-p3 <- p1 %+% xs$central_west
-p4 <- p1 %+% xs$north_east
-p5 <- p1 %+% xs$north_west
-
-grid.arrange(p1,p2,p3,p4,p5, ncol = 5)
-
-p1 <- ggplot(xs$central,aes(x = year,y = encs,group = 1,colour = state)) + 
-  geom_jitter(size=0.5) + 
-  geom_smooth(method="lm", se=T) +
-  scale_y_continuous(limits = c(0, 16))+
-  theme(legend.title = element_blank(), legend.position=c(0.1, 0.9)) +
-  facet_wrap(~region, ncol=1)
-p1
-p2 <- p1 %+% xs$south
-p3 <- p1 %+% xs$central_west
-p4 <- p1 %+% xs$north_east
-p5 <- p1 %+% xs$north_west
-
-grid.arrange(p1,p2,p3,p4,p5, ncol = 5)
-
-
+##### FIXED EFFECTS ####
+# i.e. indices at the regional (5 regions) level for 37 years (185 obs)
+indices <- read.csv("indices_region_37.csv")
+indices <- indices %>% 
+  gather("index", "value", 4:8)
 
 # create a figure to get an idea of the data
-p <- ggplot(df, aes(x = year, y = evenness)) + geom_line()
+p <- ggplot(indices, aes(x = year, y = value, color = region)) + 
+  geom_line() +
+  facet_grid(rows = vars(index), scales = "free")
 p
 
-my.lm <- lm(evenness ~ year, data = df)
-summary(my.lm)
+# We first fit a linear model
+lm_regions <- indices %>% 
+  group_by(region, index) %>%
+  do(m1 = tidy(lm(value ~ year, data = .))) %>%
+  unnest(m1)
 
 # a linear model with data for the part after 1994
-my.lm2 <- lm(evenness ~ year, data = df[df$year > 1993, ])
-summary(my.lm2)
+#my.lm2 <- lm(evenness ~ year, data = df[df$year > 1993, ])
+#summary(my.lm2)
 
 # Extract te coefficients from the overall model
+slopes <- lm_regions %>% 
+  filter(term == "year") %>% 
+  select(region, estimate)
+
+intercepts <- lm_regions %>% 
+  filter(term == "(Intercept)") %>% 
+  select(region, estimate)
+
+p <- ggplot(indices, aes(x = year, y = value, color = region)) + 
+  geom_abline(intercept = intercepts$estimate, 
+              slope = slopes$estimate)+
+  # aes(color = "royalblue")) +
+  facet_grid(rows = vars(index), scales = "free")
+p
+
+
+
+
+
+
+
+
+
+#####  Fixed effects one by one (regions) #### 
+indices <- read.csv("indices_region_37.csv")
+indices <- indices %>% 
+  filter(region == "south")
+
+# initial look at the datao
+p <- ggplot(indices, aes(x = year, y = richness)) + 
+  geom_line()
+p
+
+my.lm <- lm(richness ~ year, data = indices)
+summary(my.lm)
 my.coef <- coef(my.lm)
 
+
 # add the regression line to the graph
-# setting the aesthetics to a constant - this provides a name that we can reference later when we add additional layers
 p <- p + geom_abline(intercept = my.coef[1], 
                      slope = my.coef[2], 
                      aes(color = "royalblue")) ### fix this, is not using the color argument
 p 
 
-##### Analyse breakpoints #####
 
 ### TRY 1 (with segmented)
 # https://rpubs.com/MarkusLoew/12164
@@ -287,9 +284,77 @@ my.seg <- segmented(my.lm,
 pscore.test(my.seg, seg.Z = ~year, more.break=T)
 pscore.test(my.seg)
 
+# When not providing estimates for the breakpoints "psi = NA" can be used.
+# The number of breakpoints that will show up is not defined
+#my.seg <- segmented(my.lm, 
+#                    seg.Z = ~ year, 
+#                    psi = NA)
 
-plot(df$year,df$evenness)
+# display the summary
+summary(my.seg)
+# get the breakpoints
+my.seg$psi
+# get the slopes
+slope(my.seg)
+# get the fitted data
+my.fitted <- fitted(my.seg)
+my.model <- data.frame(year = indices$year, richness = my.fitted)
+# plot the fitted model
+ggplot(my.model, aes(x = year, y = richness)) + geom_line()
+# add the fitted data to the exisiting plot
+p <- p + geom_line(data = my.model, aes(x = year, y = richness), colour = "maroon")
+# add vertical lines to indicate the break locations
+# second row of the psi-matrix
+my.lines <- my.seg$psi[, 2]
+p<- p + geom_vline(xintercept = my.lines, linetype = "dashed")
+p + labs(title = "North East") 
+p
 
+AIC(my.lm)
+AIC(my.seg)
+
+
+
+
+
+
+
+
+
+
+
+
+
+##### RANDOM EFFECTS one by one (regions) ######
+indices <- read.csv("indices_states_37.csv")
+# South 
+indices <- indices %>% 
+  filter(region == "south")
+
+# initial look at the data
+p <- ggplot(indices, aes(x = year, y = evenness)) + 
+  geom_point()
+p
+
+my.lm <- lm(evenness ~ year, data = indices)
+summary(my.lm)
+my.coef <- coef(my.lm)
+
+
+# add the regression line to the graph
+p <- p + geom_abline(intercept = my.coef[1], 
+                     slope = my.coef[2], 
+                     aes(color = "royalblue")) ### fix this, is not using the color argument
+p 
+
+my.seg <- segmented(my.lm, 
+                    seg.Z = ~ year)
+#seg.Z = ~ year,
+#psi = list(year = c(1990,2000,2010)))
+
+#test for the 2nd breakpoint in the variable z
+pscore.test(my.seg, seg.Z = ~year, more.break=T)
+pscore.test(my.seg)
 
 # When not providing estimates for the breakpoints "psi = NA" can be used.
 # The number of breakpoints that will show up is not defined
@@ -305,7 +370,7 @@ my.seg$psi
 slope(my.seg)
 # get the fitted data
 my.fitted <- fitted(my.seg)
-my.model <- data.frame(year = df$year, evenness = my.fitted)
+my.model <- data.frame(year = indices$year, evenness = my.fitted)
 # plot the fitted model
 ggplot(my.model, aes(x = year, y = evenness)) + geom_line()
 # add the fitted data to the exisiting plot
@@ -317,18 +382,33 @@ p<- p + geom_vline(xintercept = my.lines, linetype = "dashed")
 p + labs(title = "North East") 
 p
 
+AIC(my.lm)
+AIC(my.seg)
+
+
+
+
+
+
+
+
+
 ### to get all plots in one
 
-fits <- lmList(evenness ~ year | region, data=df)
+fits <- lmList(evenness ~ year | region, data=indices)
 fits$central
 
 
-fitted_models = df %>% group_by(region) %>% do(model = lm(evenness ~ year, data = .))
-tibble::glimpse(fitted_models)
+fitted_models = indices %>% 
+  group_by(region) %>% 
+  do(model = lm(evenness ~ year, data = .))
+
+tmp <- broom::tidy(tmp$model)
+
+tmp <- tibble::glimpse(fitted_models)
 
 rowwise(fitted_models) %>% tidy(model)
 
-do.call(grid.arrange,city_plots)
 
 
 # TRY 2 (with segmented too)
@@ -415,7 +495,7 @@ glance(fits$central)
 
 ##### Linear Models #####
 # Evenness ~ year by region
-lm_regions <- df %>% 
+lm_regions <- indices %>% 
   group_by(region) %>%
   do(my.lm = lm(evenness ~ year, data = .)) %>% 
   ungroup %>% 
@@ -514,8 +594,11 @@ plot_ly(area_covered, x=~region,
         type="box")
 
 
-
+###################
 ##### ARCHIVE #####
+###################
+
+
 # get the slopes manually - excercise!!
 my.slopes <- coef(my.seg)
 
@@ -566,3 +649,97 @@ p
 # Kernel Density Plot
 d <- density(df$abundance) # returns the density data
 plot(d) # plots the results
+
+
+
+fits_encs <- lmList(encs ~ year | state, data=indices)
+summary(fits_encs)
+summary(fits_encs$aguascalientes)
+coefs_encs <- coef(fits_encs)
+
+fits_encs <- lmList(encs ~ year | region, data=indices)
+summary(fits_encs)
+fits_encs$central
+
+fit <- fits_encs %>%
+  filter(term == "year") %>% 
+  mutate(p.value = case_when(p.value < 0.05 ~ "significant",
+                             p.value >= 0.05  ~ "non significant"))
+
+coefs_encs <- coef(fits_encs)
+
+df = group_by(indices, region) %>%
+  do(m1 = lm(encs ~ year, data = .)) # change the name of diversity index, there MUST be a way to do this at once i.e. for loop, lapply
+
+lm_region <- tidy.lm(df, m1)   # gives coefficients, SE, p-value, etc.
+lm_region_sig <- lm_region %>%
+  filter(term == "year", p.value < 0.05)
+
+write.csv(lm_region_sig, file = "encs_lm_region_sig.csv")
+
+lm_regions <- df %>% 
+  group_by(region) %>%
+  do(my.lm = lm(evenness ~ year, data = .)) %>% 
+  ungroup %>% 
+  transmute(region, RegionsCoef = map(my.lm, tidy)) %>% 
+  unnest(RegionsCoef)
+
+glance(fits_encs)
+xs <- split(indices,f = indices$region)
+# ENCS
+p1 <- ggplot(xs$central,aes(x = year,y = encs,group = 1,colour = state)) + 
+  geom_jitter() + 
+  geom_smooth(method="lm", se=T) +
+  scale_y_continuous(limits = c(0, 16))+
+  theme(legend.title = element_blank(), legend.position=c(0.1, 0.9)) +
+  facet_wrap(~region, ncol=1)
+p1
+p2 <- p1 %+% xs$south
+p3 <- p1 %+% xs$central_west
+p4 <- p1 %+% xs$north_east
+p5 <- p1 %+% xs$north_west
+
+grid.arrange(p1,p2,p3,p4,p5, ncol = 5)
+
+# Evenness
+p1 <- ggplot(xs$central,aes(x = year,y = evenness,group = 1,colour = state)) + 
+  geom_jitter(size=0.5) + 
+  geom_smooth(method="lm", se=T) +
+  scale_y_continuous(limits = c(0, 1))+
+  theme(legend.title = element_blank(), legend.position=c(0.1, 0.9)) +
+  facet_wrap(~region, ncol=1)
+p1
+p2 <- p1 %+% xs$south
+p3 <- p1 %+% xs$central_west
+p4 <- p1 %+% xs$north_east
+p5 <- p1 %+% xs$north_west
+
+grid.arrange(p1,p2,p3,p4,p5, ncol = 5)
+
+p1 <- ggplot(xs$central,aes(x = year,y = encs,group = 1,colour = state)) + 
+  geom_jitter(size=0.5) + 
+  geom_smooth(method="lm", se=T) +
+  scale_y_continuous(limits = c(0, 16))+
+  theme(legend.title = element_blank(), legend.position=c(0.1, 0.9)) +
+  facet_wrap(~region, ncol=1)
+p1
+p2 <- p1 %+% xs$south
+p3 <- p1 %+% xs$central_west
+p4 <- p1 %+% xs$north_east
+p5 <- p1 %+% xs$north_west
+
+grid.arrange(p1,p2,p3,p4,p5, ncol = 5)
+
+p1 <- ggplot(xs$central,aes(x = year,y = encs,group = 1,colour = state)) + 
+  geom_jitter(size=0.5) + 
+  geom_smooth(method="lm", se=T) +
+  scale_y_continuous(limits = c(0, 16))+
+  theme(legend.title = element_blank(), legend.position=c(0.1, 0.9)) +
+  facet_wrap(~region, ncol=1)
+p1
+p2 <- p1 %+% xs$south
+p3 <- p1 %+% xs$central_west
+p4 <- p1 %+% xs$north_east
+p5 <- p1 %+% xs$north_west
+
+grid.arrange(p1,p2,p3,p4,p5, ncol = 5)

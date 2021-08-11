@@ -1,4 +1,25 @@
+
+
+
 SIAP <- read.csv("/Users/erikaluna/Sync/UBC/Research/thesis/Data/Agt_cierre_80_16_equivalenciesFAO-SIAP.csv")
+
+SIAP$Cosechada <- as.numeric(as.character(SIAP$Cosechada))
+
+ochentauno <- SIAP %>% 
+  filter(YearAgricola == 1981)
+
+
+crop <- SIAP %>% 
+  filter(new.crop == "cafe") %>% 
+  group_by(YearAgricola) %>% 
+  summarise(ag_harv = sum(Cosechada))
+
+ggplot(crop, aes(YearAgricola, ag_harv)) +
+  geom_line()
+
+tmp <- ochenta %>% 
+  filter(Estado == "baja california")
+
 
 vars_english <- c("crop_var", "crop", "year", "state_code", "state", "mun_code", "mun", "unit",
                   "cycle", "water", "planted", "harvested", "losses", "production", "yield", "pmr", "value", "type")

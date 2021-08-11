@@ -1,0 +1,34 @@
+CVE_ENT,NOM_ENT,CAPITAL, AREA (ha),PERIMETER,COV_,COV_ID
+1,Aguascalientes,Aguascalientes,555867.3842,423.00598,0,1
+2,Baja California,Mexicali,7320656.742,3060.77271,1,2
+3,Baja California Sur,La Paz,7135056.882,5431.78664,2,3
+4,Campeche,Campeche,5526707.019,2999.98015,3,4
+5,Coahuila de Zaragoza,Saltillo,15065896.47,2407.15475,4,5
+6,Colima,Colima,573475.3127,674.55721,5,6
+7,Chiapas,Tuxtla Gutiérrez,7297091.956,2939.15562,6,7
+8,Chihuahua,Chihuahua,24695434.66,3125.62894,7,8
+9,Distrito Federal,Ciudad de México,148645.997,206.65989,8,9
+10,Durango,Victoria de Durango,12213120.49,2500.70351,9,10
+11,Guanajuato,Guanajuato,3033977.5,1370.0455,10,11
+12,Guerrero,Chilpancingo de los Bravos,6349884.075,2196.04418,11,12
+13,Hidalgo,Pachuca de Soto,2065454.574,1565.90234,12,13
+14,Jalisco,Guadalajara,7795987.312,3712.83201,13,14
+15,México,Toluca de Lerdo,2222657.665,1446.49493,14,15
+16,Michoacán de Ocampo,Morelia,5828428.152,2165.57946,15,16
+17,Morelos,Cuernavaca,485941.3843,456.47551,16,17
+18,Nayarit,Tepic,2763352.714,2003.16975,17,18
+19,Nuevo León,Monterrey,6355871.334,1912.80161,18,19
+20,Oaxaca,Oaxaca de Juárez,9284590.635,3041.59516,19,20
+21,Puebla,Heróica Puebla de Zaragoza,3415208.556,2238.086,20,21
+22,Querétaro,Santiago de Querétaro,1158926.754,874.11563,21,22
+23,Quintana Roo,Chetumal,4306700.591,2956.35092,22,23
+24,San Luis Potosí,San Luis Potosí,6049995.792,2154.14595,23,24
+25,Sinaloa,Culiacán Rosales,5497021.039,4390.7107,24,25
+26,Sonora,Hermosillo,18037887.5,4242.37539,25,26
+27,Tabasco,Villahermosa,2418695.437,3712.15005,26,27
+28,Tamaulipas,Ciudad Victoria,7728536.278,5224.75267,27,28
+29,Tlaxcala,Tlaxcala de Xicohtecatl,397397.2995,417.55371,28,29
+30,Veracruz de Ignacio de la Llave,Xalapa-Enriquez,7023430.459,6072.36401,29,30
+31,Yucatán,Mérida,3910198.172,1219.60583,30,31
+32,Zacatecas,Zacatecas,7447970.733,3166.16429,31,32
+,,,194110066.9,,,

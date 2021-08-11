@@ -17,28 +17,31 @@ SIAP <- read.csv("/Users/erikaluna/R\ Studio/crop_diversity/SIAP.csv")
 # Municipal level
 SIAP_mun <- read.csv("SIAP_mun.csv")
 
+# Frequently used objects
+regions <- c("Central", "Central West", "North East", "North West", "South")
+
 ##### DATA WRANGLING #####
 # Move this to the SIAP_mun_wrangling script
 SIAP <- SIAP %>% 
   filter(type == "food") # Only interested in food crops
 
 # Add regions 
-north_west <- c("baja california", "baja california sur", "nayarit","sinaloa", "sonora")
-north_east <- c("chihuahua", "coahuila", "durango","nuevo leon","san luis potosi","tamaulipas", "zacatecas")
-central_west <- c("aguascalientes","colima","guanajuato","jalisco","michoacan","queretaro")
-central <- c("distrito federal","hidalgo","guerrero","morelos","mexico","puebla","tlaxcala","veracruz")
-south <- c("campeche","chiapas","oaxaca","tabasco", "quintana roo","yucatan")
+#north_west <- c("baja california", "baja california sur", "nayarit","sinaloa", "sonora")
+#north_east <- c("chihuahua", "coahuila", "durango","nuevo leon","san luis potosi","tamaulipas", "zacatecas")
+#central_west <- c("aguascalientes","colima","guanajuato","jalisco","michoacan","queretaro")
+#central <- c("distrito federal","hidalgo","guerrero","morelos","mexico","puebla","tlaxcala","veracruz")
+#south <- c("campeche","chiapas","oaxaca","tabasco", "quintana roo","yucatan")
 
-SIAP <- SIAP %>% 
-  mutate(region = case_when(
-    state %in% north_west  ~ "north_west",
-    state %in% north_east  ~ "north_east",
-    state %in% central_west  ~ "central_west",
-    state %in% central  ~ "central",
-    state %in% south  ~ "south"
-  ))
+#SIAP <- SIAP %>% 
+  #mutate(region = case_when(
+    #state %in% north_west  ~ "north_west",
+    #state %in% north_east  ~ "north_east",
+    #state %in% central_west  ~ "central_west",
+    #state %in% central  ~ "central",
+    #state %in% south  ~ "south"
+  #))
 
-SIAP$region <- as.factor(SIAP$region)
+#SIAP$region <- as.factor(SIAP$region)
 
 # Add crop groups
 #Tudu
@@ -47,9 +50,29 @@ SIAP$region <- as.factor(SIAP$region)
 
 #### Graphing diversity ####
 
+cane <- SIAP %>%
+  filter(year == 2015, FAO_crop == "Sugar cane") %>% 
+  group_by(state)
+  summarise(ag_harv = sum(harvested))
+  
+SIAP_v1 <- read.csv("/Users/erikaluna/R\ Studio/crop_diversity/archive/SIAP_v1.csv")
+cane <- SIAP_v1 %>%
+  filter(crop == "cana de azucar") %>% 
+  group_by(year) %>% 
+  summarise(ag_harv = sum(harvested))
+
+cane %>% 
+  ggplot(aes(year, ag_harv)) +
+  geom_line()
+
+
+cane_lm <- lm(ag_harv ~ year, data = cane)
+summary(cane_lm)
+
 one_crop <- SIAP %>% 
   #filter(crop == "maiz", str_detect(crop_var,'grano')) %>% 
-  group_by(state, year, crop) %>% 
+  #filter(year == 1980) %>% 
+  group_by(region, state, year, crop) %>% 
   summarise(ag_yield = round(sum(production)/sum(harvested), digits = 2),
             ag_prod = sum(production),
             ag_planted = sum(planted),
@@ -64,14 +87,15 @@ p1 <- ggplot(one_crop, aes(x = state, fill = crop)) +
 p1
 
 diversity <- one_crop %>% 
-  group_by(state, year) %>% 
+  group_by(region, year) %>% 
   count()
 
-ggplot(diversity, aes(year, n, group = state, colour = state)) +
+ggplot(diversity, aes(year, n, group = region, colour = region)) +
   geom_line() +
   #geom_tile() #+
   #scale_x_discrete(guide = guide_axis(angle = 45))
-  theme(legend.position = "none")
+  theme(legend.position = "none") +
+  labs(x = "Year", y = "Number of crops")
 
 ggplot(one_crop, aes(x=year)) + 
   geom_line(aes(y = ag_planted), color = "darkred") + 
@@ -206,10 +230,92 @@ city_plots = list()
   do.call(grid.arrange,city_plots)
   
 ##### Total area #####
-data <- SIAP %>% 
-  group_by(region, year) %>% 
+# National
+area_nat <- SIAP %>% 
+  group_by(year) %>% 
   summarise(ag_harv = sum(harvested))
 
+  area_nat %>% 
+    ggplot(aes(year, ag_harv)) +
+    geom_point() +
+    geom_smooth(method = "lm") +
+    scale_y_continuous(labels = comma) +
+    labs(x = "Year", y = "Harvested Area (ha)")  
+  
+  a <- lm(ag_harv ~ year, area_nat)
+  summary(a)
+  
+# Regional
+area_reg <- SIAP %>% 
+    group_by(region, year) %>% 
+    summarise(ag_harv = sum(harvested))
+
+  area_reg %>% 
+    ggplot(aes(year, ag_harv, colour = region)) +
+    geom_point() +
+    geom_smooth(method = "lm") +
+    scale_y_continuous(labels = comma) +
+    labs(x = "Year", y = "Harvested Area (ha)") +
+    scale_color_discrete(name = "Region",labels = regions)
+  
+  a <- lm(ag_harv ~ year*region, area_reg)
+  summary(a)
+
+  lm_area <- area_reg %>% 
+    group_by(region) %>%
+    do(m1 = tidy(lm(ag_harv ~ year, data = .))) %>% # change the name of diversity index,
+    unnest(m1)
+  
+  lm_area_sig <- lm_area %>%
+    filter(term == "year") %>% 
+    mutate(p.value = case_when(p.value < 0.05 ~ "significant",
+                               p.value >= 0.05  ~ "non significant"))
+  
+# State
+area_sta <- SIAP %>% 
+  group_by(state, year) %>% 
+  summarise(ag_harv = sum(harvested))
+
+# Municipal  
+area_mun <- SIAP_mun %>% 
+  group_by(mun, year) %>% 
+  summarise(ag_harv = sum(harvested))
+
+data %>% 
+  ggplot(aes(year, ag_harv, colour = region)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  scale_y_continuous(labels = comma) +
+  labs(x = "Year", y = "Harvested Area (ha)") +
+  scale_color_discrete(name = "Region",labels = c("Central", "Central West", "North East", "North West", "South"))
+
+lm_area <- data %>% 
+  group_by(region) %>%
+  do(m1 = tidy(lm(ag_harv ~ year, data = .))) %>% # change the name of diversity index,
+  unnest(m1)
+
+lm_area_sig <- lm_area %>%
+  filter(term == "year") %>% 
+  mutate(p.value = case_when(p.value < 0.05 ~ "significant",
+                             p.value >= 0.05  ~ "non significant"))
+
+lm_area_sig <- right_join(data, lm_area_sig, by = "region") 
+
+lm_area_sig %>% 
+  ggplot(aes(year, ag_harv, group = region, color = p.value)) +
+  scale_color_manual(values=c("gray40", "indianred1")) +
+  geom_smooth(method="lm", se = T, show.legend = T) +
+  directlabels::geom_dl(aes(label = region), method = "smart.grid") #+
+  #labs(title = "Effective Number of Crop Species", x = "year", y = "ENCS") +
+  #facet_grid(cols = vars(region), labeller = as_labeller(region))
+
+
+
+lm_state_sig <- lm_state %>%
+  filter(term == "year") %>% 
+  mutate(p.value = case_when(p.value < 0.05 ~ "significant",
+                             p.value >= 0.05  ~ "non significant"))
+  
 perc_area <- data %>% 
 group_by(year) %>% 
   mutate(percent = ag_harv/sum(ag_harv)*100)
@@ -226,13 +332,15 @@ library(vegan)
 data <- SIAP %>% 
   #filter(year > 1993) %>% 
 #data <- SIAP_mun %>% 
-  group_by(region, state, crop, year) %>% # modify for region, state or municipal level
+  #group_by(region, crop, year) %>% # modify for region, state or municipal level
   #group_by(COV_ID, crop, year) %>% # modify for region, state or municipal level
+  group_by(region, crop_group, year) %>% # modify for region, state or municipal level
   summarise(ag_harv = sum(harvested))
 
 # Matrix
 data <- data %>%
-  spread(crop, ag_harv)
+  #spread(crop, ag_harv)
+  spread(crop_group, ag_harv)
 
 data[is.na(data)] <- 0
 
@@ -240,26 +348,26 @@ data <- as.data.frame(data)
 
 # indices with vegan
 abundance <- data %>%
-  group_by(region, state, year) %>% # modify for region, state or municipal level
+  group_by(region, year) %>% # modify for region, state or municipal level
   group_modify(~ broom::tidy(diversity(.x))) # this is H index (Shannon - species abundance)
-#colnames(abundance) <- c("region", "year", "abundance") # modify for region, state or municipal level
-colnames(abundance) <- c("region", "state","year", "abundance")
+colnames(abundance) <- c("region", "year", "abundance") # modify for region, state or municipal level
+#colnames(abundance) <- c("region", "state","year", "abundance")
 
 simpson <- data %>% 
-  group_by(region, state, year) %>%
+  group_by(region, year) %>%
   group_modify(~ broom::tidy(diversity(.x, "simpson"))) # this is D index (Simpson - species abundance)
-#colnames(simpson) <- c("region", "year", "simpson")
-colnames(simpson) <- c("region", "state","year", "simpson")
-
+colnames(simpson) <- c("region", "year", "simpson")
+#colnames(simpson) <- c("region", "state","year", "simpson")
 
 richness <- data %>% 
-  group_by(region,state, year) %>% 
+  group_by(region, year) %>% 
   group_modify(~ broom::tidy(specnumber(.x))) # this is S index (Species richness)
-colnames(richness) <- c("region","state", "year", "richness")
+colnames(richness) <- c("region","year", "richness")
+#colnames(richness) <- c("region","state", "year", "richness")
 
 # Indices data frame
-indices <- left_join(abundance, simpson, by = c("state","region","year")) %>% 
-              left_join(., richness, by=c("state", "region","year")) 
+indices <- left_join(abundance, simpson, by = c("region","year")) %>% 
+              left_join(., richness, by=c("region","year")) 
 
 indices <- indices %>% 
   mutate(evenness = abundance/log(richness)) # this is J index (Pielou's evenness)
@@ -275,19 +383,19 @@ H_plot <- indices %>%
   ggplot(aes(year, abundance, color = region)) +
   geom_point() +
   geom_smooth(method = "lm") +
-  labs(title = "Shannon index (H) - crop abundance", x = "year", y = "H") 
+  labs(title = "Shannon index (H)", x = "year", y = "H") 
 
 D_plot <- indices %>% 
   ggplot(aes(year, simpson, color = region)) +
   geom_point() +
   geom_smooth(method = "lm") +
-  labs(title = "Simpson index (D) - crop abundance", x = "year", y = "D") 
+  labs(title = "Simpson index (D)", x = "year", y = "D") 
 
 S_plot <- indices %>% 
   ggplot(aes(year, richness, color = region)) +
   geom_point() +
   geom_smooth(method = "lm") +
-  labs(title = "Richness index (S) - crop richness", x = "year", y = "n") 
+  labs(title = "Richness index (S)", x = "year", y = "n") 
 
 J_plot <- indices %>% 
   ggplot(aes(year, evenness, color = region)) +
