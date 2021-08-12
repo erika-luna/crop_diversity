@@ -22,8 +22,8 @@ regions <- c("Central", "Central West", "North East", "North West", "South")
 
 ##### DATA WRANGLING #####
 # Move this to the SIAP_mun_wrangling script
-SIAP <- SIAP %>% 
-  filter(type == "food") # Only interested in food crops
+#SIAP <- SIAP %>% 
+  #filter(type == "food") # Only interested in food crops
 
 # Add regions 
 #north_west <- c("baja california", "baja california sur", "nayarit","sinaloa", "sonora")
@@ -65,9 +65,80 @@ cane %>%
   ggplot(aes(year, ag_harv)) +
   geom_line()
 
+levels(SIAP_v1$type)
+
+animal_feed <- SIAP_v1 %>% 
+  filter(type == "food", crop != "pastos forrajeros") %>%
+  group_by(crop, year) %>% 
+  summarise(ag_harv = sum(harvested)) 
+
+
+animal_feed %>% 
+ggplot(aes(year, ag_harv, colour = crop))+
+  geom_line() +
+  scale_y_continuous(labels = comma) +
+  directlabels::geom_dl(aes(label = crop), method = "smart.grid")
+  
+
 
 cane_lm <- lm(ag_harv ~ year, data = cane)
 summary(cane_lm)
+
+region_crop_group <- SIAP %>% 
+  group_by(year, crop_group, region) %>% 
+  summarise(ag_harv = sum(harvested))
+
+region_crop_group %>% 
+  ggplot(aes(year, ag_harv, colour = crop_group)) +
+  geom_smooth(method = "lm") +
+  #geom_line()+
+  scale_y_continuous(labels = comma, trans='log10') +
+  facet_grid(~region)
+  
+m0 <- lm(ag_harv ~ year*region + region*crop_group, data = region_crop_group)
+summary(m0)
+
+lm_region_crop_group <- region_crop_group %>% 
+  group_by(region, crop_group) %>%
+  do(m1 = tidy(lm(ag_harv ~ year, data = .))) %>% # change the name of diversity index,
+  unnest(m1)
+
+lm_region_crop_group_sig <- lm_region_crop_group %>%
+  filter(term == "year") %>% 
+  mutate(p.value = case_when(p.value < 0.05 ~ "significant",
+                             p.value >= 0.05  ~ "non significant"))
+
+
+SIAP <- read.csv("/Users/erikaluna/R\ Studio/crop_diversity/archive/SIAP_v2.csv")
+
+FAO_crops <- Equivalencies.FAO.SIAP
+
+colnames(FAO_crops) <- c("crop", "FAO_code", "FAO_crop", "crop_group", "crop_importance")
+
+SIAP_FAO <- left_join(SIAP, FAO_crops, by="crop")
+
+trad <- SIAP_FAO %>% 
+  filter(crop_importance == "traditional") %>% 
+  group_by(year, region) %>% 
+  summarise(ag_harv = sum(harvested))
+
+trad %>% 
+  ggplot(aes(year, ag_harv, colour = region)) +
+  #geom_smooth(method = "lm") #+
+  geom_line()+
+  scale_y_continuous(labels = comma, trans='log10')
+
+m1 <- lm(ag_harv ~ region*year, data = trad)
+summary(m1)
+
+central <- trad %>% 
+  filter(region == "central")
+
+m2 <- lm(ag_harv ~ year, data = central)
+summary(m2)
+
+
+
 
 one_crop <- SIAP %>% 
   #filter(crop == "maiz", str_detect(crop_var,'grano')) %>% 

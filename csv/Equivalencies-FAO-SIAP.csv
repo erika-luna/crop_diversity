@@ -1,299 +1,1 @@
-﻿SIAP_crop,FAO_code,FAO_crop,crop_group
-trigo,15,Wheat,Cereals
-arroz,27,"Rice, paddy",Cereals
-cebada,44,Barley,Cereals
-maiz,56,Maize,Cereals
-centeno,71,Rye,Cereals
-avena,75,Oats,Cereals
-mijo,79,Millet,Cereals
-sorgo,83,Sorghum,Cereals
-quinoa,92,Quinoa,Cereals
-triticale,97,Triticale,Cereals
-alpiste,101,Canary seed,Cereals
-amaranto,108,"Cereals, nes",Cereals
-papa,116,Potatoes,Roots and tubers
-camote,122,Sweet potatoes,Roots and tubers
-yuca,125,Cassava,Roots and tubers
-macal,136,Taro (cocoyam),Roots and tubers
-malanga,136,Taro (cocoyam),Roots and tubers
-barbasco,149,"Roots and tubers, nes",Roots and tubers
-betabel,149,"Roots and tubers, nes",Roots and tubers
-jicama,149,"Roots and tubers, nes",Roots and tubers
-remolacha,149,"Roots and tubers, nes",Roots and tubers
-cana,156,Sugar cane,Sugar crops and sweetners
-cana de azucar,156,Sugar cane,Sugar crops and sweetners
-stevia,161,"Sugar crops, nes",Sugar crops and sweetners
-frijol,176,"Beans, dry",Pulses
-haba,181,"Broad beans, horse beans, dry",Pulses
-arvejon,187,"Peas, dry",Pulses
-garbanzo,191,Chick peas,Pulses
-lenteja,201,Lentils,Pulses
-maranon,217,"Cashew nuts, with shell",Nuts
-almendra,221,"Almonds, with shell",Nuts
-nuez,222,"Walnuts, with shell",Nuts
-nuez criolla,222,"Walnuts, with shell",Nuts
-nuez de castilla,222,"Walnuts, with shell",Nuts
-pistache,223,Pistachios,Nuts
-avellana,225,"Hazelnuts, with shell",Nuts
-macadamia,234,"Nuts, nes",Nuts
-pinon,234,"Nuts, nes",Nuts
-soya,236,Soybeans,Oils
-cacahuate,242,"Groundnuts, with shell",Oils
-coco,249,Coconuts,Oils
-copra,249,Coconuts,Oils
-palma africana,254,"Oil, palm fruit",Oils
-aceituna,260,Olives,Oils
-higuerilla,265,Castor oil seed,Oils
-flor girasol,267,Sunflower seed,Oils
-girasol,267,Sunflower seed,Oils
-canola,270,Rapeseed,Oils
-colza,270,Rapeseed,Oils
-jojoba,277,Jojoba seed,Oils
-cartamo,280,Safflower seed,Oils
-ajonjoli,289,Sesame seed,Oils
-mostaza,292,Mustard seed,Oils
-algodon,328,Seed cotton,Oils
-flor linaza,333,Linseed,Oils
-linaza,333,Linseed,Oils
-chia,339,Oilseeds nes,Oils
-jatropha,339,Oilseeds nes,Oils
-moringa,339,Oilseeds nes,Oils
-bock choy,358,Cabbages and other brassicas,Vegetables
-choy sum,358,Cabbages and other brassicas,Vegetables
-col,358,Cabbages and other brassicas,Vegetables
-col de bruselas,358,Cabbages and other brassicas,Vegetables
-gailan,358,Cabbages and other brassicas,Vegetables
-kale,358,Cabbages and other brassicas,Vegetables
-keel,358,Cabbages and other brassicas,Vegetables
-pak choy,358,Cabbages and other brassicas,Vegetables
-rapini,358,Cabbages and other brassicas,Vegetables
-alcachofa,366,Artichokes,Vegetables
-esparrago,367,Asparagus,Vegetables
-lechuga,372,Lettuce and chicory,Vegetables
-espinaca,373,Spinach,Vegetables
-jitomate,388,Tomatoes,Vegetables
-tomate,388,Tomatoes,Vegetables
-brocoli,393,Cauliflowers and broccoli,Vegetables
-coliflor,393,Cauliflowers and broccoli,Vegetables
-napa,393,Cauliflowers and broccoli,Vegetables
-calabacita,394,"Pumpkins, squash and gourds",Vegetables
-calabaza,394,"Pumpkins, squash and gourds",Vegetables
-chayote,394,"Pumpkins, squash and gourds",Vegetables
-chilacayote,394,"Pumpkins, squash and gourds",Vegetables
-pepino,397,Cucumbers and gherkins,Vegetables
-berenjena,399,Eggplants (aubergines),Vegetables
-chile,401,"Chillies and peppers, green",Vegetables
-cebolla,402,"Onions, shallots, green",Vegetables
-cebollin,402,"Onions, shallots, green",Vegetables
-chives,402,"Onions, shallots, green",Vegetables
-ajo,406,Garlic,Vegetables
-poro,407,"Leeks, other alliaceous vegetables",Vegetables
-ejote,414,"Beans, green",Vegetables
-vainita,414,"Beans, green",Vegetables
-chicharo,417,"Peas, green",Vegetables
-nabo,426,Carrots and turnips,Vegetables
-zanahoria,426,Carrots and turnips,Vegetables
-okra,430,Okra,Vegetables
-hongos,449,Mushrooms and truffles,Vegetables
-algarrobo,461,Carobs,Vegetables
-acelga,463,"Vegetables, fresh nes",Vegetables
-apio,463,"Vegetables, fresh nes",Vegetables
-bambu,463,"Vegetables, fresh nes",Vegetables
-berro,463,"Vegetables, fresh nes",Vegetables
-colinabo,463,"Vegetables, fresh nes",Vegetables
-elote,463,"Vegetables, fresh nes",Vegetables
-epazote,463,"Vegetables, fresh nes",Vegetables
-estropajo,463,"Vegetables, fresh nes",Vegetables
-huazontle,463,"Vegetables, fresh nes",Vegetables
-jamaica,463,"Vegetables, fresh nes",Vegetables
-mejorana,463,"Vegetables, fresh nes",Vegetables
-papalo,463,"Vegetables, fresh nes",Vegetables
-perejil,463,"Vegetables, fresh nes",Vegetables
-pipicha,463,"Vegetables, fresh nes",Vegetables
-quelite,463,"Vegetables, fresh nes",Vegetables
-rabano,463,"Vegetables, fresh nes",Vegetables
-romerito,463,"Vegetables, fresh nes",Vegetables
-sabila,463,"Vegetables, fresh nes",Vegetables
-shop suey,463,"Vegetables, fresh nes",Vegetables
-tarragon,463,"Vegetables, fresh nes",Vegetables
-verdolaga,463,"Vegetables, fresh nes",Vegetables
-platano,486,Bananas,Fruits
-hoja de platano,489,Plantains and others,Fruits
-naranja,490,Oranges,Fruits
-mandarina,495,"Tangerines, mandarins, clementines, satsumas",Fruits
-tangelo,495,"Tangerines, mandarins, clementines, satsumas",Fruits
-tangerina,495,"Tangerines, mandarins, clementines, satsumas",Fruits
-lima,497,Lemons and limes,Fruits
-limon,497,Lemons and limes,Fruits
-limon real,497,Lemons and limes,Fruits
-toronja,507,Grapefruit (inc. pomelos),Fruits
-manzana,515,Apples,Fruits
-pera,521,Pears,Fruits
-peron,521,Pears,Fruits
-membrillo,523,Quinces,Fruits
-chabacano,526,Apricots,Fruits
-capulin,531,Cherries,Fruits
-cereza,531,Cherries,Fruits
-durazno,534,Peaches and nectarines,Fruits
-nectarina,534,Peaches and nectarines,Fruits
-ciruela,536,Plums and sloes,Fruits
-fresa,544,Strawberries,Fruits
-frambuesa,547,Raspberries,Fruits
-blueberry,552,Blueberries,Fruits
-arandano,554,Cranberries,Fruits
-arrayan,558,Berries nes,Fruits
-zarzamora,558,Berries nes,Fruits
-uva,560,Grapes,Fruits
-sandia,567,Watermelons,Fruits
-melon,568,"Melons, other (inc.cantaloupes)",Fruits
-higo,569,Figs,Fruits
-guayaba,571,"Mangoes, mangosteens, guavas",Fruits
-mango,571,"Mangoes, mangosteens, guavas",Fruits
-mangostan,571,"Mangoes, mangosteens, guavas",Fruits
-aguacate,572,Avocados,Fruits
-pina,574,Pineapples,Fruits
-datil,577,Dates,Fruits
-persimonio,587,Persimmons,Fruits
-kiwi,592,Kiwi fruit,Fruits
-papaya,600,Papayas,Fruits
-anona,603,"Fruit, tropical fresh nes",Fruits
-caimito,603,"Fruit, tropical fresh nes",Fruits
-carambolo,603,"Fruit, tropical fresh nes",Fruits
-chirimoya,603,"Fruit, tropical fresh nes",Fruits
-corozo,603,"Fruit, tropical fresh nes",Fruits
-guanabana,603,"Fruit, tropical fresh nes",Fruits
-jaca,603,"Fruit, tropical fresh nes",Fruits
-litchi,603,"Fruit, tropical fresh nes",Fruits
-mamey,603,"Fruit, tropical fresh nes",Fruits
-maracuya,603,"Fruit, tropical fresh nes",Fruits
-noni,603,"Fruit, tropical fresh nes",Fruits
-pitahaya,603,"Fruit, tropical fresh nes",Fruits
-pitaya,603,"Fruit, tropical fresh nes",Fruits
-rambutan,603,"Fruit, tropical fresh nes",Fruits
-saramuyo,603,"Fruit, tropical fresh nes",Fruits
-zapote,603,"Fruit, tropical fresh nes",Fruits
-zapote negro,603,"Fruit, tropical fresh nes",Fruits
-granada,619,"Fruit, fresh nes",Fruits
-nanche,619,"Fruit, fresh nes",Fruits
-nispero,619,"Fruit, fresh nes",Fruits
-nopal,619,"Fruit, fresh nes",Fruits
-tamarindo,619,"Fruit, fresh nes",Fruits
-tejocote,619,"Fruit, fresh nes",Fruits
-tuna,619,"Fruit, fresh nes",Fruits
-pasto forrajero,638,"Forage and silage, rye grass",Feedstuffs
-plantago,638,"Forage and silage, rye grass",Feedstuffs
-clyptoria,639,"Forage and silage, grasses nes",Feedstuffs
-coquia,639,"Forage and silage, grasses nes",Feedstuffs
-ebo,639,"Forage and silage, grasses nes",Feedstuffs
-zacate buffel,639,Grasses nes for forage,Feedstuffs
-trebol,640,"Forage and silage, clover",Feedstuffs
-alfalfa,641,"Forage and silage, alfalfa",Feedstuffs
-maralfalfa,641,"Forage and silage, alfalfa",Feedstuffs
-cafe,656,"Coffee, green",Beverage crops and spices
-cacao,661,"Cocoa, beans",Beverage crops and spices
-te limon,667,Tea,Beverage crops and spices
-manzanilla,674,Tea nes,Beverage crops and spices
-lupulo,677,Hops,Beverage crops and spices
-pimienta,687,Pepper (piper spp.),Beverage crops and spices
-vainilla,692,Vanilla,Beverage crops and spices
-canela,693,Cinnamon (canella),Beverage crops and spices
-cardamomo,702,"Nutmeg, mace and cardamoms",Beverage crops and spices
-anis,711,"Anise, badian, fennel, coriander",Beverage crops and spices
-cilantro,711,"Anise, badian, fennel, coriander",Beverage crops and spices
-comino,711,"Anise, badian, fennel, coriander",Beverage crops and spices
-jenjibre,720,Ginger,Beverage crops and spices
-achiote,723,"Spices, nes",Beverage crops and spices
-albahaca,723,"Spices, nes",Beverage crops and spices
-eneldo,723,"Spices, nes",Beverage crops and spices
-eucalipto,723,"Spices, nes",Beverage crops and spices
-oregano,723,"Spices, nes",Beverage crops and spices
-pipian,723,"Spices, nes",Beverage crops and spices
-romero,723,"Spices, nes",Beverage crops and spices
-salvia,723,"Spices, nes",Beverage crops and spices
-tomillo,723,"Spices, nes",Beverage crops and spices
-hierbabuena,748,Peppermint,Beverage crops and spices
-menta,748,Peppermint,Beverage crops and spices
-yerbabuena,748,Peppermint,Beverage crops and spices
-kenaf,782,"Bastfibres, other",Fibres
-henequen,789,Sisal,Fibres
-agave,800,Agave fibres nes,Fibres
-maguey,800,Agave fibres nes,Fibres
-palma de ixtle,800,Agave fibres nes,Fibres
-tabaco,826,"Tobacco, unmanufactured",Fibres
-hule hevea,836,"Rubber, natural",Fibres
-pasto ornamental,1961,live plants,Live plants
-pasto,1961,live plants,Live plants
-zacate,1961,live plants,Live plants
-zacate ballico,1961,live plants,Live plants
-zacate bermuda,1961,live plants,Live plants
-zacate guinea,1961,live plants,Live plants
-zacate maravilla,1961,live plants,Live plants
-alamo,1961,live plants,Live plants
-almacigo,1961,live plants,Live plants
-arbol,1961,live plants,Live plants
-bangana,1961,live plants,Live plants
-muzu,1961,live plants,Live plants
-otro,1961,live plants,Live plants
-otros,1961,live plants,Live plants
-ramon,1961,live plants,Live plants
-simientes,1961,live plants,Live plants
-d√≥lar,1961,live plants,Live plants
-helecho,1961,live plants,Live plants
-palma de ornato,1961,live plants,Live plants
-palma de ornato camedor,1961,live plants,Live plants
-palma de taco,1961,live plants,Live plants
-paloma,1961,live plants,Live plants
-cascalote,1961,live plants,Live plants
-guaje,1961,live plants,Live plants
-guamuchil,1961,live plants,Live plants
-leucaena,1961,live plants,Live plants
-neem,1961,live plants,Live plants
-palo de arco,1961,live plants,Live plants
-olleto,1961,live plants,Live plants
-alstroemeria,1962,flower,Flowers
-flor agapando,1962,flower,Flowers
-flor albricia,1962,flower,Flowers
-flor alcatraz,1962,flower,Flowers
-flor alheli,1962,flower,Flowers
-flor anturios,1962,flower,Flowers
-flor aretillo,1962,flower,Flowers
-flor aster,1962,flower,Flowers
-flor ave del paraiso,1962,flower,Flowers
-flor azucena,1962,flower,Flowers
-flor begonia,1962,flower,Flowers
-flor belen,1962,flower,Flowers
-flor calancoe,1962,flower,Flowers
-flor cera,1962,flower,Flowers
-flor cineraria,1962,flower,Flowers
-flor clavel,1962,flower,Flowers
-flor crisantemo,1962,flower,Flowers
-flor cundeamor,1962,flower,Flowers
-flor cyclamen,1962,flower,Flowers
-flor espada de caballero,1962,flower,Flowers
-flor frisia,1962,flower,Flowers
-flor geranio,1962,flower,Flowers
-flor gerbera,1962,flower,Flowers
-flor gladiola,1962,flower,Flowers
-flor gypsophilia,1962,flower,Flowers
-flor hortensia,1962,flower,Flowers
-flor inmortal,1962,flower,Flowers
-flor lilium,1962,flower,Flowers
-flor limonium,1962,flower,Flowers
-flor mano de leon,1962,flower,Flowers
-flor margarita,1962,flower,Flowers
-flor nardo,1962,flower,Flowers
-flor noche buena,1962,flower,Flowers
-flor nube,1962,flower,Flowers
-flor orquidea,1962,flower,Flowers
-flor pensamiento,1962,flower,Flowers
-flor perrito,1962,flower,Flowers
-flor petunia,1962,flower,Flowers
-flor polar,1962,flower,Flowers
-flor pon pon,1962,flower,Flowers
-flor rosa,1962,flower,Flowers
-flor solidago,1962,flower,Flowers
-flor statice,1962,flower,Flowers
-flor terciopelo,1962,flower,Flowers
-flor tulipan,1962,flower,Flowers
-flor zempoalxochitl,1962,flower,Flowers
-flores,1962,flower,Flowers
+﻿SIAP_crop	FAO_code	FAO_crop	crop_group	crop_importancetrigo	15	Wheat	Cereals	arroz	27	"Rice, paddy"	Cereals	cebada	44	Barley	Cereals	maiz	56	Maize	Cereals	traditionalcenteno	71	Rye	Cereals	avena	75	Oats	Cereals	mijo	79	Millet	Cereals	sorgo	83	Sorghum	Cereals	quinoa	92	Quinoa	Cereals	triticale	97	Triticale	Cereals	alpiste	101	Canary seed	Cereals	amaranto	108	"Cereals, nes"	Cereals	traditionalpapa	116	Potatoes	Roots and tubers	camote	122	Sweet potatoes	Roots and tubers	yuca	125	Cassava	Roots and tubers	macal	136	Taro (cocoyam)	Roots and tubers	malanga	136	Taro (cocoyam)	Roots and tubers	barbasco	149	"Roots and tubers, nes"	Roots and tubers	betabel	149	"Roots and tubers, nes"	Roots and tubers	jicama	149	"Roots and tubers, nes"	Roots and tubers	remolacha	149	"Roots and tubers, nes"	Roots and tubers	cana	156	Sugar cane	Sugar crops and sweetners	cana de azucar	156	Sugar cane	Sugar crops and sweetners	stevia	161	"Sugar crops, nes"	Sugar crops and sweetners	frijol	176	"Beans, dry"	Pulses	traditionalhaba	181	"Broad beans, horse beans, dry"	Pulses	arvejon	187	"Peas, dry"	Pulses	garbanzo	191	Chick peas	Pulses	lenteja	201	Lentils	Pulses	maranon	217	"Cashew nuts, with shell"	Nuts	almendra	221	"Almonds, with shell"	Nuts	nuez	222	"Walnuts, with shell"	Nuts	nuez criolla	222	"Walnuts, with shell"	Nuts	nuez de castilla	222	"Walnuts, with shell"	Nuts	pistache	223	Pistachios	Nuts	avellana	225	"Hazelnuts, with shell"	Nuts	macadamia	234	"Nuts, nes"	Nuts	pinon	234	"Nuts, nes"	Nuts	soya	236	Soybeans	Oils	cacahuate	242	"Groundnuts, with shell"	Oils	coco	249	Coconuts	Oils	copra	249	Coconuts	Oils	palma africana	254	"Oil, palm fruit"	Oils	aceituna	260	Olives	Oils	higuerilla	265	Castor oil seed	Oils	flor girasol	267	Sunflower seed	Oils	girasol	267	Sunflower seed	Oils	canola	270	Rapeseed	Oils	colza	270	Rapeseed	Oils	jojoba	277	Jojoba seed	Oils	cartamo	280	Safflower seed	Oils	ajonjoli	289	Sesame seed	Oils	mostaza	292	Mustard seed	Oils	algodon	328	Seed cotton	Oils	flor linaza	333	Linseed	Oils	linaza	333	Linseed	Oils	chia	339	Oilseeds nes	Oils	jatropha	339	Oilseeds nes	Oils	moringa	339	Oilseeds nes	Oils	bock choy	358	Cabbages and other brassicas	Vegetables	choy sum	358	Cabbages and other brassicas	Vegetables	col	358	Cabbages and other brassicas	Vegetables	col de bruselas	358	Cabbages and other brassicas	Vegetables	gailan	358	Cabbages and other brassicas	Vegetables	kale	358	Cabbages and other brassicas	Vegetables	keel	358	Cabbages and other brassicas	Vegetables	pak choy	358	Cabbages and other brassicas	Vegetables	rapini	358	Cabbages and other brassicas	Vegetables	alcachofa	366	Artichokes	Vegetables	esparrago	367	Asparagus	Vegetables	lechuga	372	Lettuce and chicory	Vegetables	espinaca	373	Spinach	Vegetables	jitomate	388	Tomatoes	Vegetables	tomate	388	Tomatoes	Vegetables	traditionalbrocoli	393	Cauliflowers and broccoli	Vegetables	coliflor	393	Cauliflowers and broccoli	Vegetables	napa	393	Cauliflowers and broccoli	Vegetables	calabacita	394	"Pumpkins, squash and gourds"	Vegetables	calabaza	394	"Pumpkins, squash and gourds"	Vegetables	traditionalchayote	394	"Pumpkins, squash and gourds"	Vegetables	traditionalchilacayote	394	"Pumpkins, squash and gourds"	Vegetables	pepino	397	Cucumbers and gherkins	Vegetables	berenjena	399	Eggplants (aubergines)	Vegetables	chile	401	"Chillies and peppers, green"	Vegetables	traditionalcebolla	402	"Onions, shallots, green"	Vegetables	cebollin	402	"Onions, shallots, green"	Vegetables	chives	402	"Onions, shallots, green"	Vegetables	ajo	406	Garlic	Vegetables	poro	407	"Leeks, other alliaceous vegetables"	Vegetables	ejote	414	"Beans, green"	Vegetables	vainita	414	"Beans, green"	Vegetables	chicharo	417	"Peas, green"	Vegetables	nabo	426	Carrots and turnips	Vegetables	zanahoria	426	Carrots and turnips	Vegetables	okra	430	Okra	Vegetables	hongos	449	Mushrooms and truffles	Vegetables	algarrobo	461	Carobs	Vegetables	acelga	463	"Vegetables, fresh nes"	Vegetables	apio	463	"Vegetables, fresh nes"	Vegetables	bambu	463	"Vegetables, fresh nes"	Vegetables	berro	463	"Vegetables, fresh nes"	Vegetables	colinabo	463	"Vegetables, fresh nes"	Vegetables	elote	463	"Vegetables, fresh nes"	Vegetables	epazote	463	"Vegetables, fresh nes"	Vegetables	estropajo	463	"Vegetables, fresh nes"	Vegetables	huazontle	463	"Vegetables, fresh nes"	Vegetables	jamaica	463	"Vegetables, fresh nes"	Vegetables	mejorana	463	"Vegetables, fresh nes"	Vegetables	papalo	463	"Vegetables, fresh nes"	Vegetables	perejil	463	"Vegetables, fresh nes"	Vegetables	pipicha	463	"Vegetables, fresh nes"	Vegetables	quelite	463	"Vegetables, fresh nes"	Vegetables	traditionalrabano	463	"Vegetables, fresh nes"	Vegetables	romerito	463	"Vegetables, fresh nes"	Vegetables	sabila	463	"Vegetables, fresh nes"	Vegetables	shop suey	463	"Vegetables, fresh nes"	Vegetables	tarragon	463	"Vegetables, fresh nes"	Vegetables	verdolaga	463	"Vegetables, fresh nes"	Vegetables	platano	486	Bananas	Fruits	hoja de platano	489	Plantains and others	Fruits	naranja	490	Oranges	Fruits	mandarina	495	"Tangerines, mandarins, clementines, satsumas"	Fruits	tangelo	495	"Tangerines, mandarins, clementines, satsumas"	Fruits	tangerina	495	"Tangerines, mandarins, clementines, satsumas"	Fruits	lima	497	Lemons and limes	Fruits	limon	497	Lemons and limes	Fruits	limon real	497	Lemons and limes	Fruits	toronja	507	Grapefruit (inc. pomelos)	Fruits	manzana	515	Apples	Fruits	pera	521	Pears	Fruits	peron	521	Pears	Fruits	membrillo	523	Quinces	Fruits	chabacano	526	Apricots	Fruits	capulin	531	Cherries	Fruits	cereza	531	Cherries	Fruits	durazno	534	Peaches and nectarines	Fruits	nectarina	534	Peaches and nectarines	Fruits	ciruela	536	Plums and sloes	Fruits	fresa	544	Strawberries	Fruits	frambuesa	547	Raspberries	Fruits	blueberry	552	Blueberries	Fruits	arandano	554	Cranberries	Fruits	arrayan	558	Berries nes	Fruits	zarzamora	558	Berries nes	Fruits	uva	560	Grapes	Fruits	sandia	567	Watermelons	Fruits	melon	568	"Melons, other (inc.cantaloupes)"	Fruits	higo	569	Figs	Fruits	guayaba	571	"Mangoes, mangosteens, guavas"	Fruits	mango	571	"Mangoes, mangosteens, guavas"	Fruits	mangostan	571	"Mangoes, mangosteens, guavas"	Fruits	aguacate	572	Avocados	Fruits	traditionalpina	574	Pineapples	Fruits	datil	577	Dates	Fruits	persimonio	587	Persimmons	Fruits	kiwi	592	Kiwi fruit	Fruits	papaya	600	Papayas	Fruits	anona	603	"Fruit, tropical fresh nes"	Fruits	caimito	603	"Fruit, tropical fresh nes"	Fruits	carambolo	603	"Fruit, tropical fresh nes"	Fruits	chirimoya	603	"Fruit, tropical fresh nes"	Fruits	corozo	603	"Fruit, tropical fresh nes"	Fruits	guanabana	603	"Fruit, tropical fresh nes"	Fruits	jaca	603	"Fruit, tropical fresh nes"	Fruits	litchi	603	"Fruit, tropical fresh nes"	Fruits	mamey	603	"Fruit, tropical fresh nes"	Fruits	maracuya	603	"Fruit, tropical fresh nes"	Fruits	noni	603	"Fruit, tropical fresh nes"	Fruits	pitahaya	603	"Fruit, tropical fresh nes"	Fruits	pitaya	603	"Fruit, tropical fresh nes"	Fruits	rambutan	603	"Fruit, tropical fresh nes"	Fruits	saramuyo	603	"Fruit, tropical fresh nes"	Fruits	zapote	603	"Fruit, tropical fresh nes"	Fruits	zapote negro	603	"Fruit, tropical fresh nes"	Fruits	granada	619	"Fruit, fresh nes"	Fruits	nanche	619	"Fruit, fresh nes"	Fruits	nispero	619	"Fruit, fresh nes"	Fruits	nopal	619	"Fruit, fresh nes"	Fruits	traditionaltamarindo	619	"Fruit, fresh nes"	Fruits	tejocote	619	"Fruit, fresh nes"	Fruits	tuna	619	"Fruit, fresh nes"	Fruits	pasto forrajero	638	"Forage and silage, rye grass"	Feedstuffs	plantago	638	"Forage and silage, rye grass"	Feedstuffs	clyptoria	639	"Forage and silage, grasses nes"	Feedstuffs	coquia	639	"Forage and silage, grasses nes"	Feedstuffs	ebo	639	"Forage and silage, grasses nes"	Feedstuffs	zacate buffel	639	Grasses nes for forage	Feedstuffs	trebol	640	"Forage and silage, clover"	Feedstuffs	alfalfa	641	"Forage and silage, alfalfa"	Feedstuffs	maralfalfa	641	"Forage and silage, alfalfa"	Feedstuffs	cafe	656	"Coffee, green"	Beverage crops and spices	cacao	661	"Cocoa, beans"	Beverage crops and spices	traditionalte limon	667	Tea	Beverage crops and spices	manzanilla	674	Tea nes	Beverage crops and spices	lupulo	677	Hops	Beverage crops and spices	pimienta	687	Pepper (piper spp.)	Beverage crops and spices	vainilla	692	Vanilla	Beverage crops and spices	canela	693	Cinnamon (canella)	Beverage crops and spices	cardamomo	702	"Nutmeg, mace and cardamoms"	Beverage crops and spices	anis	711	"Anise, badian, fennel, coriander"	Beverage crops and spices	cilantro	711	"Anise, badian, fennel, coriander"	Beverage crops and spices	comino	711	"Anise, badian, fennel, coriander"	Beverage crops and spices	jenjibre	720	Ginger	Beverage crops and spices	achiote	723	"Spices, nes"	Beverage crops and spices	albahaca	723	"Spices, nes"	Beverage crops and spices	eneldo	723	"Spices, nes"	Beverage crops and spices	eucalipto	723	"Spices, nes"	Beverage crops and spices	oregano	723	"Spices, nes"	Beverage crops and spices	pipian	723	"Spices, nes"	Beverage crops and spices	romero	723	"Spices, nes"	Beverage crops and spices	salvia	723	"Spices, nes"	Beverage crops and spices	tomillo	723	"Spices, nes"	Beverage crops and spices	hierbabuena	748	Peppermint	Beverage crops and spices	menta	748	Peppermint	Beverage crops and spices	yerbabuena	748	Peppermint	Beverage crops and spices	kenaf	782	"Bastfibres, other"	Fibres	henequen	789	Sisal	Fibres	agave	800	Agave fibres nes	Fibres	maguey	800	Agave fibres nes	Fibres	traditionalpalma de ixtle	800	Agave fibres nes	Fibres	tabaco	826	"Tobacco, unmanufactured"	Fibres	hule hevea	836	"Rubber, natural"	Fibres	pasto ornamental	1961	live plants	Live plants	pasto	1961	live plants	Live plants	zacate	1961	live plants	Live plants	zacate ballico	1961	live plants	Live plants	zacate bermuda	1961	live plants	Live plants	zacate guinea	1961	live plants	Live plants	zacate maravilla	1961	live plants	Live plants	alamo	1961	live plants	Live plants	almacigo	1961	live plants	Live plants	arbol	1961	live plants	Live plants	bangana	1961	live plants	Live plants	muzu	1961	live plants	Live plants	otro	1961	live plants	Live plants	otros	1961	live plants	Live plants	ramon	1961	live plants	Live plants	simientes	1961	live plants	Live plants	d√≥lar	1961	live plants	Live plants	helecho	1961	live plants	Live plants	palma de ornato	1961	live plants	Live plants	palma de ornato camedor	1961	live plants	Live plants	palma de taco	1961	live plants	Live plants	paloma	1961	live plants	Live plants	cascalote	1961	live plants	Live plants	guaje	1961	live plants	Live plants	guamuchil	1961	live plants	Live plants	leucaena	1961	live plants	Live plants	neem	1961	live plants	Live plants	palo de arco	1961	live plants	Live plants	olleto	1961	live plants	Live plants	alstroemeria	1962	flower	Flowers	flor agapando	1962	flower	Flowers	flor albricia	1962	flower	Flowers	flor alcatraz	1962	flower	Flowers	flor alheli	1962	flower	Flowers	flor anturios	1962	flower	Flowers	flor aretillo	1962	flower	Flowers	flor aster	1962	flower	Flowers	flor ave del paraiso	1962	flower	Flowers	flor azucena	1962	flower	Flowers	flor begonia	1962	flower	Flowers	flor belen	1962	flower	Flowers	flor calancoe	1962	flower	Flowers	flor cera	1962	flower	Flowers	flor cineraria	1962	flower	Flowers	flor clavel	1962	flower	Flowers	flor crisantemo	1962	flower	Flowers	flor cundeamor	1962	flower	Flowers	flor cyclamen	1962	flower	Flowers	flor espada de caballero	1962	flower	Flowers	flor frisia	1962	flower	Flowers	flor geranio	1962	flower	Flowers	flor gerbera	1962	flower	Flowers	flor gladiola	1962	flower	Flowers	flor gypsophilia	1962	flower	Flowers	flor hortensia	1962	flower	Flowers	flor inmortal	1962	flower	Flowers	flor lilium	1962	flower	Flowers	flor limonium	1962	flower	Flowers	flor mano de leon	1962	flower	Flowers	flor margarita	1962	flower	Flowers	flor nardo	1962	flower	Flowers	flor noche buena	1962	flower	Flowers	flor nube	1962	flower	Flowers	flor orquidea	1962	flower	Flowers	flor pensamiento	1962	flower	Flowers	flor perrito	1962	flower	Flowers	flor petunia	1962	flower	Flowers	flor polar	1962	flower	Flowers	flor pon pon	1962	flower	Flowers	flor rosa	1962	flower	Flowers	flor solidago	1962	flower	Flowers	flor statice	1962	flower	Flowers	flor terciopelo	1962	flower	Flowers	flor tulipan	1962	flower	Flowers	flor zempoalxochitl	1962	flower	Flowers	flores	1962	flower	Flowers	
