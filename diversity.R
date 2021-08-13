@@ -124,8 +124,8 @@ trad <- SIAP_FAO %>%
 
 trad %>% 
   ggplot(aes(year, ag_harv, colour = region)) +
-  #geom_smooth(method = "lm") #+
-  geom_line()+
+  geom_smooth(method = "lm") +
+  #geom_line()+
   scale_y_continuous(labels = comma, trans='log10')
 
 m1 <- lm(ag_harv ~ region*year, data = trad)
